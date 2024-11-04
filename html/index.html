@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<img>
+<head>
+    <title>Nostale Damage Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="nostale, damage, calculator">
+    <meta name="description" content="Nostale damage calculator">
+    <meta name="author" content="Hatz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en-us">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <script type="module" src="/js/enums.js"></script>
+    <script type="module" src="/js/monster_parser.js"></script> -->
+    <script type="module" src="/js/index.js"></script>
+
+    
+</head>
+<div class="main-container">
+    <h1 class="center">NosTale Damage Calculator</h1>
+    <hr>
+
+    <div class="flex-container">
+        <div class="column box center">
+            <h2>Character configuration</h2>
+            <table class="box" style="margin: auto;">
+                <tr>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="mask-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="hat-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="fairy-slot" class="clickable">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="main-weapon-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835617.png" id="sp-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="secondary-weapon-slot" class="clickable">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="glove-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="armor-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="shoe-slot" class="clickable">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="ring-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="necklace-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="bracelet-slot" class="clickable">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835776.png" id="costume-wings-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835784.png" id="mini-pet-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="amulet-slot" class="clickable">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835776.png" id="costume-weapon-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="costume-hat-slot" class="clickable">
+                    </td>
+                    <td class="character-slot-container">
+                        <img src="/imgs/ui/1593835577.png" id="costume-slot" class="clickable">
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    
+        <div class="column box center">
+            <h2>Enemy configuration</h2>
+    
+            <div class="box flex-container center" style="position:relative;">
+                <div class="column">
+                    <img id="current-monster" class="clickable animation" src="/imgs/monster_sprites/83_1.png" style="max-height: 100%; max-width: 100%; position :relative;">
+                </div>
+                <div class="column box monster-stat-container">
+                    <h3 id="monster-name-title">Monster name</h3>
+                    <h4>General</h4>
+                    <span>Level: </span>
+                    <span id="monster-level">26</span>
+                    <br>
+                    <span>Element:</span>
+                    <img id="monster-element-icon" src="/imgs/icons/17101.png" style="vertical-align: middle;">    
+                    <span id="monster-element-level">80%</span>
+        
+        
+                    <h4>Defence stats</h4>
+                    <span style="display: inline-block; margin-bottom: 10px;">Defence level: </span>
+                    <span id="defence-level-text" style="display: inline-block; margin-bottom: 10px;">+0</span>
+                    <div id="melee-def-stat" class="def-stat-text">520
+                        <img src="/imgs/ui/1593835568.png" class="melee-def-icon">
+                    </div>
+        
+                    <div id="ranged-def-stat" class="def-stat-text">480
+                        <img src="/imgs/ui/1593835568.png" class="ranged-def-icon">
+                    </div>
+        
+                    <div id="magic-def-stat" class="def-stat-text">555
+                        <img src="/imgs/ui/1593835568.png" class="mage-def-icon">
+                    </div>
+                    <h4>Resistances</h4>
+                    <div id="fire-res-stat" class="def-stat-text">20%
+                        <img src="/imgs/ui/1593835577.png" class="fire-res-icon">
+                    </div>
+        
+                    <div id="water-res-stat" class="def-stat-text">40%
+                        <img src="/imgs/ui/1593835577.png" class="water-res-icon">
+                    </div>
+        
+                    <div id="light-res-stat" class="def-stat-text">30%
+                        <img src="/imgs/ui/1593835577.png" class="light-res-icon">
+                    </div>
+        
+                    <div id="shadow-res-stat" class="def-stat-text">50%
+                        <img src="/imgs/ui/1593835577.png" class="shadow-res-icon">
+                    </div>
+                </div>
+                <div id="monster-dropdown" class="box">
+                    <input type="text" id="monster-search" name="monster-search" placeholder="Monster name" style="width: 99%;">
+                    <div id="monster-list" class="flex-container center scrollbar" style="max-height: 400px;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+        
+
+    <hr>
+
+    <div class="center">
+        <h2>Damage results</h2>
+        
+        <div>
+            <label>Base damage:</label>
+            <output id="min_base_dmg">0</output>
+            -
+            <output id="max_base_dmg">0</output>
+        </div>
+
+        <div>
+            <label>Critical damage:</label>
+            <output id="min_crit_dmg">0</output>
+            -
+            <output id="mmax_crit_dmg">0</output>
+        </div>
+
+        
+        <div>
+            <label>Softcrit damage:</label>
+            <output id="min_softcrit_dmg">0</output>
+            -
+            <output id="max_softcrit_dmg">0</output>
+        </div>
+
+        <div>
+            <label>Softcrit + Critical damage:</label>
+            <output id="min_softcrit_crit_dmg">0</output>
+            -
+            <output id="max_softcrit_crit_dmg">0</output>
+        </div>
+
+        <button id="calculate_btn">Calculate</button>
+
+        <hr>
+    </div>
+
+    <div>
+        <h2>Character configuration</h2>
+            
+            <div>
+                <label for="character_level">Level:</label>
+                <input id="character_level" type="number" value="1" min="1" max="99">
+            </div>
+
+            <div>
+                <label for="overall_dmg_increase">Overall damage increase (%):</label>
+                <input id="overall_dmg_increase" type="number" value="0" min="0">
+            </div>
+
+            <h3>Physical Damage</h3>
+    
+            <div>
+                <label for="weapon_level">Weapon upgrade level:</label>
+                <input id="weapon_level" type="number" value="0" min="0" max="10">
+            </div>
+
+            <div>
+                <label for="weapon_base_dmg">Weapon base damage (min, max):</label>
+                <span>
+                    <input id="weapon_base_dmg_min" type="number" value="0" min="0">
+                    <input id="weapon_base_dmg_max" type="number" value="0" min="0">
+                </span>
+            </div>
+
+            <div>
+                <label for="char_base_dmg">Character base damage</label>
+                <input id="char_base_dmg" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="soft_crit_dmg">Soft crit damage increase (%)</label>
+                <input id="soft_crit_dmg" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="critical_dmg">Critical damage increase (%):</label>
+                <input id="critical_dmg" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="skill_base_dmg">Skill power increase</label>
+                <input id="skill_base_dmg" type="number" value="0" min="0">
+            </div>
+    
+            <h3>Elemental Damage</h3>
+    
+            <div>
+                <label for="weapon_elemental_energy">Weapon elemental energies increase:</label>
+                <input id="weapon_elemental_energy" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="skill_element">Skill element increase:</label>
+                <input id="skill_element" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="fairy_level">Fairy level (%):</label>
+                <input id="fairy_level" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="weapon_ele_reduction">Weapons elemental resistance reduction (%):</label>
+                <input id="weapon_ele_reduction" type="number" value="0" min="0">
+            </div>
+
+            <div>
+                <label for="fairy_element">Fairy element:</label>
+                <select id="fairy_element">
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="light">Light</option>
+                    <option value="shadow">Shadow</option>
+                </select>
+            </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+    background-color: #f4f4f4b9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+}
+
+img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.main-container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.monster-stats-container {
+    min-width: 200px; 
+    max-width: 400px;
+    min-height: 460px;
+}
+
+.box {
+    border: solid 1px #ccc;
+    border-radius: 8px;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+/* img.animation {
+    animation-name: test;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes test {
+    50% {content:url("/imgs/monster_sprites/83_1.png");}
+} */
+
+.column {
+    /* float: left;*/
+    width: 48%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.scrollbar {
+    overflow: auto;
+}
+
+.monster-img-container {
+    width: 100px; 
+    height: 100px;
+}
+
+.monster-img-container:hover {
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+.monster-img-max-size {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .column {
+      width: 100%;
+    }
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#monster-dropdown {
+    height: 425px;
+    width: 420px; 
+    position: absolute; 
+    background-color: rgba(240, 240, 240, 0.9);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+.def-stat-text {
+    position: relative;
+    display: table;
+    left: 50%;
+    margin-bottom: 2px;
+}
+
+.mage-def-icon {
+    position: absolute;
+    clip-path: inset(224px 348px 270px 146px);
+    top: -224px;
+    right: -348px;
+    bottom: -270px;
+    left: -171px;
+}
+
+.melee-def-icon {
+    position: absolute;
+    clip-path: inset(224px 330px 271px 163px);
+    top: -224px;
+    right: -330px;
+    bottom: -270px;
+    left: -188px;
+}
+
+.ranged-def-icon {
+    position: absolute;
+    clip-path: inset(241px 348px 253px 146px);
+    top: -241px;
+    right: -348px;
+    bottom: -253px;
+    left: -171px;
+}
+
+.fire-res-icon {
+    position: absolute;
+    clip-path: inset(193px 100px 296px 391px);
+    top: -193px;
+    right: -100px;
+    bottom: -296px;
+    left: -416px;
+}
+
+.water-res-icon {
+    position: absolute;
+    clip-path: inset(193px 78px 296px 413px);
+    top: -193px;
+    right: -78px;
+    bottom: -296px;
+    left: -438px;
+}
+
+.light-res-icon {
+    position: absolute;
+    clip-path: inset(193px 56px 296px 435px);
+    top: -193px;
+    right: -56px;
+    bottom: -296px;
+    left: -460px;
+}
+
+.shadow-res-icon {
+    position: absolute;
+    clip-path: inset(193px 33px 296px 457px);
+    top: -193px;
+    right: -33px;
+    bottom: -296px;
+    left: -482px;
+}
+
+.character-slot-container {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    margin: auto;
+}
+
+.character-slot-container img {
+    margin: auto;
+}
+
+#mask-slot {
+    position: absolute;
+    clip-path: inset(340px 208px 130px 262px);
+    top: -340px;
+    right: -208px;
+    bottom: -130px;
+    left: -262px;
+}
+
+#hat-slot {
+    position: absolute;
+    clip-path: inset(291px 208px 179px 262px);
+    top: -291px;
+    right: -208px;
+    bottom: -179px;
+    left: -262px;
+}
+
+#fairy-slot {
+    position: absolute;
+    clip-path: inset(4px 5px 466px 465px);
+    top: -4px;
+    right: -5px;
+    bottom: -466px;
+    left: -465px;
+}
+
+#main-weapon-slot {
+    position: absolute;
+    clip-path: inset(447px 208px 23px 262px);
+    top: -447px;
+    right: -208px;
+    bottom: -23px;
+    left: -262px;
+}
+
+#armor-slot {
+    position: absolute;
+    clip-path: inset(4px 53px 466px 417px);
+    top: -4px;
+    right: -53px;
+    bottom: -466px;
+    left: -417px;
+}
+
+/* 
+left = 308
+top = 356
+width = 55
+height = 55 
+*/
+#sp-slot {
+    position: absolute;
+    clip-path: inset(356px 149px 101px 308px);
+    top: -356px;
+    right: -149px;
+    bottom: -101px;
+    left: -308px;
+}
+
+#secondary-weapon-slot {
+    position: absolute;
+    clip-path: inset(291px 159px 179px 311px);
+    top: -291px;
+    right: -159px;
+    bottom: -179px;
+    left: -311px;
+}
+
+#glove-slot {
+    position: absolute;
+    clip-path: inset(56px 5px 414px 465px);
+    top: -56px;
+    right: -5px;
+    bottom: -414px;
+    left: -465px;
+}
+
+#shoe-slot {
+    position: absolute;
+    clip-path: inset(447px 159px 23px 311px);
+    top: -447px;
+    right: -159px;
+    bottom: -23px;
+    left: -311px;
+}
+
+#necklace-slot {
+    position: absolute;
+    clip-path: inset(392px 208px 78px 262px);
+    top: -392px;
+    right: -208px;
+    bottom: -78px;
+    left: -262px;
+}
+
+#ring-slot {
+    position: absolute;
+    clip-path: inset(340px 159px 130px 311px);
+    top: -340px;
+    right: -159px;
+    bottom: -130px;
+    left: -311px;
+}
+
+#bracelet-slot {
+    position: absolute;
+    clip-path: inset(392px 159px 78px 311px);
+    top: -392px;
+    right: -159px;
+    bottom: -78px;
+    left: -311px;
+}
+
+#amulet-slot {
+    position: absolute;
+    clip-path: inset(56px 53px 414px 417px);
+    top: -56px;
+    right: -53px;
+    bottom: -414px;
+    left: -417px;
+}
+
+#costume-slot {
+    position: absolute;
+    clip-path: inset(220px 54px 250px 416px);
+    top: -220px;
+    right: -54px;
+    bottom: -250px;
+    left: -416px;
+}
+
+#costume-hat-slot {
+    position: absolute;
+    clip-path: inset(220px 103px 250px 367px);
+    top: -220px;
+    right: -103px;
+    bottom: -250px;
+    left: -367px;
+}
+
+#costume-weapon-slot {
+    position: absolute;
+    clip-path: inset(293px 10px 177px 460px);
+    top: -293px;
+    right: -10px;
+    bottom: -177px;
+    left: -460px;
+}
+
+#costume-wings-slot {
+    position: absolute;
+    clip-path: inset(336px 10px 134px 460px);
+    top: -336px;
+    right: -10px;
+    bottom: -134px;
+    left: -460px;
+}
+
+#mini-pet-slot {
+    position: absolute;
+    clip-path: inset(412px 38px 58px 432px);
+    top: -412px;
+    right: -38px;
+    bottom: -58px;
+    left: -432px;
+}
