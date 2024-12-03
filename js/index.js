@@ -1,10 +1,11 @@
-
 import { Monster, MonsterDatParser, MonsterNameParser } from "./monster_parser.js"
 import { AttackType, Resistance } from "./enums.js";
+import { getIdleMonsterImgPaths } from "./monster_img_parser.js";
 
 var monsters;
 var monster_names;
 var monster_sprite_data;
+var monster_img_paths;
 
 window.addEventListener("load", onLoad);
 
@@ -17,6 +18,7 @@ async function onLoad() {
 
     const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
+    monster_img_paths = getIdleMonsterImgPaths(monster_sprite_data);
 
     initMonsterList();
 
@@ -52,8 +54,8 @@ function monsterSearchAutocomplete() {
         const monster_name = img_node.title.toLowerCase();
 
         // Display
-        if (monster_name.startsWith(text) || monster_name.includes(text)) {
-            child.style.display = "block";
+        if (monster_name.includes(text)) {
+            child.style.display = "flex";
         }
         // Hide
         else {
@@ -94,24 +96,21 @@ function initMonsterList() {
         if (monster.race === 8)
             return;
 
+        // We don't want to show monsters that has no image
+        if (!monster_img_paths.has(monster.skin))
+            return;
+
         // Create the div node
         const div_node = document.createElement("div");
-        div_node.setAttribute("class", "clickable flex-container center monster-img-container");
-
-        const sprite_info = monster_sprite_data.find(elem => {
-            return elem.monster == monster.skin && elem.animation == 10 && elem.direction == 2;
-        });
-
-        // if sprite_info is undefined then it means that this monster has no png
-        // so it's better to not display it
-        if (sprite_info === undefined)
-            return;
+        div_node.setAttribute("class", "clickable monster-img-container");
 
         // Create the img node
         const img_node = document.createElement("img");
-        img_node.setAttribute("src", `/imgs/monster_sprites/${sprite_info.base}_0.png`);
+        img_node.setAttribute("src", monster_img_paths.get(monster.skin))
         img_node.setAttribute("title", monster.name);
         img_node.setAttribute("class", "monster-img-max-size");
+        img_node.style.margin = "auto";
+        img_node.style.padding = "auto";
 
         // Add the img node to the div
         div_node.appendChild(img_node);
