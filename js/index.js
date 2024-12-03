@@ -1,5 +1,6 @@
-import { Monster, MonsterDatParser, MonsterNameParser } from "./monster_parser.js"
+import { Monster, MonsterDatParser } from "./monster_parser.js"
 import { AttackType, Resistance } from "./enums.js";
+import { NameParser } from "./name_parser.js";
 import { getIdleMonsterImgPaths } from "./monster_img_parser.js";
 
 var monsters;
@@ -16,6 +17,8 @@ async function onLoad() {
     monster_names = await initMonsterNames();
     monsters = await initMonsters(monster_names);
 
+    console.log(monsters);
+
     const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
     monster_img_paths = getIdleMonsterImgPaths(monster_sprite_data);
@@ -29,7 +32,7 @@ async function onLoad() {
 async function initMonsterNames() {
     const monster_lang_file = await fetch("/lang/_code_uk_monster.txt");
     const data = await monster_lang_file.text();
-    const parser = new MonsterNameParser(data);
+    const parser = new NameParser(data);
     return parser.parse();
 }
 

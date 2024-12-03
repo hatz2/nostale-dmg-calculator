@@ -1,16 +1,16 @@
 import { AttackType } from "./enums.js"
 import { normalizeEOL } from "./utils.js";
+import { DatObject, EntryParser, DatParser, DatRow } from "./dat_parser.js";
 
 export {
     Monster,
     MonsterDatParser,
-    MonsterNameParser,
 }
 
 /**
  * Data class with the information needed from a monster
  */
-class Monster {
+class Monster extends DatObject {
     constructor(
         vnum, 
         name, 
@@ -24,8 +24,8 @@ class Monster {
         icon_id,
         skin,
     ) {
-        this.vnum = vnum;
-        this.name = name;
+        super(vnum, name)
+
         this.level = level;
         this.race = race;
         this.element = element;
@@ -41,62 +41,19 @@ class Monster {
 /**
  * monster.dat parser
  */
-class MonsterDatParser {
-    #data;
-    #monster_names;
-    
-    constructor(data, monster_names) {
-        this.#data = normalizeEOL(data);
-        this.#monster_names = monster_names;
-    }
+class MonsterDatParser extends DatParser {
 
-    parse() {
-        const entries = this.#splitDataIntoEntries(this.#data);
-        const monsters = this.#parseEntries(entries);
-        return this.#replaceMonsterNameIdsWithName(monsters);
-    }
-
-    #parseEntries(entries) {
-        const monsters = [];
-
-        entries.forEach(entry => {
-            const entry_parser = new EntryParser(entry);
-            const monster = entry_parser.parse();
-            monsters.push(monster);
-        });
-
-        return monsters;
-    }
-
-    #replaceMonsterNameIdsWithName(monsters) {
-        monsters.forEach(monster => {
-            if (monster.name !== undefined) {
-                monster.name = this.#monster_names.get(monster.name);
-            }
-        });
-
-        return monsters;
-    }
-    
-    #splitDataIntoEntries(data) {
-        const entries = data.split("#========================================================\n");
-        // Remove empty entries (usually the ones between two separators)
-        return entries.filter(Boolean);
+    constructor(data, names) {
+        super(data, names, MonsterEntryParser);
     }
 }
 
 /**
  * Parses a singular entry from monster.dat
  */
-class EntryParser {
-    #splitted_entry
-
+class MonsterEntryParser extends EntryParser {
     constructor(entry) {
-        this.#splitted_entry = this.#splitEntry(entry);
-    }
-
-    #splitEntry(entry) {
-        return entry.split("\n").filter(Boolean);
+        super(entry);
     }
 
     /**
@@ -106,8 +63,8 @@ class EntryParser {
         let vnum, name, level, race, armor, element, element_level, resistances, armor_upgrade;
         let icon_id, skin;
 
-        this.#splitted_entry.forEach(row_data => {
-            const row = new Row(row_data);
+        this.splitted_entry.forEach(row_data => {
+            const row = new DatRow(row_data);
             const header = row.getHeader();
 
             if (header == "VNUM") {
@@ -178,54 +135,31 @@ class EntryParser {
     }
 }
 
-/**
- * Base class for each row in a monster.dat entry
- */
-class Row {
-    #splitted_row
-
-    constructor(row) {
-        this.#splitted_row = this.#splitEntryRow(row);
-    }
-
-    #splitEntryRow(row) {
-        return row.split("\t").filter(Boolean);
-    }
-
-    getHeader() {
-        return this.get(0);
-    }
-
-    get(index) {
-        return this.#splitted_row[index];
-    }
-}
-
-class VnumRow extends Row {
+class VnumRow extends DatRow {
     getVnum() {
         return parseInt(this.get(1));
     }
 }
 
-class NameRow extends Row {
+class NameRow extends DatRow {
     getName() {
         return this.get(1);
     }
 }
 
-class LevelRow extends Row {
+class LevelRow extends DatRow {
     getLevel() {
         return parseInt(this.get(1));
     }
 }
 
-class RaceRow extends Row {
+class RaceRow extends DatRow {
     getRace() {
         return parseInt(this.get(1));
     }
 }
 
-class AttribRow extends Row {
+class AttribRow extends DatRow {
     getElementType() {
         return parseInt(this.get(1));
     }
@@ -251,7 +185,7 @@ class AttribRow extends Row {
     }
 }
 
-class ArmorRow extends Row {
+class ArmorRow extends DatRow {
     getArmorLevel() {
         return parseInt(this.get(1));
     }
@@ -269,13 +203,13 @@ class ArmorRow extends Row {
     }
 }
 
-class ArmorInfoRow extends Row {
+class ArmorInfoRow extends DatRow {
     getArmorUpgrade() {
         return parseInt(this.get(2));
     }
 }
 
-class SettingRow extends Row {
+class SettingRow extends DatRow {
     getIconId() {
         return 8000 + this.getSkinId();
     }
@@ -338,67 +272,5 @@ class MonsterDefenceStatCalculator {
             (this.#level - 1) * (race_defs[1] / 100.0) +
             this.#add_defences[attack_type]
         )
-    }
-}
-
-/**
- * Parses the file _code_uk_monster.txt
- */
-class MonsterNameParser {
-    #data
-
-    constructor(data) {
-        this.#data = normalizeEOL(data);
-        this.#replaceCaretWithSpace();
-    }
-
-    /**
-     * @returns A map with name id as keys and the name as value
-     */
-    parse() {
-        const names = new Map();
-        const entries = this.#splitIntoEntries();
-
-        entries.forEach(entry => {
-            const entry_data = MonsterNameEntry.fromRow(entry);
-            names.set(entry_data.getId(), entry_data.getName());
-        });
-
-        return names;
-    }
-
-    #splitIntoEntries() {
-        return this.#data.split('\n').filter(Boolean);
-    }
-
-    #replaceCaretWithSpace() {
-        this.#data = this.#data.replaceAll("^", " ");
-    }
-}
-
-/**
- * Represents each row of _code_uk_monster.txt
- */
-class MonsterNameEntry {
-    #splitted_entry
-
-    constructor(splitted_entry) {
-        this.#splitted_entry = splitted_entry;
-    }
-
-    static fromRow(entry) {
-        return new MonsterNameEntry(this.#splitEntry(entry));
-    }
-
-    static #splitEntry(entry) {
-        return entry.split('\t').filter(Boolean);
-    }
-
-    getId() {
-        return this.#splitted_entry[0];
-    }
-    
-    getName() {
-        return this.#splitted_entry[1];
     }
 }
