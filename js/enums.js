@@ -37,7 +37,6 @@ const ItemType = {
     EQUIPMENT: 2,
     ACCESSORY: 3,
     SPECIALIST: 4,
-    // TODO: Add missing types if needed
 }
 
 const WeaponSubType = {
@@ -69,7 +68,7 @@ const EquipmentSubType = {
     COSTUME: 4,
     COSTUME_HAT: 5,
     COSTUME_WEAPON: 6,
-    COSTUME_WINGS: 7, // TODO: check if the costume wings is correct
+    COSTUME_WINGS: 7,
 }
 
 const AccessorySubType = {
@@ -78,7 +77,7 @@ const AccessorySubType = {
     BRACELET: 2,
     FAIRY: 3,
     AMULET: 4,
-    MINI_PET: 5, // TODO: check if minipet iscorrect
+    MINI_PET: 5,
 }
 
 const SpecialistSubType = {

@@ -1,5 +1,5 @@
 import { DatObject, DatParser, DatRow } from "./dat_parser.js";
-import { MonsterDefenceStatCalculator } from "./monster_def_calculator.js";
+import { MonsterDefenceStatCalculator } from "../monster_def_calculator.js";
 
 export {
     Monster,

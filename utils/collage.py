@@ -5,8 +5,6 @@ are splitted into multiple parts
 
 from PIL import Image, UnidentifiedImageError
 import json
-from collections import defaultdict
-import cv2
 
 SPRITES_FOLDER_PATH = "./imgs/monster_sprites/"
 NSMN_DATA_PATH = "./data/NSmnData.NOS.json"
