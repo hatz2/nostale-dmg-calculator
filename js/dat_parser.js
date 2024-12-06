@@ -86,6 +86,11 @@ class DatRow {
         return row.split("\t").filter(Boolean);
     }
 
+    // Read properties from row and store them in obj
+    applyTo(obj) {
+        // Reimplemented in children classes
+    }
+
     getHeader() {
         return this.get(0);
     }
@@ -93,6 +98,7 @@ class DatRow {
     get(index) {
         return this.#splitted_row[index];
     }
+
 }
 
 

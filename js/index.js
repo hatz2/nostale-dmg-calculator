@@ -2,11 +2,12 @@ import { Monster, MonsterDatParser } from "./monster_parser.js"
 import { AttackType, Resistance } from "./enums.js";
 import { NameParser } from "./name_parser.js";
 import { getIdleMonsterImgPaths } from "./monster_img_parser.js";
+import { Item, ItemDatParser } from "./item_parser.js";
 
 var monsters;
-var monster_names;
 var monster_sprite_data;
 var monster_img_paths;
+var items;
 
 window.addEventListener("load", onLoad);
 
@@ -14,10 +15,12 @@ async function onLoad() {
     console.log('Loaded');
     
     // Load and parse game files
-    monster_names = await initMonsterNames();
+    const monster_names = await initMonsterNames();
     monsters = await initMonsters(monster_names);
+    const item_names = await initItemNames();
+    items = await initItems(item_names);
 
-    console.log(monsters);
+    console.log(items);
 
     const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
@@ -40,6 +43,20 @@ async function initMonsters(monster_names) {
     const monster_dat_file = await fetch("/data/monster.dat");
     const data = await monster_dat_file.text();
     const parser = new MonsterDatParser(data, monster_names);
+    return parser.parse();
+}
+
+async function initItemNames() {
+    const item_lang_file = await fetch("/lang/_code_uk_Item.txt");
+    const data = await item_lang_file.text();
+    const parser = new NameParser(data);
+    return parser.parse();
+}
+
+async function initItems(item_names) {
+    const item_dat_file = await fetch("/data/Item.dat");
+    const data = await item_dat_file.text();
+    const parser = new ItemDatParser(data, item_names);
     return parser.parse();
 }
 

@@ -1,6 +1,3 @@
-import { AttackType } from "./enums.js"
-import { normalizeEOL } from "./utils.js";
-import { getDatEntries } from "./dat_entry_parser.js";
 import { DatObject, EntryParser, DatParser, DatRow } from "./dat_parser.js";
 
 export {
@@ -10,7 +7,17 @@ export {
 
 // TODO: Add orange buff efects
 class Item extends DatObject {
-    constructor(vnum, name, inventory_tab, item_type, item_subtype, eq_slot, icon_id, attack_type, required_class) {
+    constructor(
+        vnum, 
+        name, 
+        inventory_tab, 
+        item_type, 
+        item_subtype, 
+        eq_slot, 
+        icon_id, 
+        attack_type, 
+        required_class
+    ) {
         super(vnum, name);
 
         this.inventory_tab = inventory_tab;
@@ -35,6 +42,100 @@ class ItemEntryParser extends EntryParser {
     }
 
     parse() {
-        // TODO: implementation
+        const item = new Item();
+        
+        this.splitted_entry.forEach(row_data => {
+            const row = new DatRow(row_data);
+            const header = row.getHeader();
+            const RowClass = RowParsers[header];
+
+            if (RowClass) {
+                const row_instance = new RowClass(row_data);
+                row_instance.applyTo(item);
+            }
+        });
+
+        return item;
     }
+}
+
+class VnumRow extends DatRow {
+    applyTo(obj) {
+        obj.vnum = this.getVnum();
+    }
+
+    getVnum() {
+        return parseInt(this.get(1));
+    }
+
+    getPrice() {
+        return parseInt(this.get(2));
+    }
+}
+
+class NameRow extends DatRow {
+    applyTo(obj) {
+        obj.name = this.getCodeName();
+    }
+
+    getCodeName() {
+        return this.get(1);
+    }
+}
+
+class IndexRow extends DatRow {
+    applyTo(obj) {
+        obj.inventory_tab = this.getInventoryTab();
+        obj.item_type = this.getItemType();
+        obj.item_subtype = this.getItemSubType();
+        obj.eq_slot = this.getEqSlot();
+        obj.icon_id = this.getIconId();
+    }
+
+    getInventoryTab() {
+        return this.get(1);
+    }
+
+    getItemType() {
+        return this.get(2);
+    }
+
+    getItemSubType() {
+        return this.get(3);
+    }
+
+    getEqSlot() {
+        return this.get(4);
+    }
+
+    getIconId() {
+        return this.get(5);
+    }
+}
+
+class TypeRow extends DatRow {
+    applyTo(obj) {
+        obj.attack_type = this.getAttackType();
+        obj.required_class = this.getRequiredClass();
+    }
+
+    getAttackType() {
+        return this.get(1);
+    }
+
+    getRequiredClass() {
+        return this.get(2);
+    }
+}
+
+class BuffRow extends DatRow {
+    // TODO: Implement
+}
+
+const RowParsers = {
+    "VNUM": VnumRow,
+    "NAME": NameRow,
+    "INDEX": IndexRow,
+    "TYPE": TypeRow,
+    "BUFF": BuffRow,
 }

@@ -24,3 +24,64 @@ const AttackType = {
     RANGED: 1,
     MAGIC: 2,
 }
+
+const InventoryTab = {
+    EQUIP: 0,
+    MAIN: 1,
+    ETC: 2,
+}
+
+const ItemType = {
+    WEAPON: 0,
+    ARMOR: 1,
+    EQUIPMENT: 2,
+    ACCESSORY: 3,
+    SPECIALIST: 4,
+    // TODO: Add missing types if needed
+}
+
+const WeaponSubType = {
+    ADV_SWORD: 0,
+    SWORD: 1,
+    DAGGER: 3,
+    FIRST: 4,
+    SLINGSHOT: 5,
+    BOW: 6,
+    SPELLGUN: 8,
+    WAND: 9,
+    TOKEN: 11,
+}
+
+const ArmorSubType = {
+    ADVENTURER: 0,
+    MAGE: 1,
+    ARCHER: 2,
+    SWORDSMAN: 3,
+    PARTNER: 4,
+    MARTIAL: 5,
+}
+
+const EquipmentSubType = {
+    HAT: 0,
+    MASK: 1,
+    GLOVES: 2,
+    BOOTS: 3,
+    COSTUME: 4,
+    COSTUME_HAT: 5,
+    COSTUME_WEAPON: 6,
+    COSTUME_WINGS: 7, // TODO: check if the costume wings is correct
+}
+
+const AccessorySubType = {
+    NECKLACE: 0,
+    RING: 1,
+    BRACELET: 2,
+    FAIRY: 3,
+    AMULET: 4,
+    MINI_PET: 5, // TODO: check if minipet iscorrect
+}
+
+const SpecialistSubType = {
+    EVENT_SP: 0,
+    CLASS_SP: 1,
+}
