@@ -14,30 +14,15 @@ class DatObject {
     }
 }
 
-class EntryParser {
-    constructor(entry) {
-        this.splitted_entry = this.#splitEntry(entry);
-    }
-
-    #splitEntry(entry) {
-        return entry.split("\n").filter(Boolean);
-    }
-
-    
-    parse() {
-        // Reimplemented in child objects
-    }
-}
-
 class DatParser {
     #data
     #names
-    #EntryParser
+    #row_parsers
 
-    constructor(data, names, EntryParser) {
+    constructor(data, names, row_parsers) {
         this.#data = normalizeEOL(data);
         this.#names = names;
-        this.#EntryParser = EntryParser;
+        this.#row_parsers = row_parsers;
     }
 
     parse() {
@@ -56,7 +41,7 @@ class DatParser {
         const objects = [];
 
         entries.forEach(entry => {
-            const entry_parser = new this.#EntryParser(entry);
+            const entry_parser = new EntryParser(entry, this.#row_parsers);
             const obj = entry_parser.parse();
             objects.push(obj);
         });
@@ -72,6 +57,37 @@ class DatParser {
         })
 
         return objects;
+    }
+}
+
+class EntryParser {
+    // row_parsers is a map from opcodes like VNUM to their row parser class
+    constructor(entry, row_parsers) {
+        this.splitted_entry = this.#splitEntry(entry);
+        this.row_parsers = row_parsers;
+    }
+
+    #splitEntry(entry) {
+        return entry.split("\n").filter(Boolean);
+    }
+
+    
+    parse() {
+        const item = new Object();
+        // const item = new Item();
+        
+        this.splitted_entry.forEach(row_data => {
+            const row = new DatRow(row_data);
+            const header = row.getHeader();
+            const RowClass = this.row_parsers[header];
+
+            if (RowClass) {
+                const row_instance = new RowClass(row_data);
+                row_instance.applyTo(item);
+            }
+        });
+
+        return item;
     }
 }
 
@@ -98,7 +114,6 @@ class DatRow {
     get(index) {
         return this.#splitted_row[index];
     }
-
 }
 
 

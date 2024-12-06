@@ -32,7 +32,7 @@ class Item extends DatObject {
 
 class ItemDatParser extends DatParser {
     constructor(data, names_map) {
-        super(data, names_map, ItemEntryParser)
+        super(data, names_map, RowParsers)
     }
 }
 
@@ -42,7 +42,8 @@ class ItemEntryParser extends EntryParser {
     }
 
     parse() {
-        const item = new Item();
+        const item = new Object();
+        // const item = new Item();
         
         this.splitted_entry.forEach(row_data => {
             const row = new DatRow(row_data);

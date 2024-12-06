@@ -20,6 +20,7 @@ async function onLoad() {
     const item_names = await initItemNames();
     items = await initItems(item_names);
 
+    console.log(monsters);
     console.log(items);
 
     const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
