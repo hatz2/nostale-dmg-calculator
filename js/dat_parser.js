@@ -18,11 +18,25 @@ class DatParser {
     #data
     #names
     #row_parsers
+    #obj_class
 
-    constructor(data, names, row_parsers) {
+    /**
+     * 
+     * @param {*} data Text read from disk file
+     * @param {*} names A map from code names to readable names
+     * @param {*} row_parsers A map from keys like VNUM to row class parsers
+     * @param {*} obj_class A data class to store info
+     */
+    constructor(data, names, row_parsers, obj_class) {
         this.#data = normalizeEOL(data);
+        this.#removeLastDatElement();
         this.#names = names;
         this.#row_parsers = row_parsers;
+        this.#obj_class = obj_class
+    }
+
+    #removeLastDatElement() {
+        this.#data = this.#data.substring(0, this.#data.lastIndexOf("~"));
     }
 
     parse() {
@@ -41,7 +55,7 @@ class DatParser {
         const objects = [];
 
         entries.forEach(entry => {
-            const entry_parser = new EntryParser(entry, this.#row_parsers);
+            const entry_parser = new EntryParser(entry, this.#row_parsers, this.#obj_class);
             const obj = entry_parser.parse();
             objects.push(obj);
         });
@@ -62,9 +76,10 @@ class DatParser {
 
 class EntryParser {
     // row_parsers is a map from opcodes like VNUM to their row parser class
-    constructor(entry, row_parsers) {
+    constructor(entry, row_parsers, obj_class) {
         this.splitted_entry = this.#splitEntry(entry);
         this.row_parsers = row_parsers;
+        this.obj_class = obj_class;
     }
 
     #splitEntry(entry) {
@@ -73,8 +88,7 @@ class EntryParser {
 
     
     parse() {
-        const item = new Object();
-        // const item = new Item();
+        const obj = new this.obj_class();
         
         this.splitted_entry.forEach(row_data => {
             const row = new DatRow(row_data);
@@ -83,11 +97,11 @@ class EntryParser {
 
             if (RowClass) {
                 const row_instance = new RowClass(row_data);
-                row_instance.applyTo(item);
+                row_instance.applyTo(obj);
             }
         });
 
-        return item;
+        return obj;
     }
 }
 

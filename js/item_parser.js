@@ -1,4 +1,4 @@
-import { DatObject, EntryParser, DatParser, DatRow } from "./dat_parser.js";
+import { DatObject, DatParser, DatRow } from "./dat_parser.js";
 
 export {
     Item,
@@ -32,31 +32,15 @@ class Item extends DatObject {
 
 class ItemDatParser extends DatParser {
     constructor(data, names_map) {
-        super(data, names_map, RowParsers)
-    }
-}
+        const row_parsers = {
+            "VNUM": VnumRow,
+            "NAME": NameRow,
+            "INDEX": IndexRow,
+            "TYPE": TypeRow,
+            "BUFF": BuffRow,
+        }
 
-class ItemEntryParser extends EntryParser {
-    constructor(entry) {
-        super(entry);
-    }
-
-    parse() {
-        const item = new Object();
-        // const item = new Item();
-        
-        this.splitted_entry.forEach(row_data => {
-            const row = new DatRow(row_data);
-            const header = row.getHeader();
-            const RowClass = RowParsers[header];
-
-            if (RowClass) {
-                const row_instance = new RowClass(row_data);
-                row_instance.applyTo(item);
-            }
-        });
-
-        return item;
+        super(data, names_map, row_parsers, Item)
     }
 }
 
@@ -133,10 +117,4 @@ class BuffRow extends DatRow {
     // TODO: Implement
 }
 
-const RowParsers = {
-    "VNUM": VnumRow,
-    "NAME": NameRow,
-    "INDEX": IndexRow,
-    "TYPE": TypeRow,
-    "BUFF": BuffRow,
-}
+
