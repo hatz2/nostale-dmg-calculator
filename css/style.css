@@ -20,6 +20,8 @@ img {
 .main-container {
     margin: auto;
     max-width: 1200px;
+    --dropdown-bg-color: rgba(240, 240, 240, 0.9);
+    --dropdown-item-hover-color: rgba(220, 220, 220, 0.5);
 }
 
 .monster-stats-container {
@@ -75,10 +77,11 @@ img {
     width: 100px; 
     height: 100px;
     display: flex;
+    border-radius: 8px;
 }
 
 .monster-img-container:hover {
-    background-color: rgba(220, 220, 220, 0.5);
+    background-color: var(--dropdown-item-hover-color);
 }
 
 .monster-img-max-size {
@@ -105,7 +108,7 @@ img {
     height: 425px;
     width: 420px; 
     position: absolute; 
-    background-color: rgba(240, 240, 240, 0.9);
+    background-color: var(--dropdown-bg-color);
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s linear;
@@ -358,4 +361,30 @@ height = 55
     right: -38px;
     bottom: -58px;
     left: -432px;
+}
+
+.item-dropdown {
+    position: absolute;
+    max-width: 330px;
+    background-color: var(--dropdown-bg-color);
+    z-index: 1;
+    padding: 3px;
+}
+
+.item-img-container {
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    border-radius: 8px;
+}
+
+.item-dropdown .item-img-container:hover {
+    background-color: var(--dropdown-item-hover-color);
+}
+
+.item-dropdown img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    padding: auto;
 }

@@ -2,6 +2,14 @@ export {
     Elem,
     Resistance,
     AttackType,
+    InventoryTab,
+    ItemType,
+    WeaponSubType,
+    ArmorSubType,
+    EquipmentSubType,
+    AccessorySubType,
+    SpecialistSubType,
+    ClassFlag
 }
 
 const Elem = {
@@ -83,4 +91,12 @@ const AccessorySubType = {
 const SpecialistSubType = {
     EVENT_SP: 0,
     CLASS_SP: 1,
+}
+
+const ClassFlag = {
+    ADVENTURER: 1,
+    SWORDSMAN: 2,
+    ARCHER: 4,
+    MAGE: 8,
+    MARTIAL_ARTIST: 16,
 }
