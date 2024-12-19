@@ -16,7 +16,9 @@ class Item extends DatObject {
         eq_slot, 
         icon_id, 
         attack_type, 
-        required_class
+        required_class,
+        expiration_time_hours,
+        is_limited,
     ) {
         super(vnum, name);
 
@@ -27,6 +29,7 @@ class Item extends DatObject {
         this.icon_id = icon_id;
         this.attack_type = attack_type;
         this.required_class = required_class;
+        this.is_limited = is_limited;
     }
 }
 
@@ -38,6 +41,7 @@ class ItemDatParser extends DatParser {
             "INDEX": IndexRow,
             "TYPE": TypeRow,
             "BUFF": BuffRow,
+            "FLAG": FlagRow,
         }
 
         super(data, names_map, row_parsers, Item)
@@ -78,23 +82,23 @@ class IndexRow extends DatRow {
     }
 
     getInventoryTab() {
-        return this.get(1);
+        return parseInt(this.get(1)) % 4;
     }
 
     getItemType() {
-        return this.get(2);
+        return parseInt(this.get(2));
     }
 
     getItemSubType() {
-        return this.get(3);
+        return parseInt(this.get(3));
     }
 
     getEqSlot() {
-        return this.get(4);
+        return parseInt(this.get(4));
     }
 
     getIconId() {
-        return this.get(5);
+        return parseInt(this.get(5));
     }
 }
 
@@ -105,11 +109,21 @@ class TypeRow extends DatRow {
     }
 
     getAttackType() {
-        return this.get(1);
+        return parseInt(this.get(1));
     }
 
     getRequiredClass() {
-        return this.get(2);
+        return parseInt(this.get(2));
+    }
+}
+
+class FlagRow extends DatRow {
+    applyTo(obj) {
+        obj.is_limited = this.getIsLimited();
+    }
+
+    getIsLimited() {
+        return parseInt(this.get(23));
     }
 }
 

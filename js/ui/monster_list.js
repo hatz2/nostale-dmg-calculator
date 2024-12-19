@@ -1,6 +1,6 @@
 import { AttackType, Resistance } from "../enums.js";
 
-export function initMonsterList(monsters, monster_img_paths) {
+export function initMonsterListUI(monsters, monster_img_paths) {
     init(monsters, monster_img_paths);
 
     const monster_search_bar = document.getElementById("monster-search");

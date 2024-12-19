@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    --dropdown-bg-color: rgba(240, 240, 240, 0.9);
+    --dropdown-item-hover-color: rgba(220, 220, 220, 0.5);
 }
 
 body {
@@ -20,8 +22,6 @@ img {
 .main-container {
     margin: auto;
     max-width: 1200px;
-    --dropdown-bg-color: rgba(240, 240, 240, 0.9);
-    --dropdown-item-hover-color: rgba(220, 220, 220, 0.5);
 }
 
 .monster-stats-container {
@@ -132,7 +132,7 @@ img {
 
 .melee-def-icon {
     position: absolute;
-    clip-path: inset(224px 330px 271px 163px);
+    clip-path: inset(224px 330px 270px 163px);
     top: -224px;
     right: -330px;
     bottom: -270px;
@@ -146,6 +146,15 @@ img {
     right: -348px;
     bottom: -253px;
     left: -171px;
+}
+
+.adventurer-class-icon {
+    position: absolute;
+    clip-path: inset(241px 294px 253px 200px);
+    top: -241px;
+    right: -294px;
+    bottom: -253px;
+    left: -225px;
 }
 
 .fire-res-icon {
@@ -195,8 +204,11 @@ img {
     margin: auto;
 }
 
-#mask-slot {
+.character-slot {
     position: absolute;
+}
+
+#mask-slot {
     clip-path: inset(340px 208px 130px 262px);
     top: -340px;
     right: -208px;
@@ -205,7 +217,6 @@ img {
 }
 
 #hat-slot {
-    position: absolute;
     clip-path: inset(291px 208px 179px 262px);
     top: -291px;
     right: -208px;
@@ -214,7 +225,6 @@ img {
 }
 
 #fairy-slot {
-    position: absolute;
     clip-path: inset(4px 5px 466px 465px);
     top: -4px;
     right: -5px;
@@ -223,7 +233,6 @@ img {
 }
 
 #main-weapon-slot {
-    position: absolute;
     clip-path: inset(447px 208px 23px 262px);
     top: -447px;
     right: -208px;
@@ -232,7 +241,6 @@ img {
 }
 
 #armor-slot {
-    position: absolute;
     clip-path: inset(4px 53px 466px 417px);
     top: -4px;
     right: -53px;
@@ -240,14 +248,7 @@ img {
     left: -417px;
 }
 
-/* 
-left = 308
-top = 356
-width = 55
-height = 55 
-*/
 #sp-slot {
-    position: absolute;
     clip-path: inset(356px 149px 101px 308px);
     top: -356px;
     right: -149px;
@@ -256,7 +257,6 @@ height = 55
 }
 
 #secondary-weapon-slot {
-    position: absolute;
     clip-path: inset(291px 159px 179px 311px);
     top: -291px;
     right: -159px;
@@ -265,7 +265,6 @@ height = 55
 }
 
 #glove-slot {
-    position: absolute;
     clip-path: inset(56px 5px 414px 465px);
     top: -56px;
     right: -5px;
@@ -274,7 +273,6 @@ height = 55
 }
 
 #shoe-slot {
-    position: absolute;
     clip-path: inset(447px 159px 23px 311px);
     top: -447px;
     right: -159px;
@@ -283,7 +281,6 @@ height = 55
 }
 
 #necklace-slot {
-    position: absolute;
     clip-path: inset(392px 208px 78px 262px);
     top: -392px;
     right: -208px;
@@ -292,7 +289,6 @@ height = 55
 }
 
 #ring-slot {
-    position: absolute;
     clip-path: inset(340px 159px 130px 311px);
     top: -340px;
     right: -159px;
@@ -301,7 +297,6 @@ height = 55
 }
 
 #bracelet-slot {
-    position: absolute;
     clip-path: inset(392px 159px 78px 311px);
     top: -392px;
     right: -159px;
@@ -310,7 +305,6 @@ height = 55
 }
 
 #amulet-slot {
-    position: absolute;
     clip-path: inset(56px 53px 414px 417px);
     top: -56px;
     right: -53px;
@@ -319,7 +313,6 @@ height = 55
 }
 
 #costume-slot {
-    position: absolute;
     clip-path: inset(220px 54px 250px 416px);
     top: -220px;
     right: -54px;
@@ -328,7 +321,6 @@ height = 55
 }
 
 #costume-hat-slot {
-    position: absolute;
     clip-path: inset(220px 103px 250px 367px);
     top: -220px;
     right: -103px;
@@ -337,7 +329,6 @@ height = 55
 }
 
 #costume-weapon-slot {
-    position: absolute;
     clip-path: inset(293px 10px 177px 460px);
     top: -293px;
     right: -10px;
@@ -346,7 +337,6 @@ height = 55
 }
 
 #costume-wings-slot {
-    position: absolute;
     clip-path: inset(336px 10px 134px 460px);
     top: -336px;
     right: -10px;
@@ -355,7 +345,6 @@ height = 55
 }
 
 #mini-pet-slot {
-    position: absolute;
     clip-path: inset(412px 38px 58px 432px);
     top: -412px;
     right: -38px;
@@ -365,10 +354,18 @@ height = 55
 
 .item-dropdown {
     position: absolute;
-    max-width: 330px;
+    max-width: 500px;
+    max-height: 400px;
     background-color: var(--dropdown-bg-color);
     z-index: 1;
     padding: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    transition: all 0.2s ease-out;
+    /* transition: top 0.3s linear; */
+    /* transition: right 0.3s linear; */
+    /* transition: bottom 0.3s linear; */
 }
 
 .item-img-container {
@@ -387,4 +384,9 @@ height = 55
     max-height: 100%;
     margin: auto;
     padding: auto;
+}
+
+.class-radio-btn-container {
+    position: relative; 
+    margin: 0px 5px;
 }

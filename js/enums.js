@@ -9,7 +9,8 @@ export {
     EquipmentSubType,
     AccessorySubType,
     SpecialistSubType,
-    ClassFlag
+    ClassFlag,
+    EquipSlot
 }
 
 const Elem = {
@@ -99,4 +100,25 @@ const ClassFlag = {
     ARCHER: 4,
     MAGE: 8,
     MARTIAL_ARTIST: 16,
+}
+
+const EquipSlot = {
+    MAIN_WEAPON: 0,
+    ARMOR: 1,
+    HAT: 2,
+    GLOVES: 3,
+    BOOTS: 4,
+    SECONDARY_WEAPON: 5,
+    NECKLACE: 6,
+    RING: 7,
+    BRACELET: 8,
+    MASK: 9,
+    FAIRY: 10,
+    AMULET: 11,
+    SP: 12,
+    BODY_COSTUME: 13,
+    HAT_COSTUME: 14,
+    WEAPON_COSTUME: 15,
+    WINGS_COSTUME: 16,
+    MINIPET: 17,
 }

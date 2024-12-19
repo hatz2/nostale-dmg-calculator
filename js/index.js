@@ -2,8 +2,9 @@ import { MonsterDatParser } from "./dat_parsers/monster_parser.js"
 import { NameParser } from "./name_parser.js";
 import { getIdleMonsterImgPaths } from "./img_parsers/monster_img_parser.js";
 import { ItemDatParser } from "./dat_parsers/item_parser.js";
-import { initMonsterList } from "./ui/monster_list.js";
+import { initMonsterListUI } from "./ui/monster_list.js";
 import { ClassFlag, ItemType } from "./enums.js";
+import { initItemListUI } from "./ui/items_lists.js";
 
 var monsters;
 var monster_sprite_data;
@@ -27,9 +28,10 @@ async function onLoad() {
     monster_sprite_data = await monster_sprite_file.json();
     monster_img_paths = getIdleMonsterImgPaths(monster_sprite_data);
 
-    initMonsterList(monsters, monster_img_paths);
+    initMonsterListUI(monsters, monster_img_paths);
 
-    test();
+    initItemListUI(items);
+    // test();
 }
 
 async function initMonsterNames() {
@@ -60,28 +62,28 @@ async function initItems(item_names) {
     return parser.parse();
 }
 
-function test() {
-    const item_dropdown = document.getElementById("item-dropdown");
-    const filtered_items = items.filter((item) => {
-        return item.eq_slot == 15 && item.required_class & ClassFlag.SWORDSMAN;
-    });
+// function test() {
+//     const item_dropdown = document.getElementById("item-dropdown");
+//     const filtered_items = items.filter((item) => {
+//         return item.eq_slot == 15 && item.expiration_time_hours == 0 && item.required_class & ClassFlag.SWORDSMAN;
+//     });
 
-    filtered_items.forEach(item => {
-        const img_container = document.createElement("div");
-        img_container.classList.add("item-img-container");
+//     filtered_items.forEach(item => {
+//         const img_container = document.createElement("div");
+//         img_container.classList.add("item-img-container");
 
-        const img_node = document.createElement("img");
-        img_node.src = `/imgs/icons/${item.icon_id}.png`;
-        img_node.classList.add("clickable");
-        img_node.title = item.name;
+//         const img_node = document.createElement("img");
+//         img_node.src = `/imgs/icons/${item.icon_id}.png`;
+//         img_node.classList.add("clickable");
+//         img_node.title = item.name;
 
-        img_container.appendChild(img_node);
+//         img_container.appendChild(img_node);
 
-        item_dropdown.appendChild(img_container);
+//         item_dropdown.appendChild(img_container);
 
-        console.log(item);
+//         console.log(item);
 
-        // console.log(`/imgs/icons/${item.vnum}.png`);
-        // console.log(item.name);
-    });
-}
+//         // console.log(`/imgs/icons/${item.vnum}.png`);
+//         // console.log(item.name);
+//     });
+// }
