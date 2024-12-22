@@ -45,17 +45,6 @@ img {
     cursor: pointer;
 }
 
-/* img.animation {
-    animation-name: test;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes test {
-    50% {content:url("/imgs/monster_sprites/83_1.png");}
-} */
-
 .column {
     /* float: left;*/
     width: 48%;
@@ -111,7 +100,8 @@ img {
     background-color: var(--dropdown-bg-color);
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s linear;
+    /* transition: opacity 0.3s linear; */
+    transition: all 0.3s ease-out;
 }
 
 .def-stat-text {
@@ -354,18 +344,15 @@ img {
 
 .item-dropdown {
     position: absolute;
-    max-width: 500px;
+    max-width: 502px;
     max-height: 400px;
     background-color: var(--dropdown-bg-color);
-    z-index: 1;
+    z-index: 10;
     padding: 3px;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s linear;
-    transition: all 0.2s ease-out;
-    /* transition: top 0.3s linear; */
-    /* transition: right 0.3s linear; */
-    /* transition: bottom 0.3s linear; */
+    
+    transition: all 0.3s ease-out;
 }
 
 .item-img-container {
@@ -389,4 +376,15 @@ img {
 .class-radio-btn-container {
     position: relative; 
     margin: 0px 5px;
+}
+
+.weared-item {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 1;
+    max-width: 42px;
+    max-height: 42px;
 }

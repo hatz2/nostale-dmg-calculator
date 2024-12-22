@@ -17,7 +17,6 @@ class Item extends DatObject {
         icon_id, 
         attack_type, 
         required_class,
-        expiration_time_hours,
         is_limited,
     ) {
         super(vnum, name);

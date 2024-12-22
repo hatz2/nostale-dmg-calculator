@@ -62,7 +62,6 @@ function init(monsters, monster_img_paths) {
             // Set the new current monster
             current_monster.title = img_node.title;
             current_monster.src = img_node.src;
-            monster_dropdown.style.opacity = 0;
 
             // Set monster stats
             melee_stat_div.firstChild.data = monster.armor[AttackType.MELEE];
@@ -90,10 +89,9 @@ function init(monsters, monster_img_paths) {
             // Set monster element level
             monster_element_level_text.innerText = monster.element_level + "%";
 
-            setTimeout(() => {
-                monster_dropdown.style.visibility = "hidden";
-            }, 300);
-            
+            // Hide the menu
+            monster_dropdown.style.opacity = 0;
+            monster_dropdown.style.visibility = "hidden";
         };
 
         // Add the div node to the monster list

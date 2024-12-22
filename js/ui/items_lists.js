@@ -1,23 +1,16 @@
 import { ClassFlag, EquipSlot } from "../enums.js";
 
 var items_dict = new Map();
+var selected_eq_slot;
 const ITEM_ICONS_PATH = "/imgs/icons";
 
 export function initItemListUI(items) {
     init(items);
     initCharacterSlotCallbacks(items);
 
-    // document.body.onclick = () => {
-    //     console.log("clicked");
-    // }
 
     document.addEventListener("click", (event) => {
-        console.log(event.target.closest("character-slot"));
-
-        if (event.target.closest(".character-slot")) {
-            console.log("closest?");
-        }
-        else {
+        if (!event.target.closest(".weared-item")) {
             hideDropdown();
         }
     });
@@ -36,10 +29,11 @@ function init(items) {
 function createItemUIandAddToDropdown(item, dropdown) {
     const img_container = document.createElement("div");
     img_container.classList.add("item-img-container");
+    img_container.classList.add("clickable");
+    img_container.onclick = onItemClicked;
 
     const img_node = document.createElement("img");
     img_node.src = `${ITEM_ICONS_PATH}/${item.icon_id}.png`;
-    img_node.classList.add("clickable");
     img_node.title = item.name;
     img_node.onerror = () => img_node.src = `${ITEM_ICONS_PATH}/0.png`;
     img_node.setAttribute("vnum", item.vnum);
@@ -47,6 +41,24 @@ function createItemUIandAddToDropdown(item, dropdown) {
     img_container.appendChild(img_node);
 
     dropdown.appendChild(img_container);
+}
+
+function onItemClicked(event) {
+    // Get the img node from the dropdown menu
+    const img_node = this.children[0];
+
+    // Get the vnum of the item
+    const vnum = parseInt(img_node.getAttribute("vnum"));
+
+    // Get the itemdata
+    const item = items_dict.get(vnum);
+
+    // Get the img node of the weared item on top of the eq slot
+    const weared_item_img = document.querySelector(`.weared-item[eqslot="${selected_eq_slot}"]`);
+
+    // Set error handler and set the img
+    weared_item_img.onerror = () => weared_item_img.src = `${ITEM_ICONS_PATH}/0.png`;
+    weared_item_img.setAttribute("src", `${ITEM_ICONS_PATH}/${item.icon_id}.png`)
 }
 
 function initCharacterSlotCallbacks(items) {
@@ -57,10 +69,9 @@ function initCharacterSlotCallbacks(items) {
 
         for (let j = 0; j < row.cells.length; ++j) {
             const cell = row.cells[j];
-            const character_slot_img = cell.children[0];
+            const weared_item_img = cell.children[1];
 
-            character_slot_img.onclick = characterSlotClickCallback;
-
+            weared_item_img.onclick = characterSlotClickCallback;
         }
     }
 }
@@ -70,6 +81,10 @@ function characterSlotClickCallback(event) {
     const selected_class = getSelectedClass();
     const item_dropdown = document.getElementById("item-dropdown");
     let item_filter;
+
+    selected_eq_slot = eq_slot;
+
+
     // Filter items based on eq slot and selected class
     // First the specific cases of each class
     if (eq_slot == EquipSlot.MAIN_WEAPON) {
@@ -198,15 +213,8 @@ function showDropdown() {
 function hideDropdown() {
     const item_dropdown = document.getElementById("item-dropdown");
 
-    console.log(item_dropdown.style.visibility);
-    console.log(item_dropdown.style.opacity);
-
     if (item_dropdown.style.visibility != "hidden" && item_dropdown.style.opacity != 0) {
-        console.log("hidding");
         item_dropdown.style.opacity = 0;
-
-        setTimeout(() => {
-            item_dropdown.style.visibility = "hidden";
-        }, 300);
+        item_dropdown.style.visibility = "hidden";
     }
 }
