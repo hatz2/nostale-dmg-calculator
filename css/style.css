@@ -149,11 +149,11 @@ img {
 
 .martial-artist-class-icon {
     position: absolute;
-    clip-path: inset(0px 109px 494px 385px);
+    clip-path: inset(0px 108px 494px 386px);
     top: 0px;
-    right: -109px;
+    right: -108px;
     bottom: -494px;
-    left: -385px;
+    left: -386px;
 }
 
 .fire-res-icon {
