@@ -80,65 +80,9 @@ function characterSlotClickCallback(event) {
     const eq_slot = this.getAttribute("eqslot");
     const selected_class = getSelectedClass();
     const item_dropdown = document.getElementById("item-dropdown");
-    let item_filter;
+    let item_filter = getItemFilter(eq_slot, selected_class);
 
     selected_eq_slot = eq_slot;
-
-
-    // Filter items based on eq slot and selected class
-    // First the specific cases of each class
-    if (eq_slot == EquipSlot.MAIN_WEAPON) {
-        const CLASS_TO_ITEM_TYPE = {
-            2: {inv_tab: 0, item_type: 0, item_subtype: 1},
-            4: {inv_tab: 0, item_type: 0, item_subtype: 6},
-            8: {inv_tab: 0, item_type: 0, item_subtype: 9},
-            16: {inv_tab: 0, item_type: 0, item_subtype: 4},
-        }
-
-        item_filter = CLASS_TO_ITEM_TYPE[selected_class];
-    }
-    else if (eq_slot == EquipSlot.SECONDARY_WEAPON) {
-        const CLASS_TO_ITEM_TYPE = {
-            2: {inv_tab: 0, item_type: 0, item_subtype: 5},
-            4: {inv_tab: 0, item_type: 0, item_subtype: 3},
-            8: {inv_tab: 0, item_type: 0, item_subtype: 8},
-            16: {inv_tab: 0, item_type: 0, item_subtype: 11},
-        }
-
-        item_filter = CLASS_TO_ITEM_TYPE[selected_class];
-    }
-    else if (eq_slot == EquipSlot.ARMOR) {
-        const CLASS_TO_ITEM_TYPE = {
-            2: {inv_tab: 0, item_type: 1, item_subtype: 3},
-            4: {inv_tab: 0, item_type: 1, item_subtype: 2},
-            8: {inv_tab: 0, item_type: 1, item_subtype: 1},
-            16: {inv_tab: 0, item_type: 1, item_subtype: 5},
-        }
-
-        item_filter = CLASS_TO_ITEM_TYPE[selected_class];
-    }
-    else {
-        // General case
-        const EQ_SLOT_TO_ITEM_TYPE = {
-            2: {inv_tab: 0, item_type: 2, item_subtype: 0},  // Hat
-            3: {inv_tab: 0, item_type: 2, item_subtype: 2},  // Gloves
-            4: {inv_tab: 0, item_type: 2, item_subtype: 3},  // Boots
-            6: {inv_tab: 0, item_type: 3, item_subtype: 0},  // Necklace
-            7: {inv_tab: 0, item_type: 3, item_subtype: 1},  // Ring
-            8: {inv_tab: 0, item_type: 3, item_subtype: 2},  // Bracelet
-            9: {inv_tab: 0, item_type: 2, item_subtype: 1},  // Mask
-            10: {inv_tab: 0, item_type: 3, item_subtype: 3}, // Fairy
-            11: {inv_tab: 0, item_type: 3, item_subtype: 4}, // Amulet
-            12: {inv_tab: 0, item_type: 4, item_subtype: 1}, // SP
-            13: {inv_tab: 0, item_type: 2, item_subtype: 4}, // Body costume
-            14: {inv_tab: 0, item_type: 2, item_subtype: 5}, // Hat costume
-            15: {inv_tab: 0, item_type: 2, item_subtype: 6}, // Weapon costume
-            16: {inv_tab: 0, item_type: 2, item_subtype: 7}, // Wings costume
-            17: {inv_tab: 0, item_type: 3, item_subtype: 5}, // Minipet
-        }
-
-        item_filter = EQ_SLOT_TO_ITEM_TYPE[eq_slot];
-    }
 
 
     // Filter the items
@@ -170,6 +114,75 @@ function characterSlotClickCallback(event) {
     showDropdown();
 }
 
+function getItemFilter(eq_slot, selected_class) {
+    // Filter items based on eq slot and selected class
+    // First the specific cases of each class
+    if (eq_slot == EquipSlot.MAIN_WEAPON) {
+        const CLASS_TO_ITEM_TYPE = {
+            1: {inv_tab: 0, item_type: 0, item_subtype: 0},
+            2: {inv_tab: 0, item_type: 0, item_subtype: 1},
+            4: {inv_tab: 0, item_type: 0, item_subtype: 6},
+            8: {inv_tab: 0, item_type: 0, item_subtype: 9},
+            16: {inv_tab: 0, item_type: 0, item_subtype: 4},
+        }
+
+        return CLASS_TO_ITEM_TYPE[selected_class];
+    }
+    else if (eq_slot == EquipSlot.SECONDARY_WEAPON) {
+        const CLASS_TO_ITEM_TYPE = {
+            1: {inv_tab: 0, item_type: 0, item_subtype: 5},
+            2: {inv_tab: 0, item_type: 0, item_subtype: 5},
+            4: {inv_tab: 0, item_type: 0, item_subtype: 3},
+            8: {inv_tab: 0, item_type: 0, item_subtype: 8},
+            16: {inv_tab: 0, item_type: 0, item_subtype: 11},
+        }
+
+        return CLASS_TO_ITEM_TYPE[selected_class];
+    }
+    else if (eq_slot == EquipSlot.ARMOR) {
+        const CLASS_TO_ITEM_TYPE = {
+            1: {inv_tab: 0, item_type: 1, item_subtype: 0},
+            2: {inv_tab: 0, item_type: 1, item_subtype: 3},
+            4: {inv_tab: 0, item_type: 1, item_subtype: 2},
+            8: {inv_tab: 0, item_type: 1, item_subtype: 1},
+            16: {inv_tab: 0, item_type: 1, item_subtype: 5},
+        }
+
+        return CLASS_TO_ITEM_TYPE[selected_class];
+    }
+    // Special case for sps
+    else if (eq_slot == EquipSlot.SP) {
+        if (selected_class == ClassFlag.ADVENTURER) {
+            return {inv_tab: 0, item_type: 4, item_subtype: 0}; // SP
+        }
+        else {
+            return {inv_tab: 0, item_type: 4, item_subtype: 1};
+        }
+    }
+    else {
+        // General case
+        const EQ_SLOT_TO_ITEM_TYPE = {
+            2: {inv_tab: 0, item_type: 2, item_subtype: 0},  // Hat
+            3: {inv_tab: 0, item_type: 2, item_subtype: 2},  // Gloves
+            4: {inv_tab: 0, item_type: 2, item_subtype: 3},  // Boots
+            6: {inv_tab: 0, item_type: 3, item_subtype: 0},  // Necklace
+            7: {inv_tab: 0, item_type: 3, item_subtype: 1},  // Ring
+            8: {inv_tab: 0, item_type: 3, item_subtype: 2},  // Bracelet
+            9: {inv_tab: 0, item_type: 2, item_subtype: 1},  // Mask
+            10: {inv_tab: 0, item_type: 3, item_subtype: 3}, // Fairy
+            11: {inv_tab: 0, item_type: 3, item_subtype: 4}, // Amulet
+            12: {inv_tab: 0, item_type: 4, item_subtype: 1}, // SP
+            13: {inv_tab: 0, item_type: 2, item_subtype: 4}, // Body costume
+            14: {inv_tab: 0, item_type: 2, item_subtype: 5}, // Hat costume
+            15: {inv_tab: 0, item_type: 2, item_subtype: 6}, // Weapon costume
+            16: {inv_tab: 0, item_type: 2, item_subtype: 7}, // Wings costume
+            17: {inv_tab: 0, item_type: 3, item_subtype: 5}, // Minipet
+        }
+
+        return EQ_SLOT_TO_ITEM_TYPE[eq_slot];
+    }
+}
+
 function itemPassFilter(item, filter, required_class, eq_slot) {
     return item.eq_slot == eq_slot && 
         item.inventory_tab == filter.inv_tab &&
@@ -184,6 +197,7 @@ function getSelectedClass() {
     const ranged_radio_btn = document.getElementById("ranged-radio-btn");
     const mage_radio_btn = document.getElementById("mage-radio-btn");
     const martial_artist_radio_btn = document.getElementById("artist-radio-btn");
+    
 
     if (melee_radio_btn.checked) {
         return ClassFlag.SWORDSMAN;

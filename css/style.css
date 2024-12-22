@@ -147,6 +147,15 @@ img {
     left: -225px;
 }
 
+.martial-artist-class-icon {
+    position: absolute;
+    clip-path: inset(0px 109px 494px 385px);
+    top: 0px;
+    right: -109px;
+    bottom: -494px;
+    left: -385px;
+}
+
 .fire-res-icon {
     position: absolute;
     clip-path: inset(193px 100px 296px 391px);
@@ -346,13 +355,15 @@ img {
     position: absolute;
     max-width: 502px;
     max-height: 400px;
+    min-width: 42px;
+    min-height: 42px;
+
     background-color: var(--dropdown-bg-color);
     z-index: 10;
     padding: 3px;
     visibility: hidden;
     opacity: 0;
-    
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .item-img-container {
