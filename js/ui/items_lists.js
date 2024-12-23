@@ -1,4 +1,4 @@
-import { ClassFlag, EquipSlot } from "../enums.js";
+import { AccessorySubType, ArmorSubType, ClassFlag, EquipmentSubType, EquipSlot, InventoryTab, ItemType, SpecialistSubType, WeaponSubType } from "../enums.js";
 
 var items_dict = new Map();
 var selected_eq_slot;
@@ -7,7 +7,6 @@ const ITEM_ICONS_PATH = "/imgs/icons";
 export function initItemListUI(items) {
     init(items);
     initCharacterSlotCallbacks(items);
-
 
     document.addEventListener("click", (event) => {
         if (!event.target.closest(".weared-item")) {
@@ -50,6 +49,8 @@ function onItemClicked(event) {
     // Get the vnum of the item
     const vnum = parseInt(img_node.getAttribute("vnum"));
 
+    console.log(vnum);
+
     // Get the itemdata
     const item = items_dict.get(vnum);
 
@@ -59,6 +60,7 @@ function onItemClicked(event) {
     // Set error handler and set the img
     weared_item_img.onerror = () => weared_item_img.src = `${ITEM_ICONS_PATH}/0.png`;
     weared_item_img.setAttribute("src", `${ITEM_ICONS_PATH}/${item.icon_id}.png`)
+    weared_item_img.setAttribute("title", img_node.getAttribute("title"));
 }
 
 function initCharacterSlotCallbacks(items) {
@@ -119,33 +121,33 @@ function getItemFilter(eq_slot, selected_class) {
     // First the specific cases of each class
     if (eq_slot == EquipSlot.MAIN_WEAPON) {
         const CLASS_TO_ITEM_TYPE = {
-            1: {inv_tab: 0, item_type: 0, item_subtype: 0},
-            2: {inv_tab: 0, item_type: 0, item_subtype: 1},
-            4: {inv_tab: 0, item_type: 0, item_subtype: 6},
-            8: {inv_tab: 0, item_type: 0, item_subtype: 9},
-            16: {inv_tab: 0, item_type: 0, item_subtype: 4},
+            1: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.ADV_SWORD},
+            2: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.SWORD},
+            4: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.BOW},
+            8: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.WAND},
+            16: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.FIST},
         }
 
         return CLASS_TO_ITEM_TYPE[selected_class];
     }
     else if (eq_slot == EquipSlot.SECONDARY_WEAPON) {
         const CLASS_TO_ITEM_TYPE = {
-            1: {inv_tab: 0, item_type: 0, item_subtype: 5},
-            2: {inv_tab: 0, item_type: 0, item_subtype: 5},
-            4: {inv_tab: 0, item_type: 0, item_subtype: 3},
-            8: {inv_tab: 0, item_type: 0, item_subtype: 8},
-            16: {inv_tab: 0, item_type: 0, item_subtype: 11},
+            1: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.SLINGSHOT},
+            2: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.SLINGSHOT},
+            4: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.DAGGER},
+            8: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.SPELLGUN},
+            16: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.WEAPON, item_subtype: WeaponSubType.TOKEN},
         }
 
         return CLASS_TO_ITEM_TYPE[selected_class];
     }
     else if (eq_slot == EquipSlot.ARMOR) {
         const CLASS_TO_ITEM_TYPE = {
-            1: {inv_tab: 0, item_type: 1, item_subtype: 0},
-            2: {inv_tab: 0, item_type: 1, item_subtype: 3},
-            4: {inv_tab: 0, item_type: 1, item_subtype: 2},
-            8: {inv_tab: 0, item_type: 1, item_subtype: 1},
-            16: {inv_tab: 0, item_type: 1, item_subtype: 5},
+            1: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ARMOR, item_subtype: ArmorSubType.ADVENTURER},
+            2: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ARMOR, item_subtype: ArmorSubType.SWORDSMAN},
+            4: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ARMOR, item_subtype: ArmorSubType.ARCHER},
+            8: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ARMOR, item_subtype: ArmorSubType.MAGE},
+            16: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ARMOR, item_subtype: ArmorSubType.MARTIAL},
         }
 
         return CLASS_TO_ITEM_TYPE[selected_class];
@@ -153,30 +155,30 @@ function getItemFilter(eq_slot, selected_class) {
     // Special case for sps
     else if (eq_slot == EquipSlot.SP) {
         if (selected_class == ClassFlag.ADVENTURER) {
-            return {inv_tab: 0, item_type: 4, item_subtype: 0}; // SP
+            return {inv_tab: InventoryTab.EQUIP, item_type: ItemType.SPECIALIST, item_subtype: SpecialistSubType.EVENT_SP};
         }
         else {
-            return {inv_tab: 0, item_type: 4, item_subtype: 1};
+            return {inv_tab: InventoryTab.EQUIP, item_type: ItemType.SPECIALIST, item_subtype: SpecialistSubType.CLASS_SP};
         }
     }
     else {
         // General case
         const EQ_SLOT_TO_ITEM_TYPE = {
-            2: {inv_tab: 0, item_type: 2, item_subtype: 0},  // Hat
-            3: {inv_tab: 0, item_type: 2, item_subtype: 2},  // Gloves
-            4: {inv_tab: 0, item_type: 2, item_subtype: 3},  // Boots
-            6: {inv_tab: 0, item_type: 3, item_subtype: 0},  // Necklace
-            7: {inv_tab: 0, item_type: 3, item_subtype: 1},  // Ring
-            8: {inv_tab: 0, item_type: 3, item_subtype: 2},  // Bracelet
-            9: {inv_tab: 0, item_type: 2, item_subtype: 1},  // Mask
-            10: {inv_tab: 0, item_type: 3, item_subtype: 3}, // Fairy
-            11: {inv_tab: 0, item_type: 3, item_subtype: 4}, // Amulet
-            12: {inv_tab: 0, item_type: 4, item_subtype: 1}, // SP
-            13: {inv_tab: 0, item_type: 2, item_subtype: 4}, // Body costume
-            14: {inv_tab: 0, item_type: 2, item_subtype: 5}, // Hat costume
-            15: {inv_tab: 0, item_type: 2, item_subtype: 6}, // Weapon costume
-            16: {inv_tab: 0, item_type: 2, item_subtype: 7}, // Wings costume
-            17: {inv_tab: 0, item_type: 3, item_subtype: 5}, // Minipet
+            2: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.HAT},
+            3: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.GLOVES},
+            4: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.BOOTS},
+            6: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ACCESSORY, item_subtype: AccessorySubType.NECKLACE},
+            7: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ACCESSORY, item_subtype: AccessorySubType.RING},
+            8: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ACCESSORY, item_subtype: AccessorySubType.BRACELET},
+            9: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.MASK},
+            10: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ACCESSORY, item_subtype: AccessorySubType.FAIRY},
+            11: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ACCESSORY, item_subtype: AccessorySubType.AMULET},
+            12: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.SPECIALIST, item_subtype: SpecialistSubType.CLASS_SP},
+            13: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.COSTUME},
+            14: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.COSTUME_HAT},
+            15: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.COSTUME_WEAPON},
+            16: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.EQUIPMENT, item_subtype: EquipmentSubType.COSTUME_WINGS},
+            17: {inv_tab: InventoryTab.EQUIP, item_type: ItemType.ACCESSORY, item_subtype: AccessorySubType.MINI_PET},
         }
 
         return EQ_SLOT_TO_ITEM_TYPE[eq_slot];

@@ -1,3 +1,5 @@
+import { InventoryTab, ItemType } from "../enums.js";
+import { BuffInfo } from "./buff_info.js";
 import { DatObject, DatParser, DatRow } from "./dat_parser.js";
 
 export {
@@ -5,11 +7,11 @@ export {
     ItemDatParser,
 }
 
-// TODO: Add orange buff efects
 class Item extends DatObject {
     constructor(
         vnum, 
-        name, 
+        name,
+        price,
         inventory_tab, 
         item_type, 
         item_subtype, 
@@ -20,7 +22,7 @@ class Item extends DatObject {
         is_limited,
     ) {
         super(vnum, name);
-
+        this.price = price;
         this.inventory_tab = inventory_tab;
         this.item_type = item_type;
         this.item_subtype = item_subtype;
@@ -29,6 +31,13 @@ class Item extends DatObject {
         this.attack_type = attack_type;
         this.required_class = required_class;
         this.is_limited = is_limited;
+        this.buffs = [];
+        this.data = {};
+    }
+
+    isWeapon() {
+        return this.inventory_tab == InventoryTab.EQUIP &&
+            this.item_type == ItemType.WEAPON;
     }
 }
 
@@ -41,23 +50,25 @@ class ItemDatParser extends DatParser {
             "TYPE": TypeRow,
             "BUFF": BuffRow,
             "FLAG": FlagRow,
+            "DATA": DataRow,
         }
 
-        super(data, names_map, row_parsers, Item)
+        super(data, names_map, row_parsers, Item);
     }
 }
 
 class VnumRow extends DatRow {
     applyTo(obj) {
         obj.vnum = this.getVnum();
+        obj.price = this.getPrice();
     }
 
     getVnum() {
-        return parseInt(this.get(1));
+        return this.getInt(1);
     }
 
     getPrice() {
-        return parseInt(this.get(2));
+        return this.getInt(2);
     }
 }
 
@@ -81,23 +92,23 @@ class IndexRow extends DatRow {
     }
 
     getInventoryTab() {
-        return parseInt(this.get(1)) % 4;
+        return this.getInt(1) % 4;
     }
 
     getItemType() {
-        return parseInt(this.get(2));
+        return this.getInt(2);
     }
 
     getItemSubType() {
-        return parseInt(this.get(3));
+        return this.getInt(3);
     }
 
     getEqSlot() {
-        return parseInt(this.get(4));
+        return this.getInt(4);
     }
 
     getIconId() {
-        return parseInt(this.get(5));
+        return this.getInt(5);
     }
 }
 
@@ -108,11 +119,11 @@ class TypeRow extends DatRow {
     }
 
     getAttackType() {
-        return parseInt(this.get(1));
+        return this.getInt(1);
     }
 
     getRequiredClass() {
-        return parseInt(this.get(2));
+        return this.getInt(2);
     }
 }
 
@@ -122,12 +133,68 @@ class FlagRow extends DatRow {
     }
 
     getIsLimited() {
-        return parseInt(this.get(23));
+        return this.getInt(23);
     }
 }
 
 class BuffRow extends DatRow {
-    // TODO: Implement
+    applyTo(obj) {
+
+        for (let i = 1; i < this.getSize(); i += 5) {
+            const buff = new BuffInfo(
+                this.getBCardVnum(i),
+                this.getValues(i),
+                this.getBCardSub(i),
+                this.getTarget(i)
+            );
+
+            obj.buffs.push(buff);
+        }
+    }
+
+    getBCardVnum(item_index) {
+        return this.getInt(item_index + 0);
+    }
+
+    getValues(item_index) {
+        // Get the real values divided by 4
+        const values = [
+            this.getInt(item_index + 1), 
+            this.getInt(item_index + 2)
+        ];
+
+        values[0] = Math.floor(values[0] / 4);
+        values[1] = Math.floor(values[1] / 4);
+
+        return values;
+    }
+
+    getBCardSub(item_index) {
+        return this.getInt(item_index + 3);
+    }
+
+    getTarget(item_index) {
+        return this.getInt(item_index + 4);
+    }
+}
+
+class DataRow extends DatRow {
+    // TODO: implement other item types
+    applyTo(obj) {
+        if (obj.isWeapon()) {
+            this.applyToWeapon(obj);
+        }
+    }
+
+    applyToWeapon(obj) {
+        obj.data.level = this.getInt(1);
+        obj.data.dmg_min = this.getInt(2);
+        obj.data.dmg_max = this.getInt(3);
+        obj.data.hit_rate = this.getInt(4);
+        obj.data.crit_chance = this.getInt(5);
+        obj.data.crit_damage = this.getInt(6);
+        obj.data.upgrade_level = this.getInt(9);
+    }
 }
 
 

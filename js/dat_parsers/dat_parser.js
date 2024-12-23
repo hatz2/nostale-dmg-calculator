@@ -44,9 +44,13 @@ class DatParser {
         const objects = this.#parseEntries(entries);
         return this.#replaceNameIdsWithName(objects);
     }
+    
+    getNamesMap() {
+        return this.#names;
+    }
 
     #splitDataIntoEntries() {
-        const entries = this.#data.split("#========================================================\n");
+        const entries = this.#data.split(/#=+\n/);
         // Remove empty entries (usually the ones between two separators)
         return entries.filter(Boolean);
     }
@@ -125,8 +129,16 @@ class DatRow {
         return this.get(0);
     }
 
+    getSize() {
+        return this.#splitted_row.length;
+    }
+
     get(index) {
         return this.#splitted_row[index];
+    }
+
+    getInt(index) {
+        return parseInt(this.#splitted_row[index]);
     }
 }
 
