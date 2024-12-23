@@ -52,7 +52,7 @@ const WeaponSubType = {
     ADV_SWORD: 0,
     SWORD: 1,
     DAGGER: 3,
-    FIRST: 4,
+    FIST: 4,
     SLINGSHOT: 5,
     BOW: 6,
     SPELLGUN: 8,
