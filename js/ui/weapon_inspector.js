@@ -228,25 +228,13 @@ function getRequiredClassText(class_flag) {
 }
 
 function upgradeLevelChange() {
-    if (current_item_slot == EquipSlot.MAIN_WEAPON)
-        character_config.weapon.data.upgrade_level = this.value;
-
-    if (current_item_slot == EquipSlot.SECONDARY_WEAPON)
-        character_config.offhand.data.upgrade_level = this.value;
+    character_config.getItem(current_item_slot).data.upgrade_level = this.value;
 }
 
 function dmgMinChange() {
-    if (current_item_slot == EquipSlot.MAIN_WEAPON)
-        character_config.weapon.data.dmg_min = this.value;
-
-    if (current_item_slot == EquipSlot.SECONDARY_WEAPON)
-        character_config.offhand.data.dmg_min = this.value;
+    character_config.getItem(current_item_slot).data.dmg_min = this.value;
 }
 
 function dmgMaxChange() {
-    if (current_item_slot == EquipSlot.MAIN_WEAPON)
-        character_config.weapon.data.dmg_max = this.value;
-
-    if (current_item_slot == EquipSlot.SECONDARY_WEAPON)
-        character_config.offhand.data.dmg_min = this.value;
+    character_config.getItem(current_item_slot).data.dmg_max = this.value;
 }

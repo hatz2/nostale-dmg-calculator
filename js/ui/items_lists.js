@@ -63,12 +63,10 @@ function onItemClicked(event) {
     weared_item_img.setAttribute("title", img_node.getAttribute("title"));
 
     // Set the item data in the charcter config structure
-    if (parseInt(weared_item_img.getAttribute("eqslot")) == EquipSlot.MAIN_WEAPON) {
-        character_config.weapon = structuredClone(item);
-    }
-    else if (parseInt(weared_item_img.getAttribute("eqslot")) == EquipSlot.SECONDARY_WEAPON) {
-        character_config.offhand = structuredClone(item);
-    }
+    const eqslot = parseInt(weared_item_img.getAttribute("eqslot"));
+    character_config.setItem(eqslot, item);
+
+    console.log(character_config);
 }
 
 function initCharacterSlotCallbacks(items) {
