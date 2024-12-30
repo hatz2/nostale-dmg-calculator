@@ -1,4 +1,4 @@
-import { normalizeEOL } from "./utils.js"
+import { normalizeEOL } from "../utils.js"
 
 export {
     NameParser,

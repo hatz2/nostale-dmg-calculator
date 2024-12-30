@@ -15,16 +15,80 @@
 
     
 </head>
-<body>
+<body class="prevent-select">
 
 <div id="item-dropdown" class="item-dropdown box flex-container scrollbar"></div>
+
+<div id="main-weapon-inspector" class="center item-inspector-frame smooth-hiding-transition" draggable="false">
+    <img id="weapon-img" src="/imgs/icons/4944.png" class="item-inspector-icon">
+    <input id="weapon-inspector-close-btn" type="image" src="/imgs/ui/close-btn.webp" class="item-inspector-close-btn">
+
+    <div class="item-inspector-text-container">
+        <br>
+        <div id="item-name">
+            <label id="weapon-name" class="item-inspector-title">Heated Sword +</label>
+            <input id="weapon-upgrade-lvl" type="number" value="0" min="0" max="10" class="item-inspector-upgrade">
+        </div>
+        <br>
+        <div class="item-inspector-gray-text" id="req-class-text">Swordsman only</div>
+        <div>
+            <label class="item-inspector-gray-text" id="required-lvl-type">Required Champion Level:</label>
+            <label class="item-inspector-gray-text" id="weapon-lvl">83Lv</label>
+        </div>
+        <div>
+            <label class="item-inspector-gray-text">Rarity Level:</label>
+            <label class="item-inspector-gray-text">0</label>
+        </div>
+        <br>
+        <div>
+            <label class="item-inspector-light-orange-text">Damage:</label>
+            <input type="number" value="1250" class="item-inspector-dmg-numbers" id="dmg-min">
+            <label class="item-inspector-light-orange-text">~</label>
+            <input type="number" value="1369" class="item-inspector-dmg-numbers" id="dmg-max">
+        </div>
+        <div>
+            <label class="item-inspector-light-orange-text" id="hit_rate_text">Hit Rate:</label>
+            <label class="item-inspector-light-orange-text" id="hit_rate_or_focus">809</label>
+        </div>
+        <div>
+            <label class="item-inspector-light-orange-text" id="crit-chance">17%</label>
+            <label class="item-inspector-light-orange-text" id="crit-chance-text">Chance of</label>
+            <label class="item-inspector-light-orange-text" id="crit-dmg">260%</label>
+            <label class="item-inspector-light-orange-text" id="crit-dmg-text">Critical</label>
+        </div>
+        <br>
+    
+        <div>
+            <label class="item-inspector-red-text">Price:</label>
+            <label class="item-inspector-red-text" id="price">1.800.000</label>
+        </div>
+        <br>
+        <div id="buff-effects">
+            <div class="item-inspector-dark-orange-text">
+                Reduces the enemy's elemental resistances by 31.
+            </div>
+            <div class="item-inspector-dark-orange-text">
+                All element energies are increase by 230.
+            </div>
+            <div class="item-inspector-dark-orange-text">
+                Provides a 40% chance to increase attack power by 40%.
+            </div>
+            <div class="item-inspector-dark-orange-text">
+                Increases damage to all monsters in Act 9 (excluding raids) and the Land of Life by 10%.
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+</div>
+
 
 <div id="main-container" class="main-container">
     <h1 class="center">NosTale Damage Calculator</h1>
     <hr>
 
     <div class="flex-container">
-        
         <div class="column center">
             <h2>Character configuration</h2>
             <div class="" style="display: table; margin: auto;">

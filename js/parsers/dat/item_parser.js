@@ -1,4 +1,4 @@
-import { InventoryTab, ItemType } from "../enums.js";
+import { InventoryTab, ItemType } from "../../enums.js";
 import { BuffInfo } from "./buff_info.js";
 import { DatObject, DatParser, DatRow } from "./dat_parser.js";
 
@@ -20,6 +20,7 @@ class Item extends DatObject {
         attack_type, 
         required_class,
         is_limited,
+        is_hero_eq
     ) {
         super(vnum, name);
         this.price = price;
@@ -31,6 +32,7 @@ class Item extends DatObject {
         this.attack_type = attack_type;
         this.required_class = required_class;
         this.is_limited = is_limited;
+        this.is_hero_eq = is_hero_eq;
         this.buffs = [];
         this.data = {};
     }
@@ -130,10 +132,15 @@ class TypeRow extends DatRow {
 class FlagRow extends DatRow {
     applyTo(obj) {
         obj.is_limited = this.getIsLimited();
+        obj.is_hero_eq = this.getIsHeroEq();
     }
 
     getIsLimited() {
         return this.getInt(23);
+    }
+
+    getIsHeroEq() {
+        return this.getInt(21);
     }
 }
 

@@ -1,7 +1,8 @@
-import { AttackType } from "./enums.js";
+import { AttackType } from "../enums.js";
 
 /**
  * Calculator to get the real defence stats of a monster
+ * Taken from NosWings leaked project aka Vanosilla
  */
 export class MonsterDefenceStatCalculator {
     static #race_defences = {

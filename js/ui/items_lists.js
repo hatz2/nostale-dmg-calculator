@@ -1,8 +1,10 @@
+import { character_config } from "../calculator/character_config.js";
 import { AccessorySubType, ArmorSubType, ClassFlag, EquipmentSubType, EquipSlot, InventoryTab, ItemType, SpecialistSubType, WeaponSubType } from "../enums.js";
+import { hideWeaponInspector } from "./weapon_inspector.js";
 
 var items_dict = new Map();
 var selected_eq_slot;
-const ITEM_ICONS_PATH = "/imgs/icons";
+export const ITEM_ICONS_PATH = "/imgs/icons";
 
 export function initItemListUI(items) {
     init(items);
@@ -49,8 +51,6 @@ function onItemClicked(event) {
     // Get the vnum of the item
     const vnum = parseInt(img_node.getAttribute("vnum"));
 
-    console.log(vnum);
-
     // Get the itemdata
     const item = items_dict.get(vnum);
 
@@ -61,6 +61,14 @@ function onItemClicked(event) {
     weared_item_img.onerror = () => weared_item_img.src = `${ITEM_ICONS_PATH}/0.png`;
     weared_item_img.setAttribute("src", `${ITEM_ICONS_PATH}/${item.icon_id}.png`)
     weared_item_img.setAttribute("title", img_node.getAttribute("title"));
+
+    // Set the item data in the charcter config structure
+    if (parseInt(weared_item_img.getAttribute("eqslot")) == EquipSlot.MAIN_WEAPON) {
+        character_config.weapon = structuredClone(item);
+    }
+    else if (parseInt(weared_item_img.getAttribute("eqslot")) == EquipSlot.SECONDARY_WEAPON) {
+        character_config.offhand = structuredClone(item);
+    }
 }
 
 function initCharacterSlotCallbacks(items) {
@@ -73,7 +81,8 @@ function initCharacterSlotCallbacks(items) {
             const cell = row.cells[j];
             const weared_item_img = cell.children[1];
 
-            weared_item_img.onclick = characterSlotClickCallback;
+            weared_item_img.addEventListener("click", characterSlotClickCallback);
+            weared_item_img.addEventListener("click", hideWeaponInspector);
         }
     }
 }

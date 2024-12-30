@@ -1,4 +1,4 @@
-import { normalizeEOL } from "../utils.js";
+import { normalizeEOL } from "../../utils.js";
 
 export {
     DatObject,
@@ -117,7 +117,7 @@ class DatRow {
     }
 
     #splitEntryRow(row) {
-        return row.split("\t").filter(Boolean);
+        return row.split(/[\t\ ]/).filter(Boolean);
     }
 
     // Read properties from row and store them in obj

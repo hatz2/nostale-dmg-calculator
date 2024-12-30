@@ -1,11 +1,12 @@
-import { MonsterDatParser } from "./dat_parsers/monster_parser.js"
-import { NameParser } from "./name_parser.js";
-import { getIdleMonsterImgPaths } from "./img_parsers/monster_img_parser.js";
-import { ItemDatParser } from "./dat_parsers/item_parser.js";
+import { MonsterDatParser } from "./parsers/dat/monster_parser.js"
+import { NameParser } from "./parsers/name_parser.js";
+import { getIdleMonsterImgPaths } from "./parsers/imgs/monster_img_parser.js";
+import { ItemDatParser } from "./parsers/dat/item_parser.js";
 import { initMonsterListUI } from "./ui/monster_list.js";
 import { ClassFlag, ItemType } from "./enums.js";
 import { initItemListUI } from "./ui/items_lists.js";
-import { BCardDatParser } from "./dat_parsers/bcard_parser.js";
+import { BCardDatParser } from "./parsers/dat/bcard_parser.js";
+import { initWeaponInspector } from "./ui/weapon_inspector.js";
 
 var monsters;
 var monster_sprite_data;
@@ -14,7 +15,6 @@ var items;
 var bcards;
 
 window.addEventListener("load", onLoad);
-
 
 async function onLoad() {
     // Load and parse game files
@@ -36,6 +36,7 @@ async function onLoad() {
 
     initMonsterListUI(monsters, monster_img_paths);
     initItemListUI(items);
+    initWeaponInspector(bcards);
 }
 
 async function readNamesMapFromFile(path) {
@@ -50,4 +51,4 @@ async function initDatObjCollection(path, names_map, ParserTemplate, ...addition
     const data = await dat_file.text();
     const parser = new ParserTemplate(data, names_map, additional_params);
     return parser.parse();
-}   
+}
