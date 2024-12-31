@@ -39,7 +39,7 @@ function weaponContextMenu(event) {
     event.preventDefault();
     current_item_slot = parseInt(this.getAttribute("eqslot"));
 
-    if (character_config.weapon == undefined) {
+    if (character_config.getItem(current_item_slot) == undefined) {
         return;
     }
 

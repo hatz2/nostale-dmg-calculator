@@ -119,8 +119,6 @@ img {
     background-color: var(--dropdown-bg-color);
     visibility: hidden;
     opacity: 0;
-    /* transition: opacity 0.3s linear; */
-    transition: all 0.3s ease-out;
 }
 
 .def-stat-text {
@@ -433,7 +431,8 @@ img {
     border: solid 2px rgb(125, 124, 123); 
     border-radius: 5px;
     --light-orange: rgb(245, 196, 120);
-    --frame-bg-color: rgb(59, 57, 59);
+    /* --frame-bg-color: rgb(59, 57, 59, 1.0); */
+    --frame-bg-color: rgb(20, 20, 20, 0.90);
     background-color: var(--frame-bg-color); 
     z-index: 2;
     visibility: hidden;
@@ -464,7 +463,7 @@ img {
 
 .item-inspector-frame input[type="number"] {
     color: var(--light-orange);
-    background-color: var(--frame-bg-color);
+    background-color: transparent;
     font-size: 12px;
 }
 
