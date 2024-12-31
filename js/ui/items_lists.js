@@ -1,5 +1,6 @@
 import { character_config } from "../calculator/character_config.js";
 import { AccessorySubType, ArmorSubType, ClassFlag, EquipmentSubType, EquipSlot, InventoryTab, ItemType, SpecialistSubType, WeaponSubType } from "../enums.js";
+import { hideSpInspector } from "./sp_inspector.js";
 import { hideWeaponInspector } from "./weapon_inspector.js";
 
 var items_dict = new Map();
@@ -65,8 +66,6 @@ function onItemClicked(event) {
     // Set the item data in the charcter config structure
     const eqslot = parseInt(weared_item_img.getAttribute("eqslot"));
     character_config.setItem(eqslot, item);
-
-    console.log(character_config);
 }
 
 function initCharacterSlotCallbacks(items) {
@@ -78,9 +77,15 @@ function initCharacterSlotCallbacks(items) {
         for (let j = 0; j < row.cells.length; ++j) {
             const cell = row.cells[j];
             const weared_item_img = cell.children[1];
+            const eqslot = parseInt(weared_item_img.getAttribute("eqslot"));
 
             weared_item_img.addEventListener("click", characterSlotClickCallback);
-            weared_item_img.addEventListener("click", hideWeaponInspector);
+
+            if (eqslot == EquipSlot.MAIN_WEAPON || eqslot == EquipSlot.SECONDARY_WEAPON)
+                weared_item_img.addEventListener("click", hideWeaponInspector);
+
+            if (eqslot == EquipSlot.SP)
+                weared_item_img.addEventListener("click", hideSpInspector);
         }
     }
 }

@@ -1,18 +1,7 @@
-/*
-        obj.data.level = this.getInt(1);
-        obj.data.dmg_min = this.getInt(2);
-        obj.data.dmg_max = this.getInt(3);
-        obj.data.hit_rate = this.getInt(4);
-        obj.data.crit_chance = this.getInt(5);
-        obj.data.crit_damage = this.getInt(6);
-        obj.data.upgrade_level = this.getInt(9);
-
-*/
-
 import { character_config } from "../calculator/character_config.js";
 import { ClassFlag, EquipSlot } from "../enums.js";
 import { formatString } from "../utils.js";
-import { makeDraggable } from "./dragable_element.js";
+// import { makeDraggable } from "./dragable_element.js";
 import { ITEM_ICONS_PATH } from "./items_lists.js";
 
 var bcards
@@ -26,9 +15,6 @@ export function initWeaponInspector(bcard_list) {
 
     const offhand_img = document.querySelector(`.weared-item[eqslot="5"]`);
     offhand_img.addEventListener("contextmenu", weaponContextMenu);
-
-    const weapon_inspector = document.getElementById("main-weapon-inspector");
-    makeDraggable(weapon_inspector);
 
     const close_btn = document.getElementById("weapon-inspector-close-btn");
     close_btn.addEventListener("click", hideWeaponInspector);

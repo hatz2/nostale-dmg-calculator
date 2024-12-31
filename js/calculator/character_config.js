@@ -1,6 +1,5 @@
 import { EquipSlot } from "../enums.js"
 
-
 class CharacterConfig {
     constructor() {
         this.weapon = undefined;
@@ -21,6 +20,7 @@ class CharacterConfig {
         this.costume_weapon = undefined;
         this.costume_hat = undefined;
         this.costume_body = undefined;
+        this.sp_config = new SpConfig();
     }
 
     setItem(eqslot, item) {
@@ -135,6 +135,23 @@ class CharacterConfig {
         else if (eqslot == EquipSlot.BODY_COSTUME) {
             return this.costume_body;
         }
+    }
+}
+
+class SpConfig {
+    constructor() {
+        this.resetFields();
+    }
+
+    resetFields() {
+        this.attack = 0;
+        this.defence = 0;
+        this.element = 0;
+        this.hp_mp = 0;
+        this.attack_perf = 0;
+        this.defence_perf = 0;
+        this.element_perf = 0;
+        this.hp_mp_perf = 0;
     }
 }
 

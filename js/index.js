@@ -7,6 +7,8 @@ import { ClassFlag, ItemType } from "./enums.js";
 import { initItemListUI } from "./ui/items_lists.js";
 import { BCardDatParser } from "./parsers/dat/bcard_parser.js";
 import { initWeaponInspector } from "./ui/weapon_inspector.js";
+import { initDraggableElements } from "./ui/dragable_element.js";
+import { initSpInspector } from "./ui/sp_inspector.js";
 
 var monsters;
 var monster_sprite_data;
@@ -37,6 +39,8 @@ async function onLoad() {
     initMonsterListUI(monsters, monster_img_paths);
     initItemListUI(items);
     initWeaponInspector(bcards);
+    initSpInspector();
+    initDraggableElements();
 }
 
 async function readNamesMapFromFile(path) {

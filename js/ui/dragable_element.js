@@ -1,5 +1,14 @@
 
-export function makeDraggable(html_element) {
+export function initDraggableElements() {
+    const elements = document.querySelectorAll('[draggable-elem="true"]');
+
+    elements.forEach((elem) => {
+        makeDraggable(elem);
+    });
+}
+
+
+function makeDraggable(html_element) {
     var init_pos = {x: 0, y: 0};
     var shift_offset = {x: 0, y: 0};
 

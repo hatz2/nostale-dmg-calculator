@@ -17,23 +17,43 @@
 </head>
 <body class="prevent-select">
 
+<div id="sp-point-inspector" class="center smooth-hiding-transition" draggable-elem="true">
+    <img src="/imgs/ui/sp_edit.png">
+    <!-- <label style="position: absolute; left: 70px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Points</label>
+    <label style="position: absolute; left: 125px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Perfection</label> -->
+    <div id="sp-cross-close-btn" class="clickable"></div>
+    <div id="reset-points-btn" class="clickable"></div>
+    <div id="sp-close-blue-btn" class="clickable"></div>
+    <label id="sp-title" class="sp-title"></label>
+    <input id="attack-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 75px;" title="Attack points"></input>
+    <input id="defence-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 120px;" title="Defence points"></input>
+    <input id="element-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 165px;" title="Element points"></input>
+    <input id="hp-mp-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 210px;" title="HP/MP points"></input>
+
+    <input id="attack-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 75px;" title="Attack perfection"></input>
+    <input id="defence-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 120px;" title="Defence perfection"></input>
+    <input id="element-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 165px;" title="Element perfection"></input>
+    <input id="hp-mp-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 210px;" title="HP/MP perfection"></input>
+
+</div>
+
 <div id="item-dropdown" class="item-dropdown box flex-container scrollbar"></div>
 
-<div id="main-weapon-inspector" class="center item-inspector-frame smooth-hiding-transition" draggable="false">
+<div id="main-weapon-inspector" class="center item-inspector-frame smooth-hiding-transition" draggable-elem="true">
     <img id="weapon-img" src="/imgs/icons/4944.png" class="item-inspector-icon">
     <input id="weapon-inspector-close-btn" type="image" src="/imgs/ui/close-btn.webp" class="item-inspector-close-btn">
 
     <div class="item-inspector-text-container">
         <br>
         <div id="item-name">
-            <label id="weapon-name" class="item-inspector-title">Heated Sword +</label>
+            <label id="weapon-name" class="item-inspector-title"></label>
             <input id="weapon-upgrade-lvl" type="number" value="0" min="0" max="10" class="item-inspector-upgrade">
         </div>
         <br>
-        <div class="item-inspector-gray-text" id="req-class-text">Swordsman only</div>
+        <div class="item-inspector-gray-text" id="req-class-text"></div>
         <div>
-            <label class="item-inspector-gray-text" id="required-lvl-type">Required Champion Level:</label>
-            <label class="item-inspector-gray-text" id="weapon-lvl">83Lv</label>
+            <label class="item-inspector-gray-text" id="required-lvl-type"></label>
+            <label class="item-inspector-gray-text" id="weapon-lvl"></label>
         </div>
         <div>
             <label class="item-inspector-gray-text">Rarity Level:</label>
@@ -47,35 +67,23 @@
             <input type="number" value="1369" class="item-inspector-dmg-numbers" id="dmg-max">
         </div>
         <div>
-            <label class="item-inspector-light-orange-text" id="hit_rate_text">Hit Rate:</label>
-            <label class="item-inspector-light-orange-text" id="hit_rate_or_focus">809</label>
+            <label class="item-inspector-light-orange-text" id="hit_rate_text"></label>
+            <label class="item-inspector-light-orange-text" id="hit_rate_or_focus"></label>
         </div>
         <div>
-            <label class="item-inspector-light-orange-text" id="crit-chance">17%</label>
-            <label class="item-inspector-light-orange-text" id="crit-chance-text">Chance of</label>
-            <label class="item-inspector-light-orange-text" id="crit-dmg">260%</label>
-            <label class="item-inspector-light-orange-text" id="crit-dmg-text">Critical</label>
+            <label class="item-inspector-light-orange-text" id="crit-chance"></label>
+            <label class="item-inspector-light-orange-text" id="crit-chance-text"></label>
+            <label class="item-inspector-light-orange-text" id="crit-dmg"></label>
+            <label class="item-inspector-light-orange-text" id="crit-dmg-text"></label>
         </div>
         <br>
     
         <div>
             <label class="item-inspector-red-text">Price:</label>
-            <label class="item-inspector-red-text" id="price">1.800.000</label>
+            <label class="item-inspector-red-text" id="price"></label>
         </div>
         <br>
         <div id="buff-effects">
-            <div class="item-inspector-dark-orange-text">
-                Reduces the enemy's elemental resistances by 31.
-            </div>
-            <div class="item-inspector-dark-orange-text">
-                All element energies are increase by 230.
-            </div>
-            <div class="item-inspector-dark-orange-text">
-                Provides a 40% chance to increase attack power by 40%.
-            </div>
-            <div class="item-inspector-dark-orange-text">
-                Increases damage to all monsters in Act 9 (excluding raids) and the Land of Life by 10%.
-            </div>
         </div>
         <br>
         <br>
@@ -87,6 +95,7 @@
 <div id="main-container" class="main-container">
     <h1 class="center">NosTale Damage Calculator</h1>
     <hr>
+
 
     <div class="flex-container">
         <div class="column center">
