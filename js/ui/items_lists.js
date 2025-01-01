@@ -218,7 +218,7 @@ function itemPassFilter(item, filter, required_class, eq_slot) {
         EquipSlot.WINGS_COSTUME
     ]
 
-    if (required_class_slots.includes(eq_slot)) {
+    if (required_class_slots.includes(parseInt(eq_slot))) {
         filtered &&= item.required_class & required_class;
     }
     else {
