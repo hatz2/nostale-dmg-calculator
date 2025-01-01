@@ -198,12 +198,34 @@ function getItemFilter(eq_slot, selected_class) {
 }
 
 function itemPassFilter(item, filter, required_class, eq_slot) {
-    return item.eq_slot == eq_slot && 
-        item.inventory_tab == filter.inv_tab &&
-        item.item_type == filter.item_type &&
-        item.item_subtype == filter.item_subtype &&
-        item.is_limited == 0 &&
-        (item.required_class & required_class || item.required_class == 0);
+    let filtered = true;
+    filtered &&= item.eq_slot == eq_slot;
+    filtered &&= item.inventory_tab == filter.inv_tab;
+    filtered &&= item.item_type == filter.item_type;
+    filtered &&= item.item_subtype == filter.item_subtype;
+    filtered &&= item.is_limited == 0
+
+    // Check if the slot is one that must have a required class option
+    const required_class_slots = [
+        EquipSlot.MASK, 
+        EquipSlot.HAT, 
+        EquipSlot.MAIN_WEAPON, 
+        EquipSlot.SECONDARY_WEAPON,
+        EquipSlot.ARMOR,
+        EquipSlot.HAT_COSTUME,
+        EquipSlot.BODY_COSTUME,
+        EquipSlot.WEAPON_COSTUME,
+        EquipSlot.WINGS_COSTUME
+    ]
+
+    if (required_class_slots.includes(eq_slot)) {
+        filtered &&= item.required_class & required_class;
+    }
+    else {
+        filtered &&= (item.required_class & required_class || item.required_class == 0);
+    }
+
+    return filtered;
 }
 
 function getSelectedClass() {
