@@ -2,6 +2,10 @@ import { EquipSlot } from "../enums.js"
 
 class CharacterConfig {
     constructor() {
+        this.#initItems();
+    }
+
+    #initItems() {
         this.weapon = undefined;
         this.offhand = undefined;
         this.armor = undefined;
@@ -21,6 +25,10 @@ class CharacterConfig {
         this.costume_hat = undefined;
         this.costume_body = undefined;
         this.sp_config = new SpConfig();
+    }
+
+    clear() {
+        this.#initItems();
     }
 
     setItem(eqslot, item) {

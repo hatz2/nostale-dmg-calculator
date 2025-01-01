@@ -9,6 +9,7 @@ import { BCardDatParser } from "./parsers/dat/bcard_parser.js";
 import { initWeaponInspector } from "./ui/weapon_inspector.js";
 import { initDraggableElements } from "./ui/dragable_element.js";
 import { initSpInspector } from "./ui/sp_inspector.js";
+import { initClassSwapRadioButtons } from "./ui/class_swap.js";
 
 var monsters;
 var monster_sprite_data;
@@ -41,6 +42,7 @@ async function onLoad() {
     initWeaponInspector(bcards);
     initSpInspector();
     initDraggableElements();
+    initClassSwapRadioButtons();
 }
 
 async function readNamesMapFromFile(path) {
