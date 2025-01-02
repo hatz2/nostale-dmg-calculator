@@ -10,12 +10,14 @@ import { initDraggableElements } from "./ui/dragable_element.js";
 import { initSpInspector } from "./ui/sp_inspector.js";
 import { initClassSwapRadioButtons } from "./ui/class_swap.js";
 import { initFairyInspector } from "./ui/fairy_inspector.js";
+import { SkillDatParser } from "./parsers/dat/skill_parser.js";
 
 var monsters;
 var monster_sprite_data;
 var monster_img_paths;
 var items;
 var bcards;
+var skills;
 
 window.addEventListener("load", onLoad);
 
@@ -28,10 +30,12 @@ async function onLoad() {
     const skill_names = await readNamesMapFromFile("/lang/_code_uk_Skill.txt");
     monsters = await initDatObjCollection("/data/monster.dat", monster_names, MonsterDatParser);
     items = await initDatObjCollection("/data/Item.dat", item_names, ItemDatParser);
-    bcards = await initDatObjCollection("/data/BCard.dat", new Map([...bcard_names]), BCardDatParser);
-
+    bcards = await initDatObjCollection("/data/BCard.dat", bcard_names, BCardDatParser);
+    skills = await initDatObjCollection("/data/Skill.dat", skill_names, SkillDatParser)
     // console.log(bcards);
     // console.log(items);
+
+    console.log(skills);
 
     const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();

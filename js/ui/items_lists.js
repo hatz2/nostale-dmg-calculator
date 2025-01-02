@@ -1,5 +1,6 @@
 import { character_config } from "../calculator/character_config.js";
 import { AccessorySubType, ArmorSubType, ClassFlag, EquipmentSubType, EquipSlot, InventoryTab, ItemType, SpecialistSubType, WeaponSubType } from "../enums.js";
+import { hideFairyInspector } from "./fairy_inspector.js";
 import { hideSpInspector } from "./sp_inspector.js";
 import { hideWeaponInspector } from "./weapon_inspector.js";
 
@@ -88,6 +89,10 @@ function initCharacterSlotCallbacks(items) {
 
             if (eqslot == EquipSlot.SP)
                 weared_item_img.addEventListener("click", hideSpInspector);
+
+            if (eqslot == EquipSlot.FAIRY) {
+                weared_item_img.addEventListener("click", hideFairyInspector);
+            }
         }
     }
 }
