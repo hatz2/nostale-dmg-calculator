@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <img>
+
 <head>
     <title>Nostale Damage Calculator</title>
     <meta charset="UTF-8">
@@ -13,316 +14,360 @@
     <script type="module" src="/js/monster_parser.js"></script> -->
     <script type="module" src="/js/index.js"></script>
 
-    
+
 </head>
+
 <body class="prevent-select">
 
-<div id="sp-point-inspector" class="center smooth-hiding-transition" draggable-elem="true">
-    <img src="/imgs/ui/sp_edit.png">
-    <!-- <label style="position: absolute; left: 70px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Points</label>
+    <div id="fairy-inspector" class="center item-inspector-frame smooth-hiding-transition" draggable-elem="true">
+        <input id="fairy-inspector-close-btn" type="image" src="/imgs/ui/close-btn.webp"
+            class="item-inspector-close-btn">
+        
+        <img id="fairy-img" src="/imgs/icons/804.png" class="item-inspector-icon">
+
+        <div class="item-inspector-text-container">
+            <br>
+            <label id="fairy-name" class="item-inspector-title">Solaris (Limited)</label>
+            <br>
+            <br>
+            <label class="item-inspector-light-orange-text">Attribute:</label>
+            <label id="fairy-element-text" class="item-inspector-light-orange-text">Light</label>
+            <br>
+            <label class="item-inspector-light-orange-text">Strengthness the element by</label>
+            <input type="number" value="0" id="fairy-level-text" style="max-width: 35px;"></input>
+            <label class="item-inspector-light-orange-text">%</label>
+            <br>
+            <br>
+            <div id="fairy-buff-effects">
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div id="sp-point-inspector" class="center smooth-hiding-transition" draggable-elem="true">
+        <img src="/imgs/ui/sp_edit.png">
+        <!-- <label style="position: absolute; left: 70px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Points</label>
     <label style="position: absolute; left: 125px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Perfection</label> -->
-    <div id="sp-cross-close-btn" class="clickable"></div>
-    <div id="reset-points-btn" class="clickable"></div>
-    <div id="sp-close-blue-btn" class="clickable"></div>
-    <label id="sp-title" class="sp-title"></label>
-    <input id="attack-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 75px;" title="Attack points"></input>
-    <input id="defence-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 120px;" title="Defence points"></input>
-    <input id="element-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 165px;" title="Element points"></input>
-    <input id="hp-mp-points" type="number" min="0" value="0" class="sp-input sp-point-color" style="left: 70px; top: 210px;" title="HP/MP points"></input>
+        <div id="sp-cross-close-btn" class="clickable"></div>
+        <div id="reset-points-btn" class="clickable"></div>
+        <div id="sp-close-blue-btn" class="clickable"></div>
+        <label id="sp-title" class="sp-title"></label>
+        <input id="attack-points" type="number" min="0" value="0" class="sp-input sp-point-color"
+            style="left: 70px; top: 75px;" title="Attack points"></input>
+        <input id="defence-points" type="number" min="0" value="0" class="sp-input sp-point-color"
+            style="left: 70px; top: 120px;" title="Defence points"></input>
+        <input id="element-points" type="number" min="0" value="0" class="sp-input sp-point-color"
+            style="left: 70px; top: 165px;" title="Element points"></input>
+        <input id="hp-mp-points" type="number" min="0" value="0" class="sp-input sp-point-color"
+            style="left: 70px; top: 210px;" title="HP/MP points"></input>
 
-    <input id="attack-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 75px;" title="Attack perfection"></input>
-    <input id="defence-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 120px;" title="Defence perfection"></input>
-    <input id="element-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 165px;" title="Element perfection"></input>
-    <input id="hp-mp-perf" type="number" min="0" value="0" class="sp-input sp-perf-color" style="left: 130px; top: 210px;" title="HP/MP perfection"></input>
+        <input id="attack-perf" type="number" min="0" value="0" class="sp-input sp-perf-color"
+            style="left: 130px; top: 75px;" title="Attack perfection"></input>
+        <input id="defence-perf" type="number" min="0" value="0" class="sp-input sp-perf-color"
+            style="left: 130px; top: 120px;" title="Defence perfection"></input>
+        <input id="element-perf" type="number" min="0" value="0" class="sp-input sp-perf-color"
+            style="left: 130px; top: 165px;" title="Element perfection"></input>
+        <input id="hp-mp-perf" type="number" min="0" value="0" class="sp-input sp-perf-color"
+            style="left: 130px; top: 210px;" title="HP/MP perfection"></input>
 
-</div>
-
-<div id="item-dropdown" class="item-dropdown box flex-container scrollbar"></div>
-
-<div id="main-weapon-inspector" class="center item-inspector-frame smooth-hiding-transition" draggable-elem="true">
-    <img id="weapon-img" src="/imgs/icons/4944.png" class="item-inspector-icon">
-    <input id="weapon-inspector-close-btn" type="image" src="/imgs/ui/close-btn.webp" class="item-inspector-close-btn">
-
-    <div class="item-inspector-text-container">
-        <br>
-        <div id="item-name">
-            <label id="weapon-name" class="item-inspector-title"></label>
-            <input id="weapon-upgrade-lvl" type="number" value="0" min="0" max="10" class="item-inspector-upgrade">
-        </div>
-        <br>
-        <div class="item-inspector-gray-text" id="req-class-text"></div>
-        <div>
-            <label class="item-inspector-gray-text" id="required-lvl-type"></label>
-            <label class="item-inspector-gray-text" id="weapon-lvl"></label>
-        </div>
-        <div>
-            <label class="item-inspector-gray-text">Rarity Level:</label>
-            <label class="item-inspector-gray-text">0</label>
-        </div>
-        <br>
-        <div>
-            <label class="item-inspector-light-orange-text">Damage:</label>
-            <input type="number" value="1250" class="item-inspector-dmg-numbers" id="dmg-min">
-            <label class="item-inspector-light-orange-text">~</label>
-            <input type="number" value="1369" class="item-inspector-dmg-numbers" id="dmg-max">
-        </div>
-        <div>
-            <label class="item-inspector-light-orange-text" id="hit_rate_text"></label>
-            <label class="item-inspector-light-orange-text" id="hit_rate_or_focus"></label>
-        </div>
-        <div>
-            <label class="item-inspector-light-orange-text" id="crit-chance"></label>
-            <label class="item-inspector-light-orange-text" id="crit-chance-text"></label>
-            <label class="item-inspector-light-orange-text" id="crit-dmg"></label>
-            <label class="item-inspector-light-orange-text" id="crit-dmg-text"></label>
-        </div>
-        <br>
-    
-        <div>
-            <label class="item-inspector-red-text">Price:</label>
-            <label class="item-inspector-red-text" id="price"></label>
-        </div>
-        <br>
-        <div id="buff-effects">
-        </div>
-        <br>
-        <br>
     </div>
-    
-</div>
 
+    <div id="item-dropdown" class="item-dropdown box flex-container scrollbar"></div>
 
-<div id="main-container" class="main-container">
-    <h1 class="center">NosTale Damage Calculator</h1>
-    <hr>
+    <div id="main-weapon-inspector" class="center item-inspector-frame smooth-hiding-transition" draggable-elem="true">
+        <img id="weapon-img" src="/imgs/icons/4944.png" class="item-inspector-icon">
+        <input id="weapon-inspector-close-btn" type="image" src="/imgs/ui/close-btn.webp"
+            class="item-inspector-close-btn">
 
-
-    <div class="flex-container">
-        <div class="column center">
-            <h2>Character configuration</h2>
-            <div class="" style="display: table; margin: auto;">
-                <span class="class-radio-btn-container" style="margin: 0px 5px 0px 20px;">
-                    <input type="radio" id="adventurer-radio-btn" name="character_class">
-                    <img src="/imgs/ui/1593835568.png" class="adventurer-class-icon" style="left: -214px;">
-                </span>
-                <span class="class-radio-btn-container">
-                    <input type="radio" id="melee-radio-btn" name="character_class" checked>
-                    <img src="/imgs/ui/1593835568.png" class="melee-def-icon" style="left: -180px;">
-                </span>
-
-                <span class="class-radio-btn-container">
-                    <input type="radio" id="ranged-radio-btn" name="character_class">
-                    <img src="/imgs/ui/1593835568.png" class="ranged-def-icon" style="left: -160px;">
-                </span>
-
-                <span class="class-radio-btn-container">
-                    <input type="radio" id="mage-radio-btn" name="character_class">
-                    <img src="/imgs/ui/1593835568.png" class="mage-def-icon" style="left: -160px;">
-                </span>
-                
-                <span class="class-radio-btn-container">
-                    <input type="radio" id="artist-radio-btn" name="character_class">
-                    <img src="/imgs/ui/1593835784.png" class="martial-artist-class-icon" style="left: -400px;">
-                </span>
-
-
-                <table id="character-config-table" style="margin: auto;">
-                    <tr>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="mask-slot" class="character-slot" eqslot="9">
-                            <img src="" class="weared-item clickable" eqslot="9">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="hat-slot" class="character-slot" eqslot="2">
-                            <img src="" class="weared-item clickable" eqslot="2">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="fairy-slot" class="character-slot" eqslot="10">
-                            <img src="" class="weared-item clickable" eqslot="10">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="main-weapon-slot" class="character-slot" eqslot="0">
-                            <img src="" class="weared-item clickable" eqslot="0">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835617.png" id="sp-slot" class="character-slot" eqslot="12">
-                            <img src="" class="weared-item clickable" eqslot="12">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="secondary-weapon-slot" class="character-slot" eqslot="5">
-                            <img src="" class="weared-item clickable" eqslot="5">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="glove-slot" class="character-slot" eqslot="3">
-                            <img src="" class="weared-item clickable" eqslot="3">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="armor-slot" class="character-slot" eqslot="1">
-                            <img src="" class="weared-item clickable" eqslot="1">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="shoe-slot" class="character-slot" eqslot="4">
-                            <img src="" class="weared-item clickable" eqslot="4">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="ring-slot" class="character-slot" eqslot="7">
-                            <img src="" class="weared-item clickable" eqslot="7">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="necklace-slot" class="character-slot" eqslot="6">
-                            <img src="" class="weared-item clickable" eqslot="6">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="bracelet-slot" class="character-slot" eqslot="8">
-                            <img src="" class="weared-item clickable" eqslot="8">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835776.png" id="costume-wings-slot" class="character-slot" eqslot="16">
-                            <img src="" class="weared-item clickable" eqslot="16">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835784.png" id="mini-pet-slot" class="character-slot" eqslot="17">
-                            <img src="" class="weared-item clickable" eqslot="17">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="amulet-slot" class="character-slot" eqslot="11">
-                            <img src="" class="weared-item clickable" eqslot="11">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835776.png" id="costume-weapon-slot" class="clickable character-slot" eqslot="15">
-                            <img src="" class="weared-item clickable" eqslot="15">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="costume-hat-slot" class="clickable character-slot" eqslot="14">
-                            <img src="" class="weared-item clickable" eqslot="14">
-                        </td>
-                        <td class="character-slot-container">
-                            <img src="/imgs/ui/1593835577.png" id="costume-slot" class="clickable character-slot" eqslot="13">
-                            <img src="" class="weared-item clickable" eqslot="13">
-                        </td>
-                    </tr>
-                </table>
-
+        <div class="item-inspector-text-container">
+            <br>
+            <div id="item-name">
+                <label id="weapon-name" class="item-inspector-title"></label>
+                <input id="weapon-upgrade-lvl" type="number" value="0" min="0" max="10" class="item-inspector-upgrade">
             </div>
-
-        </div>
-    
-        <div class="column center">
-            <h2>Enemy configuration</h2>
-    
-            <div class="flex-container center" style="position:relative;">
-                <div class="column">
-                    <img id="current-monster" class="clickable animation" 
-                        src="/imgs/full_monster_sprites/0_10_2.webp" 
-                        style="max-height: 100%; max-width: 100%; position: relative;">
-                </div>
-                <div class="column box monster-stat-container">
-                    <h3 id="monster-name-title">Monster name</h3>
-                    <h4>General</h4>
-                    <span>Level: </span>
-                    <span id="monster-level">26</span>
-                    <br>
-                    <span>Element:</span>
-                    <img id="monster-element-icon" src="/imgs/icons/17101.png" style="vertical-align: middle;">    
-                    <span id="monster-element-level">80%</span>
-        
-        
-                    <h4>Defence stats</h4>
-                    <span style="display: inline-block; margin-bottom: 10px;">Defence level: </span>
-                    <span id="defence-level-text" style="display: inline-block; margin-bottom: 10px;">+0</span>
-                    <div id="melee-def-stat" class="def-stat-text">520
-                        <img src="/imgs/ui/1593835568.png" class="melee-def-icon">
-                    </div>
-        
-                    <div id="ranged-def-stat" class="def-stat-text">480
-                        <img src="/imgs/ui/1593835568.png" class="ranged-def-icon">
-                    </div>
-        
-                    <div id="magic-def-stat" class="def-stat-text">555
-                        <img src="/imgs/ui/1593835568.png" class="mage-def-icon">
-                    </div>
-                    <h4>Resistances</h4>
-                    <div id="fire-res-stat" class="def-stat-text">20%
-                        <img src="/imgs/ui/1593835577.png" class="fire-res-icon">
-                    </div>
-        
-                    <div id="water-res-stat" class="def-stat-text">40%
-                        <img src="/imgs/ui/1593835577.png" class="water-res-icon">
-                    </div>
-        
-                    <div id="light-res-stat" class="def-stat-text">30%
-                        <img src="/imgs/ui/1593835577.png" class="light-res-icon">
-                    </div>
-        
-                    <div id="shadow-res-stat" class="def-stat-text">50%
-                        <img src="/imgs/ui/1593835577.png" class="shadow-res-icon">
-                    </div>
-                </div>
-                <div id="monster-dropdown" class="box smooth-hiding-transition">
-                    <input type="text" id="monster-search" name="monster-search" placeholder="Monster name" style="width: 99%;">
-                    <div id="monster-list" class="flex-container center scrollbar" style="max-height: 400px;">
-                    </div>
-                </div>
+            <br>
+            <div class="item-inspector-gray-text" id="req-class-text"></div>
+            <div>
+                <label class="item-inspector-gray-text" id="required-lvl-type"></label>
+                <label class="item-inspector-gray-text" id="weapon-lvl"></label>
             </div>
+            <div>
+                <label class="item-inspector-gray-text">Rarity Level:</label>
+                <label class="item-inspector-gray-text">0</label>
+            </div>
+            <br>
+            <div>
+                <label class="item-inspector-light-orange-text">Damage:</label>
+                <input type="number" value="1250" class="item-inspector-dmg-numbers" id="dmg-min">
+                <label class="item-inspector-light-orange-text">~</label>
+                <input type="number" value="1369" class="item-inspector-dmg-numbers" id="dmg-max">
+            </div>
+            <div>
+                <label class="item-inspector-light-orange-text" id="hit_rate_text"></label>
+                <label class="item-inspector-light-orange-text" id="hit_rate_or_focus"></label>
+            </div>
+            <div>
+                <label class="item-inspector-light-orange-text" id="crit-chance"></label>
+                <label class="item-inspector-light-orange-text" id="crit-chance-text"></label>
+                <label class="item-inspector-light-orange-text" id="crit-dmg"></label>
+                <label class="item-inspector-light-orange-text" id="crit-dmg-text"></label>
+            </div>
+            <br>
 
+            <div>
+                <label class="item-inspector-red-text">Price:</label>
+                <label class="item-inspector-red-text" id="price"></label>
+            </div>
+            <br>
+            <div id="buff-effects">
+            </div>
+            <br>
+            <br>
         </div>
+
     </div>
 
 
-        
+    <div id="main-container" class="main-container">
+        <h1 class="center">NosTale Damage Calculator</h1>
+        <hr>
 
-    <hr>
 
-    <div class="center">
-        <h2>Damage results</h2>
-        
-        <div>
-            <label>Base damage:</label>
-            <output id="min_base_dmg">0</output>
-            -
-            <output id="max_base_dmg">0</output>
+        <div class="flex-container">
+            <div class="column center">
+                <h2>Character configuration</h2>
+                <div class="" style="display: table; margin: auto;">
+                    <span class="class-radio-btn-container" style="margin: 0px 5px 0px 20px;">
+                        <input type="radio" id="adventurer-radio-btn" name="character_class">
+                        <img src="/imgs/ui/1593835568.png" class="adventurer-class-icon" style="left: -214px;">
+                    </span>
+                    <span class="class-radio-btn-container">
+                        <input type="radio" id="melee-radio-btn" name="character_class" checked>
+                        <img src="/imgs/ui/1593835568.png" class="melee-def-icon" style="left: -180px;">
+                    </span>
+
+                    <span class="class-radio-btn-container">
+                        <input type="radio" id="ranged-radio-btn" name="character_class">
+                        <img src="/imgs/ui/1593835568.png" class="ranged-def-icon" style="left: -160px;">
+                    </span>
+
+                    <span class="class-radio-btn-container">
+                        <input type="radio" id="mage-radio-btn" name="character_class">
+                        <img src="/imgs/ui/1593835568.png" class="mage-def-icon" style="left: -160px;">
+                    </span>
+
+                    <span class="class-radio-btn-container">
+                        <input type="radio" id="artist-radio-btn" name="character_class">
+                        <img src="/imgs/ui/1593835784.png" class="martial-artist-class-icon" style="left: -400px;">
+                    </span>
+
+
+                    <table id="character-config-table" style="margin: auto;">
+                        <tr>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="mask-slot" class="character-slot" eqslot="9">
+                                <img src="" class="weared-item clickable" eqslot="9">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="hat-slot" class="character-slot" eqslot="2">
+                                <img src="" class="weared-item clickable" eqslot="2">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="fairy-slot" class="character-slot" eqslot="10">
+                                <img src="" class="weared-item clickable" eqslot="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="main-weapon-slot" class="character-slot"
+                                    eqslot="0">
+                                <img src="" class="weared-item clickable" eqslot="0">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835617.png" id="sp-slot" class="character-slot" eqslot="12">
+                                <img src="" class="weared-item clickable" eqslot="12">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="secondary-weapon-slot" class="character-slot"
+                                    eqslot="5">
+                                <img src="" class="weared-item clickable" eqslot="5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="glove-slot" class="character-slot" eqslot="3">
+                                <img src="" class="weared-item clickable" eqslot="3">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="armor-slot" class="character-slot" eqslot="1">
+                                <img src="" class="weared-item clickable" eqslot="1">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="shoe-slot" class="character-slot" eqslot="4">
+                                <img src="" class="weared-item clickable" eqslot="4">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="ring-slot" class="character-slot" eqslot="7">
+                                <img src="" class="weared-item clickable" eqslot="7">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="necklace-slot" class="character-slot" eqslot="6">
+                                <img src="" class="weared-item clickable" eqslot="6">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="bracelet-slot" class="character-slot" eqslot="8">
+                                <img src="" class="weared-item clickable" eqslot="8">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835776.png" id="costume-wings-slot" class="character-slot"
+                                    eqslot="16">
+                                <img src="" class="weared-item clickable" eqslot="16">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835784.png" id="mini-pet-slot" class="character-slot"
+                                    eqslot="17">
+                                <img src="" class="weared-item clickable" eqslot="17">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="amulet-slot" class="character-slot" eqslot="11">
+                                <img src="" class="weared-item clickable" eqslot="11">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835776.png" id="costume-weapon-slot"
+                                    class="clickable character-slot" eqslot="15">
+                                <img src="" class="weared-item clickable" eqslot="15">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="costume-hat-slot"
+                                    class="clickable character-slot" eqslot="14">
+                                <img src="" class="weared-item clickable" eqslot="14">
+                            </td>
+                            <td class="character-slot-container">
+                                <img src="/imgs/ui/1593835577.png" id="costume-slot" class="clickable character-slot"
+                                    eqslot="13">
+                                <img src="" class="weared-item clickable" eqslot="13">
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="column center">
+                <h2>Enemy configuration</h2>
+
+                <div class="flex-container center" style="position:relative;">
+                    <div class="column">
+                        <img id="current-monster" class="clickable animation"
+                            src="/imgs/full_monster_sprites/0_10_2.webp"
+                            style="max-height: 100%; max-width: 100%; position: relative;">
+                    </div>
+                    <div class="column box monster-stat-container">
+                        <h3 id="monster-name-title">Monster name</h3>
+                        <h4>General</h4>
+                        <span>Level: </span>
+                        <span id="monster-level">26</span>
+                        <br>
+                        <span>Element:</span>
+                        <img id="monster-element-icon" src="/imgs/icons/17101.png" style="vertical-align: middle;">
+                        <span id="monster-element-level">80%</span>
+
+
+                        <h4>Defence stats</h4>
+                        <span style="display: inline-block; margin-bottom: 10px;">Defence level: </span>
+                        <span id="defence-level-text" style="display: inline-block; margin-bottom: 10px;">+0</span>
+                        <div id="melee-def-stat" class="def-stat-text">520
+                            <img src="/imgs/ui/1593835568.png" class="melee-def-icon">
+                        </div>
+
+                        <div id="ranged-def-stat" class="def-stat-text">480
+                            <img src="/imgs/ui/1593835568.png" class="ranged-def-icon">
+                        </div>
+
+                        <div id="magic-def-stat" class="def-stat-text">555
+                            <img src="/imgs/ui/1593835568.png" class="mage-def-icon">
+                        </div>
+                        <h4>Resistances</h4>
+                        <div id="fire-res-stat" class="def-stat-text">20%
+                            <img src="/imgs/ui/1593835577.png" class="fire-res-icon">
+                        </div>
+
+                        <div id="water-res-stat" class="def-stat-text">40%
+                            <img src="/imgs/ui/1593835577.png" class="water-res-icon">
+                        </div>
+
+                        <div id="light-res-stat" class="def-stat-text">30%
+                            <img src="/imgs/ui/1593835577.png" class="light-res-icon">
+                        </div>
+
+                        <div id="shadow-res-stat" class="def-stat-text">50%
+                            <img src="/imgs/ui/1593835577.png" class="shadow-res-icon">
+                        </div>
+                    </div>
+                    <div id="monster-dropdown" class="box smooth-hiding-transition">
+                        <input type="text" id="monster-search" name="monster-search" placeholder="Monster name"
+                            style="width: 99%;">
+                        <div id="monster-list" class="flex-container center scrollbar" style="max-height: 400px;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div>
-            <label>Critical damage:</label>
-            <output id="min_crit_dmg">0</output>
-            -
-            <output id="mmax_crit_dmg">0</output>
-        </div>
 
-        
-        <div>
-            <label>Softcrit damage:</label>
-            <output id="min_softcrit_dmg">0</output>
-            -
-            <output id="max_softcrit_dmg">0</output>
-        </div>
 
-        <div>
-            <label>Softcrit + Critical damage:</label>
-            <output id="min_softcrit_crit_dmg">0</output>
-            -
-            <output id="max_softcrit_crit_dmg">0</output>
-        </div>
-
-        <button id="calculate_btn">Calculate</button>
 
         <hr>
-    </div>
 
-    <div>
-        <h2>Character configuration</h2>
-            
+        <div class="center">
+            <h2>Damage results</h2>
+
+            <div>
+                <label>Base damage:</label>
+                <output id="min_base_dmg">0</output>
+                -
+                <output id="max_base_dmg">0</output>
+            </div>
+
+            <div>
+                <label>Critical damage:</label>
+                <output id="min_crit_dmg">0</output>
+                -
+                <output id="mmax_crit_dmg">0</output>
+            </div>
+
+
+            <div>
+                <label>Softcrit damage:</label>
+                <output id="min_softcrit_dmg">0</output>
+                -
+                <output id="max_softcrit_dmg">0</output>
+            </div>
+
+            <div>
+                <label>Softcrit + Critical damage:</label>
+                <output id="min_softcrit_crit_dmg">0</output>
+                -
+                <output id="max_softcrit_crit_dmg">0</output>
+            </div>
+
+            <button id="calculate_btn">Calculate</button>
+
+            <hr>
+        </div>
+
+        <div>
+            <h2>Character configuration</h2>
+
             <div>
                 <label for="character_level">Level:</label>
                 <input id="character_level" type="number" value="1" min="1" max="99">
@@ -334,7 +379,7 @@
             </div>
 
             <h3>Physical Damage</h3>
-    
+
             <div>
                 <label for="weapon_level">Weapon upgrade level:</label>
                 <input id="weapon_level" type="number" value="0" min="0" max="10">
@@ -367,9 +412,9 @@
                 <label for="skill_base_dmg">Skill power increase</label>
                 <input id="skill_base_dmg" type="number" value="0" min="0">
             </div>
-    
+
             <h3>Elemental Damage</h3>
-    
+
             <div>
                 <label for="weapon_elemental_energy">Weapon elemental energies increase:</label>
                 <input id="weapon_elemental_energy" type="number" value="0" min="0">
@@ -399,6 +444,7 @@
                     <option value="shadow">Shadow</option>
                 </select>
             </div>
-    </div>
+        </div>
 </body>
+
 </html>

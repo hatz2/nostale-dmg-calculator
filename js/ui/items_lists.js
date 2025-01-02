@@ -55,6 +55,8 @@ function onItemClicked(event) {
     // Get the itemdata
     const item = items_dict.get(vnum);
 
+    // console.log(item);
+
     // Get the img node of the weared item on top of the eq slot
     const weared_item_img = document.querySelector(`.weared-item[eqslot="${selected_eq_slot}"]`);
 

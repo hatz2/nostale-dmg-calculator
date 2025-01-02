@@ -3,13 +3,13 @@ import { NameParser } from "./parsers/name_parser.js";
 import { getIdleMonsterImgPaths } from "./parsers/imgs/monster_img_parser.js";
 import { ItemDatParser } from "./parsers/dat/item_parser.js";
 import { initMonsterListUI } from "./ui/monster_list.js";
-import { ClassFlag, ItemType } from "./enums.js";
 import { initItemListUI } from "./ui/items_lists.js";
 import { BCardDatParser } from "./parsers/dat/bcard_parser.js";
 import { initWeaponInspector } from "./ui/weapon_inspector.js";
 import { initDraggableElements } from "./ui/dragable_element.js";
 import { initSpInspector } from "./ui/sp_inspector.js";
 import { initClassSwapRadioButtons } from "./ui/class_swap.js";
+import { initFairyInspector } from "./ui/fairy_inspector.js";
 
 var monsters;
 var monster_sprite_data;
@@ -41,6 +41,7 @@ async function onLoad() {
     initItemListUI(items);
     initWeaponInspector(bcards);
     initSpInspector();
+    initFairyInspector(bcards);
     initDraggableElements();
     initClassSwapRadioButtons();
 }

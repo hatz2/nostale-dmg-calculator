@@ -214,13 +214,13 @@ function getRequiredClassText(class_flag) {
 }
 
 function upgradeLevelChange() {
-    character_config.getItem(current_item_slot).data.upgrade_level = this.value;
+    character_config.getItem(current_item_slot).data.upgrade_level = parseInt(this.value);
 }
 
 function dmgMinChange() {
-    character_config.getItem(current_item_slot).data.dmg_min = this.value;
+    character_config.getItem(current_item_slot).data.dmg_min = parseInt(this.value);
 }
 
 function dmgMaxChange() {
-    character_config.getItem(current_item_slot).data.dmg_max = this.value;
+    character_config.getItem(current_item_slot).data.dmg_max = parseInt(this.value);
 }

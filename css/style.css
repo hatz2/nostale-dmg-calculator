@@ -424,7 +424,7 @@ img {
 }
 
 .item-inspector-frame {
-    max-width: 295px; 
+    max-width: 310px; 
     position: absolute; 
     font-size: 12px; 
     color: white; 
@@ -476,7 +476,7 @@ img {
 }
 
 .item-inspector-dmg-numbers {
-    max-width: 40px; 
+    max-width: 45px; 
 }
 
 .item-inspector-light-orange-text {

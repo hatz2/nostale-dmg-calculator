@@ -1,4 +1,4 @@
-import { InventoryTab, ItemType } from "../../enums.js";
+import { AccessorySubType, InventoryTab, ItemType } from "../../enums.js";
 import { BuffInfo } from "./buff_info.js";
 import { DatObject, DatParser, DatRow } from "./dat_parser.js";
 
@@ -40,6 +40,12 @@ class Item extends DatObject {
     isWeapon() {
         return this.inventory_tab == InventoryTab.EQUIP &&
             this.item_type == ItemType.WEAPON;
+    }
+
+    isFairy() {
+        return this.inventory_tab == InventoryTab.EQUIP &&
+            this.item_type == ItemType.ACCESSORY &&
+            this.item_subtype == AccessorySubType.FAIRY;
     }
 }
 
@@ -191,6 +197,9 @@ class DataRow extends DatRow {
         if (obj.isWeapon()) {
             this.applyToWeapon(obj);
         }
+        else if (obj.isFairy()) {
+            this.applyToFairy(obj);
+        }
     }
 
     applyToWeapon(obj) {
@@ -201,6 +210,11 @@ class DataRow extends DatRow {
         obj.data.crit_chance = this.getInt(5);
         obj.data.crit_damage = this.getInt(6);
         obj.data.upgrade_level = this.getInt(9);
+    }
+
+    applyToFairy(obj) {
+        obj.data.level = this.getInt(2);
+        obj.data.element = this.getInt(1);
     }
 }
 
