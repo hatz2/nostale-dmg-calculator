@@ -54,6 +54,11 @@ class Item extends DatObject {
         return this.inventory_tab == InventoryTab.EQUIP &&
             this.item_type == ItemType.SPECIALIST;
     }
+
+    isEquipment() {
+        return this.inventory_tab == InventoryTab.EQUIP &&
+            this.item_type == ItemType.EQUIPMENT;
+    }
 }
 
 class ItemDatParser extends DatParser {
@@ -215,6 +220,9 @@ class DataRow extends DatRow {
         else if (obj.isSp()) {
             this.applyToSp(obj);
         }
+        else if (obj.isEquipment()) {
+            this.applyToEquipment(obj);
+        }
     }
 
     applyToWeapon(obj) {
@@ -234,6 +242,10 @@ class DataRow extends DatRow {
 
     applyToSp(obj) {
         obj.data.morph_id = this.getInt(13);
+    }
+
+    applyToEquipment(obj) {
+        obj.data.time_left = this.getInt(12);
     }
 }
 

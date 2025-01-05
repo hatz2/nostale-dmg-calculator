@@ -1,6 +1,7 @@
 import { character_config } from "../calculator/character_config.js";
 import { AccessorySubType, ArmorSubType, ClassFlag, EquipmentSubType, EquipSlot, InventoryTab, ItemType, SpecialistSubType, WeaponSubType } from "../enums.js";
 import { hideFairyInspector } from "./fairy_inspector.js";
+import { resetSkill } from "./skill_list.js";
 import { hideSpInspector } from "./sp_inspector.js";
 import { hideWeaponInspector } from "./weapon_inspector.js";
 
@@ -23,6 +24,9 @@ function init(items) {
     const item_dropdown = document.getElementById("item-dropdown");
 
     items.forEach(item => {
+        if (item.name == undefined)
+            return;
+
         createItemUIandAddToDropdown(item, item_dropdown);
         items_dict.set(item.vnum, item);
     });
@@ -69,6 +73,9 @@ function onItemClicked(event) {
     // Set the item data in the charcter config structure
     const eqslot = parseInt(weared_item_img.getAttribute("eqslot"));
     character_config.setItem(eqslot, item);
+
+    // If we click an SP reset the skill widget
+    resetSkill();
 }
 
 function initCharacterSlotCallbacks(items) {

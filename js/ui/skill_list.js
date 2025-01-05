@@ -194,3 +194,10 @@ function onSkillClicked(event) {
     // Set the item data in the charcter config structure
     character_config.skill = skill;
 }
+
+export function resetSkill() {
+    const img = document.getElementById("equiped-skill");
+    img.removeAttribute("src");
+    img.setAttribute("title", "");
+    character_config.skill = undefined;
+}
