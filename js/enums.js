@@ -32,6 +32,9 @@ const AttackType = {
     MELEE: 0,
     RANGED: 1,
     MAGIC: 2,
+    OTHER: 3,
+    CHARGE: 4,
+    DARSH: 5,
 }
 
 const InventoryTab = {
@@ -121,4 +124,27 @@ const EquipSlot = {
     WEAPON_COSTUME: 15,
     WINGS_COSTUME: 16,
     MINIPET: 17,
+}
+
+export const SkillType = {
+    PASSIVE: 0,
+    PLAYER_SKILL: 1,
+    SKILL_UPGRADE: 2,
+    EMOTE: 3,
+    MONSTER_SKILL: 4,
+    PARTNER_SKILL: 5,
+}
+
+export const SkillTargetType = {
+    TARGET: 0,
+    SELF: 1,
+    TARGET_OR_SELF: 2,
+    NO_TARGET: 3,
+}
+
+export const SkillTargetGroup = {
+    ENEMY: 0,
+    ENEMY_DEBUFF: 1,
+    ALLY_BUFF: 2,
+    NONE: 3,
 }

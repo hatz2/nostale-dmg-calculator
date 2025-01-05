@@ -11,6 +11,7 @@ import { initSpInspector } from "./ui/sp_inspector.js";
 import { initClassSwapRadioButtons } from "./ui/class_swap.js";
 import { initFairyInspector } from "./ui/fairy_inspector.js";
 import { SkillDatParser } from "./parsers/dat/skill_parser.js";
+import { initSkillListUI } from "./ui/skill_list.js";
 
 var monsters;
 var monster_sprite_data;
@@ -32,10 +33,10 @@ async function onLoad() {
     items = await initDatObjCollection("/data/Item.dat", item_names, ItemDatParser);
     bcards = await initDatObjCollection("/data/BCard.dat", bcard_names, BCardDatParser);
     skills = await initDatObjCollection("/data/Skill.dat", skill_names, SkillDatParser)
+    
     // console.log(bcards);
     // console.log(items);
-
-    console.log(skills);
+    // console.log(skills);
 
     const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
@@ -43,6 +44,7 @@ async function onLoad() {
 
     initMonsterListUI(monsters, monster_img_paths);
     initItemListUI(items);
+    initSkillListUI(skills);
     initWeaponInspector(bcards);
     initSpInspector();
     initFairyInspector(bcards);

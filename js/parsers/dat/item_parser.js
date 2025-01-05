@@ -20,7 +20,8 @@ class Item extends DatObject {
         attack_type, 
         required_class,
         is_limited,
-        is_hero_eq
+        is_hero_eq,
+        visual_change_id,
     ) {
         super(vnum, name);
         this.price = price;
@@ -33,6 +34,7 @@ class Item extends DatObject {
         this.required_class = required_class;
         this.is_limited = is_limited;
         this.is_hero_eq = is_hero_eq;
+        this.visual_change_id = visual_change_id;
         this.buffs = [];
         this.data = {};
     }
@@ -46,6 +48,11 @@ class Item extends DatObject {
         return this.inventory_tab == InventoryTab.EQUIP &&
             this.item_type == ItemType.ACCESSORY &&
             this.item_subtype == AccessorySubType.FAIRY;
+    }
+
+    isSp() {
+        return this.inventory_tab == InventoryTab.EQUIP &&
+            this.item_type == ItemType.SPECIALIST;
     }
 }
 
@@ -97,6 +104,7 @@ class IndexRow extends DatRow {
         obj.item_subtype = this.getItemSubType();
         obj.eq_slot = this.getEqSlot();
         obj.icon_id = this.getIconId();
+        obj.visual_change_id = this.getVisualChangeId();
     }
 
     getInventoryTab() {
@@ -117,6 +125,10 @@ class IndexRow extends DatRow {
 
     getIconId() {
         return this.getInt(5);
+    }
+
+    getVisualChangeId() {
+        return this.getInt(6);
     }
 }
 
@@ -200,6 +212,9 @@ class DataRow extends DatRow {
         else if (obj.isFairy()) {
             this.applyToFairy(obj);
         }
+        else if (obj.isSp()) {
+            this.applyToSp(obj);
+        }
     }
 
     applyToWeapon(obj) {
@@ -215,6 +230,10 @@ class DataRow extends DatRow {
     applyToFairy(obj) {
         obj.data.level = this.getInt(2);
         obj.data.element = this.getInt(1);
+    }
+
+    applyToSp(obj) {
+        obj.data.morph_id = this.getInt(13);
     }
 }
 

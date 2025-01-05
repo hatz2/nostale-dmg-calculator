@@ -24,6 +24,7 @@ class CharacterConfig {
         this.costume_weapon = undefined;
         this.costume_hat = undefined;
         this.costume_body = undefined;
+        this.skill = undefined;
         this.sp_config = new SpConfig();
     }
 

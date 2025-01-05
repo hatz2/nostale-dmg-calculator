@@ -56,7 +56,7 @@ function onItemClicked(event) {
     // Get the itemdata
     const item = items_dict.get(vnum);
 
-    // console.log(item);
+    console.log(item);
 
     // Get the img node of the weared item on top of the eq slot
     const weared_item_img = document.querySelector(`.weared-item[eqslot="${selected_eq_slot}"]`);
@@ -235,7 +235,7 @@ function itemPassFilter(item, filter, required_class, eq_slot) {
     return filtered;
 }
 
-function getSelectedClass() {
+export function getSelectedClass() {
     const melee_radio_btn = document.getElementById("melee-radio-btn");
     const ranged_radio_btn = document.getElementById("ranged-radio-btn");
     const mage_radio_btn = document.getElementById("mage-radio-btn");

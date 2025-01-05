@@ -12,6 +12,8 @@ export class Skill extends DatObject {
         this.uses_secondary_weapon = undefined;
         this.element = undefined;
         this.icon_id = undefined;
+        this.targetting_type = undefined;
+        this.target_group = undefined;
         this.buffs = []
 
     }
@@ -25,6 +27,7 @@ export class SkillDatParser extends DatParser {
             "TYPE": TypeRow,
             "EFFECT": EffectRow,
             "BASIC": BasicRow,
+            "TARGET": TargetRow,
         }
 
         super(data, names_map, row_parsers, Skill);
@@ -79,5 +82,12 @@ class BasicRow extends DatRow {
         ];
 
         return values;
+    }
+}
+
+class TargetRow extends DatRow {
+    applyTo(obj) {
+        obj.targetting_type = this.getInt(1);
+        obj.target_group = this.getInt(5);
     }
 }
