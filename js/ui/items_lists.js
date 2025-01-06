@@ -75,7 +75,8 @@ function onItemClicked(event) {
     character_config.setItem(eqslot, item);
 
     // If we click an SP reset the skill widget
-    resetSkill();
+    if (eqslot == EquipSlot.SP)
+        resetSkill();
 }
 
 function initCharacterSlotCallbacks(items) {

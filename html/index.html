@@ -47,8 +47,12 @@
 
     <div id="sp-point-inspector" class="center smooth-hiding-transition" draggable-elem="true">
         <img src="/imgs/ui/sp_edit.png">
-        <!-- <label style="position: absolute; left: 70px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Points</label>
-    <label style="position: absolute; left: 125px; top: 40px; color: rgb(124, 143, 245); font-size: 13px;">Perfection</label> -->
+        <label style="position: absolute; left: 70px; top: 45px; color: rgb(124, 143, 245); font-size: 13px;">Points</label>
+        <label style="position: absolute; left: 125px; top: 45px; color: rgb(124, 143, 245); font-size: 13px;">Perfection</label>
+        <label id="sp-attack" style="position: absolute; left: 240px; top: 85px; font-size: 13px" class="sp-perf-color">+ 0</label>
+        <label id="sp-defence" style="position: absolute; left: 240px; top: 130px; font-size: 13px" class="sp-perf-color">+ 0</label>
+        <label id="sp-element" style="position: absolute; left: 240px; top: 175px; font-size: 13px" class="sp-perf-color">+ 0</label>
+        <label id="sp-hpmp" style="position: absolute; left: 240px; top: 220px; font-size: 13px" class="sp-perf-color">+ 0</label>
         <div id="sp-cross-close-btn" class="clickable"></div>
         <div id="reset-points-btn" class="clickable"></div>
         <div id="sp-close-blue-btn" class="clickable"></div>
@@ -284,44 +288,44 @@
                             style="max-height: 100%; max-width: 100%; position: relative;">
                     </div>
                     <div class="column box monster-stat-container">
-                        <h3 id="monster-name-title">Monster name</h3>
+                        <h3 id="monster-name-title">Baby Fox</h3>
                         <h4>General</h4>
                         <span>Level: </span>
-                        <span id="monster-level">26</span>
+                        <span id="monster-level">16</span>
                         <br>
                         <span>Element:</span>
-                        <img id="monster-element-icon" src="/imgs/icons/17101.png" style="vertical-align: middle;">
-                        <span id="monster-element-level">80%</span>
+                        <img id="monster-element-icon" src="/imgs/icons/17100.png" style="vertical-align: middle;">
+                        <span id="monster-element-level">0%</span>
 
 
                         <h4>Defence stats</h4>
                         <span style="display: inline-block; margin-bottom: 10px;">Defence level: </span>
                         <span id="defence-level-text" style="display: inline-block; margin-bottom: 10px;">+0</span>
-                        <div id="melee-def-stat" class="def-stat-text">520
+                        <div id="melee-def-stat" class="def-stat-text">56
                             <img src="/imgs/ui/1593835568.png" class="melee-def-icon">
                         </div>
 
-                        <div id="ranged-def-stat" class="def-stat-text">480
+                        <div id="ranged-def-stat" class="def-stat-text">35
                             <img src="/imgs/ui/1593835568.png" class="ranged-def-icon">
                         </div>
 
-                        <div id="magic-def-stat" class="def-stat-text">555
+                        <div id="magic-def-stat" class="def-stat-text">50
                             <img src="/imgs/ui/1593835568.png" class="mage-def-icon">
                         </div>
                         <h4>Resistances</h4>
-                        <div id="fire-res-stat" class="def-stat-text">20%
+                        <div id="fire-res-stat" class="def-stat-text">13%
                             <img src="/imgs/ui/1593835577.png" class="fire-res-icon">
                         </div>
 
-                        <div id="water-res-stat" class="def-stat-text">40%
+                        <div id="water-res-stat" class="def-stat-text">0%
                             <img src="/imgs/ui/1593835577.png" class="water-res-icon">
                         </div>
 
-                        <div id="light-res-stat" class="def-stat-text">30%
+                        <div id="light-res-stat" class="def-stat-text">1%
                             <img src="/imgs/ui/1593835577.png" class="light-res-icon">
                         </div>
 
-                        <div id="shadow-res-stat" class="def-stat-text">50%
+                        <div id="shadow-res-stat" class="def-stat-text">0%
                             <img src="/imgs/ui/1593835577.png" class="shadow-res-icon">
                         </div>
                     </div>

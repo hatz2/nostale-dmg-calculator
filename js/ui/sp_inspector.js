@@ -1,4 +1,5 @@
 import { character_config } from "../calculator/character_config.js";
+import { calculateAttackAddition, calculateDefenceAddition, calculateElementAddition, calculateHpMpAddition } from "../calculator/sp_stats.js";
 
 
 export function initSpInspector() {
@@ -18,47 +19,91 @@ function initInputBindings() {
     const element_perf = document.getElementById("element-perf");
     const hp_mp_perf = document.getElementById("hp-mp-perf");
 
-    attack.addEventListener("click", setAttackPoints);
-    defence.addEventListener("click", setDefencePoints);
-    element.addEventListener("click", setElementPoints);
-    hp_mp.addEventListener("click", setHpMpPoints);
+    attack.addEventListener("input", setAttackPoints);
+    defence.addEventListener("input", setDefencePoints);
+    element.addEventListener("input", setElementPoints);
+    hp_mp.addEventListener("input", setHpMpPoints);
 
-    attack_perf.addEventListener("click", setAttackPerf);
-    defence_perf.addEventListener("click", setDefencePerf);
-    element_perf.addEventListener("click", setElementPerf);
-    hp_mp_perf.addEventListener("click", setHpMpPerf);
+    attack_perf.addEventListener("input", setAttackPerf);
+    defence_perf.addEventListener("input", setDefencePerf);
+    element_perf.addEventListener("input", setElementPerf);
+    hp_mp_perf.addEventListener("input", setHpMpPerf);
 }
 
 function setAttackPoints() {
     character_config.sp_config.attack = this.value;
+    showAttackIncrease();
 }
 
 function setDefencePoints() {
     character_config.sp_config.defence = this.value;
+    showDefenceIncrease();
 }
 
 function setElementPoints() {
     character_config.sp_config.element = this.value;
+    showElementIncrease();
 }
 
 function setHpMpPoints() {
     character_config.sp_config.hp_mp = this.value;
+    showHpMpIncrease();
 }
 
 function setAttackPerf() {
     character_config.sp_config.attack_perf = this.value;
+    showAttackIncrease();
 }
 
 function setDefencePerf() {
     character_config.sp_config.defence_perf = this.value;
+    showDefenceIncrease();
 }
 
 function setElementPerf() {
-    character_config.sp_config.element = this.value;
+    character_config.sp_config.element_perf = this.value;
+    showElementIncrease();
 }
 
 function setHpMpPerf() {
     character_config.sp_config.hp_mp_perf = this.value;
+    showHpMpIncrease();
+}
+
+function showAttackIncrease() {
+    document.getElementById("sp-attack").innerText = `+ ${
+        calculateAttackAddition(
+            character_config.sp_config.attack, 
+            character_config.sp_config.attack_perf
+        )
+    }`;
+}
+
+function showDefenceIncrease() {
+    document.getElementById("sp-defence").innerText = `+ ${
+        calculateDefenceAddition(
+            character_config.sp_config.defence,
+            character_config.sp_config.defence_perf
+        )
+    }`;
+}
+
+function showElementIncrease() {
+    document.getElementById("sp-element").innerText = `+ ${
+        calculateElementAddition(
+            character_config.sp_config.element,
+            character_config.sp_config.element_perf
+        )
+    }`;
+}
+
+function showHpMpIncrease() {
+    document.getElementById("sp-hpmp").innerText = `+ ${
+        calculateHpMpAddition(
+            character_config.sp_config.hp_mp,
+            character_config.sp_config.hp_mp_perf
+        )
+    }`;
 }
 
 function initButtonBindings() {
