@@ -34,7 +34,7 @@ async function onLoad() {
     bcards = await initDatObjCollection("/data/BCard.dat", bcard_names, BCardDatParser);
     skills = await initDatObjCollection("/data/Skill.dat", skill_names, SkillDatParser)
     
-    // console.log(bcards);
+    console.log(bcards);
     // console.log(items);
     // console.log(skills);
 
