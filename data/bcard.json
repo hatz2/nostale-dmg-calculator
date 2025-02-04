@@ -1,0 +1,5009 @@
+[
+    {
+        "vnum": 1,
+        "name": "Special Attack",
+        "subj": [
+            "Cancel attack",
+            "Melee attack is ineffective.",
+            "Ranged attack is ineffective.",
+            "Magic is not allowed.",
+            "Targeting is ineffective."
+        ],
+        "list": [
+            [
+                "No attack possible",
+                "No attack possible"
+            ],
+            [
+                "Melee attacks are not allowed.",
+                "Melee attacks are not allowed."
+            ],
+            [
+                "Ranged attacks are not allowed.",
+                "Ranged attacks are not allowed."
+            ],
+            [
+                "Magic attacks are not allowed.",
+                "Magic attacks are not allowed."
+            ],
+            [
+                "The attack fails if you miss the target. (Excluding magic attacks.)",
+                "The attack fails if you miss the target. (Excluding magic attacks.)"
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 2,
+        "name": "Special Defence",
+        "subj": [
+            "Interrupts defence",
+            "Melee defence is ineffective.",
+            "Remote defence is ineffective.",
+            "Magic defence is ineffective.",
+            "Interrupts dodge"
+        ],
+        "list": [
+            [
+                "All defence is nullified.",
+                "All defence is nullified."
+            ],
+            [
+                "Melee defence is nullified.",
+                "Melee defence is nullified."
+            ],
+            [
+                "Ranged defence is nullified.",
+                "Ranged defence is nullified."
+            ],
+            [
+                "Magic defence is nullified.",
+                "Magic defence is nullified."
+            ],
+            [
+                "No defence possible",
+                "No defence possible"
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 3,
+        "name": "Changes attack power.",
+        "subj": [
+            "Changes all attacks.",
+            "Changes melee attack.",
+            "Changes ranged attack.",
+            "Changes magic attacks.",
+            "Changes attack level."
+        ],
+        "list": [
+            [
+                "All attacks are increased by %s.",
+                "All attacks are decreased by %s."
+            ],
+            [
+                "Melee attack is increased by %s.",
+                "Melee attack is reduced by %s."
+            ],
+            [
+                "Ranged attack is increased by %s.",
+                "Ranged attack is reduced by %s."
+            ],
+            [
+                "Magic attack power is increased by %s.",
+                "Magic attack power is decreased by %s."
+            ],
+            [
+                "Attack level is increased by %s.",
+                "Attack level is decreased by %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 4,
+        "name": "Changes the target.",
+        "subj": [
+            "Changes all targets.",
+            "Changes close target.",
+            "Changes distant target.",
+            "Changes concentration.",
+            null
+        ],
+        "list": [
+            [
+                "Hit rate of all attacks is increased by %s.",
+                "Hit rate of all attacks is decreased by %s."
+            ],
+            [
+                "Hit rate of melee attacks is increased by %s.",
+                "Hit rate of melee attacks is decreased by %s."
+            ],
+            [
+                "Hit rate of ranged attacks is increased by %s.",
+                "Hit rate of ranged attacks is decreased by %s."
+            ],
+            [
+                "Concentration is increased by %s during the magic attack.",
+                "Concentration is decreased by %s during the magic attack."
+            ],
+            [
+                "Damage to monsters is increased by %s%%.",
+                null
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 5,
+        "name": "Changes critical attack.",
+        "subj": [
+            "Changes the chance of inflicting a critical hit.",
+            "Changes critical attack damage.",
+            "Double Damage",
+            "Changes enemy's critical attack chance.",
+            "Changes enemy's critical attack damage."
+        ],
+        "list": [
+            [
+                "Chance of inflicting critical hits is increased by %s%%.",
+                "Probability of causing a critical hit is reduced by %s%%."
+            ],
+            [
+                "Increases damage from critical hits by %s%%.",
+                "When inflicting critical hits, damage is reduced by %s%%."
+            ],
+            [
+                "Increases damage with a probability of %s%% by %s%%.",
+                "On attack there is a %s%% chance of damage being reduced by %s%%."
+            ],
+            [
+                "The chance of receiving a critical hit is increased by %s%%.",
+                "Probability to receive critical hits is decreased by %s%%."
+            ],
+            [
+                "Damage taken from critical hits is increased by %s%%.",
+                "Damage from critical hits is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 6,
+        "name": "Special Critical Attack",
+        "subj": [
+            "Can carry out a guaranteed critical attack.",
+            "Cannot carry out any guaranteed critical attacks.",
+            "Always receives critical hits.",
+            "Sometimes receives critical hits.",
+            "Regular chance of critical hits."
+        ],
+        "list": [
+            [
+                "Always inflicts critical hits.",
+                "Always inflicts critical hits."
+            ],
+            [
+                "Never inflicts critical hits.",
+                "Never inflicts critical hits."
+            ],
+            [
+                "Always receives critical hits.",
+                "Always receives critical hits."
+            ],
+            [
+                "Never receives critical hits.",
+                "Never receives critical hits."
+            ],
+            [
+                "Inflicts critical hits with a chance of %s%%.",
+                "Receives a critical hit with the chance of %s%%."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "vnum": 7,
+        "name": "Changes the element.",
+        "subj": [
+            "Changes the fire element.",
+            "Changes the water element.",
+            "Changes the light element.",
+            "Changes the shadow element.",
+            "Changes all elements."
+        ],
+        "list": [
+            [
+                "Fire element is increased by %s.",
+                "Fire element is decreased by %s."
+            ],
+            [
+                "Water element is increased by %s.",
+                "Water element is decreased by %s."
+            ],
+            [
+                "Light element is increased by %s.",
+                "Light element is decreased by %s."
+            ],
+            [
+                "Shadow element is increased by %s.",
+                "Shadow element is decreased by %s."
+            ],
+            [
+                "All element energies are increased by %s.",
+                "All element energies are reduced by %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 8,
+        "name": "Increases damage.",
+        "subj": [
+            "Increases probability.",
+            "Changes the fire element.",
+            "Changes the water element.",
+            "Changes the light element.",
+            "Changes the shadow element."
+        ],
+        "list": [
+            [
+                "Provides a %s%% chance to increase attack power by %s%%.",
+                "Provides a %s%% chance to reduce damage by %s%%."
+            ],
+            [
+                "Fire element is increased by %s.",
+                "Fire element is decreased by %s."
+            ],
+            [
+                "Water element is increased by %s.",
+                "Water element is decreased by %s."
+            ],
+            [
+                "Light element is increased by %s.",
+                "Light element is decreased by %s."
+            ],
+            [
+                "Shadow element is increased by %s.",
+                "Shadow element is decreased by %s."
+            ]
+        ],
+        "desc": [
+            "2",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 9,
+        "name": "Changes defence power.",
+        "subj": [
+            "Changes all defence powers.",
+            "Changes melee defence.",
+            "Changes ranged defence.",
+            "Changes magic defence.",
+            "Changes defence level."
+        ],
+        "list": [
+            [
+                "All defence powers are increased by %s.",
+                "All defence powers are decreased by %s."
+            ],
+            [
+                "Melee defence is increased by %s.",
+                "Melee defence is decreased by %s."
+            ],
+            [
+                "Ranged defence is increased by %s.",
+                "Ranged defence is decreased by %s."
+            ],
+            [
+                "Magic defence is increased by %s.",
+                "Magic defence is reduced by %s."
+            ],
+            [
+                "Defence level is increased by %s.",
+                "Defence level is decreased by %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 10,
+        "name": "Changes dodge and defence power on a percentage basis.",
+        "subj": [
+            "Changes all dodging.",
+            "Changes dodging of melee attacks.",
+            "Changes dodging of remote attacks.",
+            "Changes defence power on a percentage basis.",
+            null
+        ],
+        "list": [
+            [
+                "Dodge is increased by %s.",
+                "Dodge is decreased by %s."
+            ],
+            [
+                "Dodging of melee attacks is increased by %s.",
+                "Dodging of melee attacks is decreased by %s."
+            ],
+            [
+                "Dodging of ranged attacks is increased by %s.",
+                "Dodging of ranged attacks is decreased by %s."
+            ],
+            [
+                "Defence is increased by %s%%.",
+                "Defence power is reduced by %s%%."
+            ],
+            [
+                "Damage to low-level monsters in the Celestial Lair and Land of Life is increased by %s%%.",
+                "Damage from low-level monsters in the Celestial Lair and Land of Life is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 11,
+        "name": "Changes defence.",
+        "subj": [
+            "Changes all defence types.",
+            "Changes melee defence.",
+            "Changes ranged defence.",
+            "Changes magic defence.",
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance that damage taken from all attacks is increased by %s%%.",
+                "There is a %s%% chance that damage from all attacks is reduced by %s%%."
+            ],
+            [
+                "There is a %s%% chance that damage taken from melee attacks is increased by %s%%.",
+                "There is a %s%% chance that damage from melee attacks is reduced by %s%%."
+            ],
+            [
+                "There is a %s%% chance that damage taken from ranged attacks is increased by %s%%.",
+                "There is a %s%% chance that damage from ranged attacks is reduced by %s%%."
+            ],
+            [
+                "There is a %s%% chance that damage taken from magic attacks is increased by %s%%.",
+                "There is a %s%% chance that damage from magic attacks is reduced by %s%%."
+            ],
+            [
+                "Final damage from incoming critical hits is reduced by %s%% per critical hit (max. %s hits).",
+                "Final damage from incoming critical hits is reduced by %s%% per critical hit (max. %s hits)."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 12,
+        "name": "Changes absorption.",
+        "subj": [
+            "Changes all absorption.",
+            "Changes melee absorption.",
+            "Changes ranged absorption.",
+            "Changes magic absorption.",
+            null
+        ],
+        "list": [
+            [
+                "All attacks below level (+%s) cause %s%% more damage.",
+                "All attacks below level (+%s) cause %s%% less damage."
+            ],
+            [
+                "Melee attacks below level (+%s) cause %s%% more damage.",
+                "Melee attacks below level (+%s) cause %s%% less damage."
+            ],
+            [
+                "Ranged attacks below level (+%s) cause %s%% more damage.",
+                "Ranged attacks below level (+%s) cause %s%% less damage."
+            ],
+            [
+                "Magic attacks below level (+%s) cause %s%% more damage.",
+                "Magic attacks below level (+%s) cause %s%% less damage."
+            ],
+            [
+                "Absorb %s%% of your max HP as damage.",
+                "Absorb %s%% of your max HP as damage."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 13,
+        "name": "Changes elemental resistance.",
+        "subj": [
+            "Changes all resistances.",
+            "Changes fire resistance.",
+            "Changes water resistance.",
+            "Changes light resistance.",
+            "Changes shadow resistance."
+        ],
+        "list": [
+            [
+                "All elemental resistance is increased by %s.",
+                "All elemental resistances are decreased by %s."
+            ],
+            [
+                "Fire resistance is increased by %s.",
+                "Fire resistance is decreased by %s."
+            ],
+            [
+                "Water resistance is increased by %s.",
+                "Water resistance is decreased by %s."
+            ],
+            [
+                "Light resistance is increased by %s.",
+                "Light resistance is decreased by %s."
+            ],
+            [
+                "Shadow resistance is increased by %s.",
+                "Shadow resistance is decreased by %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 14,
+        "name": "Changes enemy's resistences.",
+        "subj": [
+            "Changes enemy's resistences.",
+            "Changes enemy's fire resistance.",
+            "Changes enemy's water resistance.",
+            "Changes enemy's light resistance.",
+            "Change opponent's shadow resistance."
+        ],
+        "list": [
+            [
+                "Increases the enemy's elemental resistances by %s.",
+                "Reduces the enemy's elemental resistances by %s."
+            ],
+            [
+                "Increases the enemy's fire resistance by %s.",
+                "Reduces the enemy's fire resistance by %s."
+            ],
+            [
+                "Increases the enemy's water resistance by %s.",
+                "Reduces the enemy's water resistance by %s."
+            ],
+            [
+                "Increases the enemy's light resistance by %s.",
+                "Reduces the enemy's light resistance by %s."
+            ],
+            [
+                "Increases the enemy's shadow resistance by %s.",
+                "Reduces the enemy's shadow resistance by %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 15,
+        "name": "Changes the damage.",
+        "subj": [
+            "Changes all damage.",
+            "Changes melee damage.",
+            "Changes ranged damage.",
+            "Changes magic damage.",
+            null
+        ],
+        "list": [
+            [
+                "Damage taken from all attacks is increased by %s%%.",
+                "Damage taken is reduced by %s%%."
+            ],
+            [
+                "Damage taken from melee attacks is increased by %s%%.",
+                "Melee damage is decreased by %s%%."
+            ],
+            [
+                "Damage taken from ranged attacks is increased by %s%%.",
+                "Ranged damage is decreased by %s%%."
+            ],
+            [
+                "Damage taken from magic attacks is increased by %s%%.",
+                "Magic damage is decreased by %s%%."
+            ],
+            [
+                "Increases HP by %s%% of max. HP for every attack received (max. %s times).",
+                "Increases MP by %s%% of max. MP for every attack received (max. %s times)."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 16,
+        "name": "Prevents focus being changed and dodges ranged attacks guaranteed.",
+        "subj": [
+            "Changes the focus guaranteed.",
+            "Changes guaranteed dodge on a percentage basis.",
+            "No penalty for long range",
+            "The greater the distance, the greater the damage.",
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance that every attack hits.",
+                "There is a %s%% chance that every attack hits."
+            ],
+            [
+                "Always dodge the target with a probability of %s%%.",
+                "Always dodge the target with a probability of %s%%."
+            ],
+            [
+                "No penalty for ranged attacks at close range.",
+                "No penalty for ranged attacks at close range."
+            ],
+            [
+                "Ranged attack power increases with the distance to the enemy.",
+                "Ranged attack power increases with the distance to the enemy."
+            ],
+            [
+                "The damage from the equipped fairy is increased by %s per debuff.",
+                null
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "0",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "vnum": 17,
+        "name": "Changes morale.",
+        "subj": [
+            "Changes morale stat.",
+            "Doubles morale stat.",
+            "No impact on morale.",
+            "Changes cooldown time.",
+            "Ignores morale."
+        ],
+        "list": [
+            [
+                "Morale stat is increased by %s.",
+                "Morale stat is decreased by %s."
+            ],
+            [
+                "Morale stat is doubled.",
+                "Morale stat is halved."
+            ],
+            [
+                "No impact on morale stat.",
+                "No impact on morale stat."
+            ],
+            [
+                "Skill cooldown is increased by %s%%.",
+                "Reduces cooldown of skills by %s%%."
+            ],
+            [
+                "Ignores the enemy's morale when attacking.",
+                "Ignores the enemy's morale when attacking."
+            ]
+        ],
+        "desc": [
+            "1",
+            "0",
+            "0",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "vnum": 18,
+        "name": "Casting",
+        "subj": [
+            "Changes effect duration.",
+            "Changes mana consumption.",
+            "Changes attack speed.",
+            "Casting failed.",
+            "Interrupt casting."
+        ],
+        "list": [
+            [
+                "Effect duration is increased by %s%%.",
+                "Effect duration is decreased by %s%%."
+            ],
+            [
+                "Mana for using skills is increased by %s%%. (Includes magic.)",
+                "Mana for using skills is decreased by %s%%. (Includes magic.)"
+            ],
+            [
+                "Attack speed is increased by %s%%.",
+                "Attack speed is decreased by %s%%."
+            ],
+            [
+                "Casting skill failed (including magic)",
+                "Casting skill failed (including magic)"
+            ],
+            [
+                "Interrupt casting (including magic)",
+                "Interrupt casting (including magic)"
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 19,
+        "name": "Move",
+        "subj": [
+            "Interrupts movement",
+            "Changes movement speed.",
+            null,
+            "Increases/decreases movement speed.",
+            null
+        ],
+        "list": [
+            [
+                "Movement impossible",
+                "Movement impossible"
+            ],
+            [
+                "Movement speed is increased by %s%%.",
+                "Movement speed is decreased by %s%%."
+            ],
+            [
+                "Your movement speed is increased by %s while you are hidden.",
+                "Your movement speed is decreased by %s while you are hidden."
+            ],
+            [
+                "Movement speed is increased by %s.",
+                "Movement speed is decreased by %s."
+            ],
+            [
+                "Your speed is temporarily maximised.",
+                "Your speed is temporarily maximised."
+            ]
+        ],
+        "desc": [
+            "0",
+            "1",
+            "1",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "vnum": 20,
+        "name": "Loses Reflection and MP.",
+        "subj": [
+            null,
+            "Changes MP according to received proportional damage.",
+            "Changes HP according to received percentage damage.",
+            "Changes MP according to received proportional damage.",
+            "There is a certain chance that the remaining MP will be lost."
+        ],
+        "list": [
+            [
+                "HP is increased by %s%% of damage given.",
+                "HP is decreased by %s%% of damage given."
+            ],
+            [
+                "MP is increased by %s%% of damage given.",
+                "MP is decreased by %s%% of damage given."
+            ],
+            [
+                "Enemy's HP is increased by %s%% of the damage I have received.",
+                "Enemy's HP is decreased by %s%% of the damage I have received."
+            ],
+            [
+                "Enemy's MP is increased by %s%% of the damage I have received.",
+                "Enemy's MP is decreased by %s%% of the damage I have received."
+            ],
+            [
+                "Do not use this part.",
+                "There is a %s%% chance that %s%% of the remaining MP is lost."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 21,
+        "name": "Drain and Steal",
+        "subj": [
+            "Converts MP to HP.",
+            "Converts HP to MP.",
+            "Steals HP.",
+            "Steals MP.",
+            "Steals HP and drains MP."
+        ],
+        "list": [
+            [
+                "Receive %s HP for using %s MP.",
+                "Receive %s HP for using %s MP."
+            ],
+            [
+                "Receive %s MP for using %s HP.",
+                "Receive %s MP for using %s HP."
+            ],
+            [
+                "There's a %s%% chance of giving your enemy %s HP.",
+                "There's a %s%% chance of leeching %s HP from the enemy."
+            ],
+            [
+                "There's a %s%% chance of giving your enemy %s MP.",
+                "There's a %s%% chance of leeching %s MP from your enemy."
+            ],
+            [
+                "Converts %s of enemy's MP into HP.",
+                "Converts %s HP from enemy into your MP."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 22,
+        "name": "Healing/Burning and Casting",
+        "subj": [
+            "HP Healing/Burning",
+            "MP Healing/Burning",
+            "Changes HP while casting.",
+            "Changes HP when concentration is disrupted.",
+            "Converts as much HP into MP as is used for casting."
+        ],
+        "list": [
+            [
+                "Restores %s HP.",
+                "HP is reduced by %s."
+            ],
+            [
+                "Restores %s MP.",
+                "MP is reduced by %s."
+            ],
+            [
+                "%s HP restored while casting.",
+                "%s HP lost while casting."
+            ],
+            [
+                "%s HP is restored when spell casting is interrupted.",
+                "%s HP is lost when spell casting is interrupted."
+            ],
+            [
+                "%s%% HP is recovered by consuming MP.",
+                "Reduces HP by %s%% of MP consumed."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 23,
+        "name": "Changes HP/MP.",
+        "subj": [
+            "Changes remaining HP.",
+            "Changes remaining MP.",
+            "Changes time HP.",
+            "Changes time MP.",
+            "Additional HP/MP received"
+        ],
+        "list": [
+            [
+                "Restores %s%% of HP lost.",
+                "Reduces remaining HP by %s%%."
+            ],
+            [
+                "Restores %s%% of MP lost.",
+                "Reduces remaining MP by %s%%."
+            ],
+            [
+                "%s HP is restored.",
+                "HP is reduced by %s."
+            ],
+            [
+                "%s MP is restored.",
+                "MP is reduced by %s."
+            ],
+            [
+                "You receive an additional %s HP. (Cannot exceed %s%% of your maximum HP.)",
+                "You receive an additional %s MP. (Cannot exceed %s%% of your maximum MP.)"
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 24,
+        "name": "Specialisation and buff resistance",
+        "subj": [
+            "Special Damage",
+            "Probability of a special critical attack.",
+            "Buff resistance",
+            "PVP Specialisation",
+            "Removes the buff below a certain level."
+        ],
+        "list": [
+            [
+                "Increases damage against %s by %s.",
+                "If %s attacks a player, damage is reduced by %s."
+            ],
+            [
+                "Critical hit chance against %s is increased by %s.",
+                "If %s attacks a player, the critical hit chance is reduced by %s."
+            ],
+            [
+                "%s%% resistance to the effect: %s and lower.",
+                "%s%% resistance to the effect: %s and lower."
+            ],
+            [
+                "Increases damage in PvP by %s.",
+                "Reduces damage in PvP by %s."
+            ],
+            [
+                "There is a %s%% chance that buffs below Lv. %s will be removed.",
+                "There is a %s%% probability to remove bad effects of level %s or lower."
+            ]
+        ],
+        "desc": [
+            "5",
+            "5",
+            "4",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 25,
+        "name": "Buff",
+        "subj": [
+            "Apply/Cancel Buff",
+            "Immunity to Certain Buff Groups",
+            "Transferring buff to increase to a certain level.",
+            "Special Immunity",
+            "Disband a certain group"
+        ],
+        "list": [
+            [
+                "Has a %s%% probability of causing [%s].",
+                "There is a %s%% chance that %s will be removed."
+            ],
+            [
+                "High probability of preventing a bad effect.",
+                "High probability of preventing a bad effect."
+            ],
+            [
+                "Nearby objects above level %s are given %s.",
+                "Nearby objects below level %s are given %s."
+            ],
+            [
+                "Generates resistance to a certain effect.",
+                "Generates resistance to a certain effect."
+            ],
+            [
+                "Cancel effects for a certain group.",
+                "Counteracts effects of the poison for a certain target or group."
+            ]
+        ],
+        "desc": [
+            "4",
+            "0",
+            "4",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 26,
+        "name": "Summons",
+        "subj": [
+            "Death Summons",
+            null,
+            "Training Dummy Summons",
+            "Time-based Summons",
+            "Ghost Summons"
+        ],
+        "list": [
+            [
+                "Summons %s of %s monsters upon death.",
+                "Upon death there is a %s%% chance of summoning %s."
+            ],
+            [
+                "Summons %s x %s.",
+                "There's a %s%% chance %s will be summoned."
+            ],
+            [
+                "Summons %s of %s monsters. (Training dummy)",
+                "With a probability of %s%%, %s will be summoned. (Training dummy)"
+            ],
+            [
+                "Summons %s of %s monsters. (Disappear after a set amount of time)",
+                "With a probability of %s%%, %s will be summoned. (Disappears after a set amount of time)"
+            ],
+            [
+                "Summons a ghost with %s MP from %s monsters.",
+                "With a probability of %s%%, summons a ghost with %s MP."
+            ]
+        ],
+        "desc": [
+            "3",
+            "3",
+            "3",
+            "3",
+            "2"
+        ]
+    },
+    {
+        "vnum": 27,
+        "name": "Special Effects",
+        "subj": [
+            "Cry",
+            "Changes non-preferred attack.",
+            "Hungover",
+            "PvP Mode",
+            "Leave the background."
+        ],
+        "list": [
+            [
+                "Decreases HP of enemy that killed you by %s%%.",
+                "Increases HP of enemy that killed you by %s%%."
+            ],
+            [
+                "Changes to preferred attack with a probability of %s%%.",
+                "Changes to non-preferred attack with a probability of %s%%."
+            ],
+            [
+                "gibberish is spoken.",
+                "gibberish is spoken."
+            ],
+            [
+                "Able to fight against people in PvP mode.",
+                "Able to fight against people in PvP mode."
+            ],
+            [
+                "A shadowy figure appears.",
+                "A shadowy figure appears."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "0",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 28,
+        "name": "Capture",
+        "subj": [
+            "Capture animals",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Capture animals that are of a lower level than you to turn them into your pets.",
+                "Capture animals that are of a lower level than you to turn them into your pets."
+            ],
+            [
+                "Can hunt sheep.",
+                "Can hunt sheep."
+            ],
+            [
+                "Throw the acorn as hard as you can.",
+                "Throw the acorn as hard as you can."
+            ],
+            [
+                "The pet gains %s%% more training experience.",
+                "The pet gains %s%% more training experience."
+            ],
+            [
+                "There's a %s%% chance to get an additional essence when extracting the essence from %s-star pets.",
+                "There's a %s%% chance to get an additional essence when extracting the essence from %s-star pets."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 29,
+        "name": "Special Attribute: Damage and Explosions",
+        "subj": [
+            "Flame Explosion",
+            "Surroundings Explosion",
+            "Surroundings Attack",
+            null,
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance of causing an explosion which inflicts %s damage.",
+                "There is a %s%% chance of causing an explosion which inflicts %s damage."
+            ],
+            [
+                "Within a radius of %s fields the explosion causes %s damage.",
+                "Within a radius of %s fields the explosion causes %s damage."
+            ],
+            [
+                "Causes damage with a chance of %s%% in %s surrounding fields.",
+                "Causes damage with a chance of %s%% in %s surrounding fields."
+            ],
+            [
+                "This is not affected by buffs which reduce the cooldown.",
+                "This is not affected by buffs which reduce the cooldown."
+            ],
+            [
+                "After %s attacks, the %s effect will be removed.",
+                "After %s attacks, the %s effect will be removed."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "0",
+            "4"
+        ]
+    },
+    {
+        "vnum": 30,
+        "name": "Special Effects 2",
+        "subj": [
+            "Taunt",
+            "Teleport",
+            "Buff on Main Weapon",
+            "Buff on Secondary Weapon",
+            "Wrong Companion"
+        ],
+        "list": [
+            [
+                "Draws enemy's attention to you.",
+                "Removes enemy's attention from you."
+            ],
+            [
+                "Teleports you within a radius of %s fields.",
+                "Teleports you within a radius of %s fields."
+            ],
+            [
+                "With a probability of %s%%, using the main weapon causes %s.",
+                "With a probability of %s%%, using the main weapon causes %s."
+            ],
+            [
+                "With a probability of %s%%, using the secondary weapon causes %s.",
+                "With a probability of %s%%, using the secondary weapon causes %s."
+            ],
+            [
+                "Certain monster groups mistake you as a friend.",
+                "Certain monster groups mistake you as a friend."
+            ]
+        ],
+        "desc": [
+            "0",
+            "1",
+            "4",
+            "4",
+            "0"
+        ]
+    },
+    {
+        "vnum": 31,
+        "name": "Calculating level",
+        "subj": [
+            "Attack Level 0",
+            "Defence Level 0",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Calculated Attack Level 0",
+                "Calculated Attack Level 0"
+            ],
+            [
+                "Calculated Defence Level 0",
+                "Calculated Defence Level 0"
+            ],
+            [
+                "Melee defence is increased by %s%%.",
+                "Melee defence is reduced by %s%%."
+            ],
+            [
+                "Ranged defence is increased by %s%%.",
+                "Ranged defence is reduced by %s%%."
+            ],
+            [
+                "Magic defence is increased by %s%%.",
+                "Magic defence is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 32,
+        "name": "Recovery",
+        "subj": [
+            "Changes HP recovery.",
+            "Changes MP recovery.",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "HP recovery is increased by %s.",
+                "HP recovery is reduced by %s."
+            ],
+            [
+                "MP recovery is increased by %s.",
+                "MP recovery is decreased by %s."
+            ],
+            [
+                "MP recovery is increased by %s%%.",
+                "MP recovery is reduced by %s%%."
+            ],
+            [
+                "Increases maximum HP by %s%%.",
+                "Decreases maximum HP by %s%%."
+            ],
+            [
+                "Increases maximum MP by %s%%.",
+                "Decreases maximum MP by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 33,
+        "name": "Maximum HP/MP",
+        "subj": [
+            "Changes maximum HP.",
+            "Changes maximum MP.",
+            "Changes maximum HP on a percentage basis. (Only used by buffs.)",
+            "Changes maximum MP on a percentage basis. (Only used by buffs.)",
+            "Transformation to a hero. Maximum MP is changed on a percentage basis."
+        ],
+        "list": [
+            [
+                "Maximum HP is increased by %s.",
+                "Maximum HP is decreased by %s."
+            ],
+            [
+                "Maximum MP is increased by %s.",
+                "Maximum MP is decreased by %s."
+            ],
+            [
+                "Increases maximum HP by %s%%.",
+                "Decreases maximum HP by %s%%."
+            ],
+            [
+                "Increases maximum MP by %s%%.",
+                "Decreases maximum MP by %s%%."
+            ],
+            [
+                "Ancelloan's Apparition. Increases both maximum HP and MP by %s%%.",
+                "Ancelloan's Apparition. Reduces both maximum HP and MP by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 34,
+        "name": "Multiplies attack power.",
+        "subj": [
+            "Multiplies overall attack power.",
+            "Multiplies melee attack power.",
+            "Multiplies ranged attack power.",
+            "Multiplies magic attack power.",
+            null
+        ],
+        "list": [
+            [
+                "Increases attack power by a factor of %s.",
+                "Reduces attack power by a factor of %s."
+            ],
+            [
+                "Melee attack power is increased %s times.",
+                "Melee attack power is decreased %s times."
+            ],
+            [
+                "Ranged attack power is increased %s times.",
+                "Ranged attack power is decreased %s times."
+            ],
+            [
+                "Magic attack power is increased %s times.",
+                "Magic attack power is decreased %s times."
+            ],
+            [
+                "Damage is reduced by (percentage missing HP/%s)%%.",
+                "Damage is increased by (percentage missing HP/%s)%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 35,
+        "name": "Multiplies defence power.",
+        "subj": [
+            "Multiplies all defence power.",
+            "Multiplies melee defence.",
+            "Multiplies ranged defence.",
+            "Multiplies magic defence.",
+            null
+        ],
+        "list": [
+            [
+                "Increases defence by a factor of %s.",
+                "Reduces defence by a factor of %s."
+            ],
+            [
+                "Increases melee defence by a factor of %s.",
+                "Reduces melee defence by a factor of %s."
+            ],
+            [
+                "Increases ranged defence by a factor of %s.",
+                "Reduces ranged defence by a factor of %s."
+            ],
+            [
+                "Increases magic defence by a factor of %s.",
+                "Decreases magic defence by a factor of %s."
+            ],
+            [
+                "Damage is reduced by %s%% per debuff stack (max. %s%%).",
+                "Damage is increased by %s%% per debuff stack (max. %s%%)."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 36,
+        "name": "Time Circle Skills",
+        "subj": [
+            "Collecting Energy",
+            "Lock HP",
+            "Lock MP",
+            "Cancel all buffs",
+            "Item cannot be used."
+        ],
+        "list": [
+            [
+                "Gather %s points for the next attack.",
+                "Gather %s points for the next attack."
+            ],
+            [
+                "No HP consumption",
+                "No HP recovery"
+            ],
+            [
+                "No MP consumption",
+                "No MP recovery"
+            ],
+            [
+                "Cancels all buffs.",
+                "Cancels all buffs."
+            ],
+            [
+                "The item cannot be used.",
+                "The item cannot be used."
+            ]
+        ],
+        "desc": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 37,
+        "name": "Percentage recovery and damage",
+        "subj": [
+            "Recover percentage of HP",
+            "Recover percentage of MP",
+            "Percentage damage",
+            null,
+            null
+        ],
+        "list": [
+            [
+                "%s%% HP is recovered.",
+                "HP is reduced by %s%%."
+            ],
+            [
+                "%s%% MP is recovered.",
+                "MP is reduced by %s%%."
+            ],
+            [
+                "Decreases the opponent's HP by %s%%.",
+                "The damage causes HP to decrease by %s%%."
+            ],
+            [
+                "HP is increased by %s%% per debuff stack (max. %s%%).",
+                "HP is reduced by %s%% per debuff stack (max. %s%%)."
+            ],
+            [
+                "The enemy's HP is reduced by %s. The caster gains %s%% of this.",
+                "The enemy's MP is reduced by (caster level*2). The caster gains %s%% of this."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 38,
+        "name": "Count",
+        "subj": [
+            "Summon monsters after counting.",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Summons %s of %s monsters when MP reaches 0.",
+                "With a probability of %s%%, summons %s when MP reaches 0."
+            ],
+            [
+                "Belial reflects your attacks and inflicts damage on your allies.",
+                "Belial reflects your attacks and inflicts damage on your allies."
+            ],
+            [
+                "The final damage from critical hits is increased by %s%%.",
+                "The damage from critical hits is reduced by %s%%."
+            ],
+            [
+                "When you're defending, the damage from critical hits is increased by %s%%.",
+                "When you're defending, the damage from critical hits is reduced by %s%%."
+            ],
+            [
+                "Summons %s NPCs (%s)",
+                "Summons %s NPCs (%s)"
+            ]
+        ],
+        "desc": [
+            "3",
+            "0",
+            "1",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "vnum": 39,
+        "name": "No defeat and no damage",
+        "subj": [
+            "No victory and no defeat",
+            "Neither inflict nor receive any damage",
+            "Power of Observation",
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Decreases HP without dying.",
+                "Decreases HP without killing."
+            ],
+            [
+                "Never receives damage.",
+                "Never causes damage."
+            ],
+            [
+                "Enemy's attack power becomes your own.",
+                "Enemy's attack power becomes your own."
+            ],
+            [
+                "Increases maximum HP by %s%%.",
+                "Decreases maximum HP by %s%%."
+            ],
+            [
+                "Increases maximum MP by %s%%.",
+                "Decreases maximum MP by %s%%."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 40,
+        "name": "Special Actions",
+        "subj": [
+            "Push",
+            "Pull",
+            "Rush",
+            "Run Away!",
+            "Hide"
+        ],
+        "list": [
+            [
+                "Push your opponent back %s fields.",
+                "Push your opponent back %s fields."
+            ],
+            [
+                "Draws enemies to %s fields away from you.",
+                "Draws enemies to %s fields away from you."
+            ],
+            [
+                "Charge at enemies within %s fields.",
+                "Charge at enemies within %s fields."
+            ],
+            [
+                "Run away from the enemy.",
+                "Run away from the enemy."
+            ],
+            [
+                "Sneak in",
+                "See hidden things"
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 41,
+        "name": "Change mode",
+        "subj": [
+            "Changes range.",
+            "Sole Effect",
+            "Changes attack speed.",
+            "Changes mode.",
+            "Jump onto other monsters."
+        ],
+        "list": [
+            [
+                "Range changed to %s.",
+                "Range returned to normal."
+            ],
+            [
+                "Applies the effect, but causes no damage.",
+                "Causes direct damage."
+            ],
+            [
+                "Attack time is increased by %s.",
+                "Attack time is decreased by %s."
+            ],
+            [
+                "Changes the mode with a probability of %s%%.",
+                "Changes the mode with a probability of %s%%."
+            ],
+            [
+                "With a probability of %s%% %s occurs.",
+                "With a probability of %s%% %s occurs."
+            ]
+        ],
+        "desc": [
+            "1",
+            "0",
+            "1",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "vnum": 42,
+        "name": "No Characteristic Value",
+        "subj": [
+            "No Characteristic Value",
+            "No Fire Characteristic Value",
+            "No Water Characteristic Value",
+            "No Light Characteristic Value",
+            "No Shadow Characteristic Value"
+        ],
+        "list": [
+            [
+                "All character powers are nullified.",
+                "All character resistances are nullified."
+            ],
+            [
+                "The fire element is nullified.",
+                "Fire resistance is nullified."
+            ],
+            [
+                "The water element is nullified.",
+                "Water resistance is nullified."
+            ],
+            [
+                "The light element is nullified.",
+                "Light resistance is nullified."
+            ],
+            [
+                "The shadow element is nullified.",
+                "Shadow resistance is nullified."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+        ]
+    },
+    {
+        "vnum": 43,
+        "name": "Light and Shadow",
+        "subj": [
+            "Mana Shield",
+            "Healing",
+            "Turn undead",
+            "Hide and Attack",
+            null
+        ],
+        "list": [
+            [
+                "Heal %s%% of inflicted damage by reducing MP.",
+                "Increases MP by absorbing %s%% of inflicted damage."
+            ],
+            [
+                "Removes all bad effects up to level %s.",
+                "Removes all good effects up to level %s."
+            ],
+            [
+                "Inflicts damage on undead with lower level.",
+                "Heals undead with lower level."
+            ],
+            [
+                "Ambush attacks cause %s additional damage.",
+                "Attacks on hidden enemy cause %s additional damage."
+            ],
+            [
+                "Ambush attacks cause %s additional damage.",
+                "Attacks on hidden enemy cause %s additional damage."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "0",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 44,
+        "name": "Item",
+        "subj": [
+            "Increases experience.",
+            "Increases attack.",
+            "Dropped Items",
+            "Paid item",
+            "Increases Gold."
+        ],
+        "list": [
+            [
+                "Experience gain is increased by %s%%.",
+                "Experience gain is increased by %s%%."
+            ],
+            [
+                "All attacks are increased by %s%%.",
+                "All defences are increased by %s%%."
+            ],
+            [
+                "For %s rounds, items drop whenever you are attacked.",
+                "For %s rounds, items drop whenever you are attacked."
+            ],
+            [
+                "The power of scroll is safe.",
+                "The power of scroll is safe."
+            ],
+            [
+                "Increases Gold earned by %s%%.",
+                "Increases Gold earned by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "vnum": 45,
+        "name": "Debuff Resistance",
+        "subj": [
+            "Abnormal Bad Effect Resistance",
+            "Normal Bad Effect Resistance",
+            "Abnormal Magic Resistance",
+            "Poison Resistance",
+            "Abnormal Disease Resistance"
+        ],
+        "list": [
+            [
+                "Below level %s the chance of getting a bad effect is increased by %s%%.",
+                "Up to level %s there is a %s%% chance of never getting a bad effect."
+            ],
+            [
+                "Below level %s the chance of getting a bad general effect is increased by %s%%.",
+                "Below level %s there is a %s%% chance of never getting a bad general effect."
+            ],
+            [
+                "Below level %s the chance of getting a bad magic effect is increased by %s%%.",
+                "Below level %s there is a %s%% chance of never getting a bad magic effect."
+            ],
+            [
+                "Below level %s the chance of getting a highly toxic effect is increased by %s%%.",
+                "Below level %s there is a %s%% chance of never getting a very toxic effect."
+            ],
+            [
+                "Below level %s the chance of getting a disease effect is increased by %s%%.",
+                "Below level %s there is a %s%% chance of never getting a disease effect."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 46,
+        "name": "Special Behaviour",
+        "subj": [
+            "Random Teleport",
+            "Hop onto an area.",
+            "Infect everyone around.",
+            "Transforms the surroundings.",
+            null
+        ],
+        "list": [
+            [
+                "Teleport to a random place on the map.",
+                "Teleport to a random place on the map."
+            ],
+            [
+                "Jump onto every object within a distance of %s field(s).",
+                "Jump onto every object within a distance of %s field(s)."
+            ],
+            [
+                "At a distance of %s, inflict %s on our team.",
+                "At a distance of %s, inflict %s on our enemies."
+            ],
+            [
+                "Transforms %s into %s.",
+                "Transforms %s into %s."
+            ],
+            [
+                "Monsters on general maps will only notice you if you attack them.",
+                "Monsters on general maps will only notice you if you attack them."
+            ]
+        ],
+        "desc": [
+            "0",
+            "1",
+            "4",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "vnum": 47,
+        "subj": [
+            "Quest Giver",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Summons monsters based on the rules.",
+                "Summons monsters based on the rules."
+            ],
+            [
+                "Restores HP equal to %s%% of the damage inflicted (max. %s per attack).",
+                "Restores MP equal to %s%% of the damage inflicted (max. %s per attack)."
+            ],
+            [
+                "You can see hidden characters within %s spaces of you.",
+                "You can see hidden characters within %s spaces of you."
+            ],
+            [
+                "Additional HP is increased by %s%%, but cannot exceed %s%% of max HP.",
+                "Additional MP is increased by %s%%, but cannot exceed %s%% of max MP."
+            ],
+            [
+                "Invisible except to enemies within 5 spaces.",
+                "Invisible except to enemies within 5 spaces."
+            ]
+        ],
+        "desc": [
+            "0",
+            "2",
+            "1",
+            "2",
+            "0"
+        ]
+    },
+    {
+        "vnum": 48,
+        "name": "The second specialist card.",
+        "subj": [
+            "Plant a bomb",
+            "Detonate bomb",
+            "Holy Breath",
+            "Casts a buff on the attacker.",
+            null
+        ],
+        "list": [
+            [
+                "Plants a bomb. Activate a second time to detonate the bomb.",
+                "Set up bomb when you attack."
+            ],
+            [
+                "Plants 3 fire mines.",
+                "Set up bomb when you attack."
+            ],
+            [
+                "Reduces the skills of all your opponents.",
+                "Reduces the skills of all your opponents."
+            ],
+            [
+                "The attacker has a %s%% chance of receiving %s.",
+                "The attacker has a %s%% chance of receiving %s."
+            ],
+            [
+                "If an opponent attacks you, there is a %s%% chance of %s being inflicted on them.",
+                "If an opponent attacks you, there is a %s%% chance of %s being inflicted on them."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "4",
+            "4"
+        ]
+    },
+    {
+        "vnum": 49,
+        "name": "Specialist Card Upgrade",
+        "subj": [
+            "Lower SP Protection Scroll",
+            "Higher SP Protection Scroll",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Use Lower SP Protection Scroll.",
+                "Use Lower SP Protection Scroll."
+            ],
+            [
+                "Use Higher SP Protection Scroll.",
+                "Use Higher SP Protection Scroll."
+            ],
+            [
+                "There is a 100%% chance for monsters to get [%s] and players [%s].",
+                "There is a 100%% chance for monsters to get [%s] and players [%s]."
+            ],
+            [
+                "All of your specialist's skill points are increased by %s.",
+                "All of your specialist's skill points are increased by %s."
+            ],
+            [
+                "The Pet Trainer specialist gains %s%% more experience.",
+                "The Pet Trainer specialist gains %s%% more experience."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "7",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 50,
+        "name": "Huge Snowman",
+        "subj": [
+            "Cold 1",
+            "Cold 2",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "A snowstorm. All standing users suffer damage of up to 99%.",
+                "A snowstorm. All standing users suffer damage of up to 99%."
+            ],
+            [
+                "An earthquake. All lying players suffer damage of up to 99%.",
+                "An earthquake. All lying players suffer damage of up to 99%."
+            ],
+            [
+                "Damage to low-level monsters in the Celestial Lair is increased by %s%%.",
+                "Damage from low-level monsters in the Celestial Lair is reduced by %s%%."
+            ],
+            [
+                "Damage to high-level dragons is increased by %s%%.",
+                "Damage to high-level dragons is reduced by %s%%."
+            ],
+            [
+                "Decreases HP without dying.",
+                "Decreases HP without killing."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "vnum": 51,
+        "subj": [
+            "Target Drain",
+            "HP Drain",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Cast Drain on the enemy.",
+                "Cast Drain on the enemy."
+            ],
+            [
+                "The opponent's HP is reduced by %s and the player's HP increased by the same.",
+                "The opponent's HP is reduced by %s and the player's HP increased by the same."
+            ],
+            [
+                "If you are attacked by the Sun Wolf, this duration has a %s%% chance of increasing by 2 seconds (max. %s times).",
+                "If you are attacked by the Sun Wolf, this duration has a %s%% chance of decreasing by 2 seconds (max. %s times)."
+            ],
+            [
+                "If you are attacked by the Sun Wolf, there's a %s%% chance %s is cast.",
+                "If you are attacked by the Sun Wolf, there's a %s%% chance %s is cast."
+            ],
+            [
+                "If you are attacked by the Sun Wolf, the damage is increased by %s%%.",
+                "If you are attacked by the Sun Wolf, the damage is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "2",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "vnum": 52,
+        "subj": [
+            "Lord Morcos",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Inflicts damage to the player more than %s fields away of %s%%.",
+                "Inflicts damage to the player more than %s fields away of %s%%."
+            ],
+            [
+                "You gain additional HP equal to %s%% of the Sun Wolf's HP. (Cannot exceed %s%% of your maximum HP.)",
+                "You gain additional HP equal to %s%% of the Sun Wolf's HP. (Cannot exceed %s%% of your maximum HP.)"
+            ],
+            [
+                "The Sun Wolf and caster have a %s%% chance to receive %s.",
+                "The Sun Wolf and caster have a %s%% chance to receive %s."
+            ],
+            [
+                "If the Sun Wolf is already dead, it is resurrected with %s%% HP.",
+                "If the Sun Wolf is already dead, it is resurrected with %s%% HP."
+            ],
+            [
+                "If the Sun Wolf has more than %s%% HP, the Sunchaser's attack power increases by %s%%.",
+                "If the Sun Wolf has more than %s%% HP, the Sunchaser's attack power increases by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "4",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 53,
+        "subj": [
+            "Dragon Head Attack",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Inflict %s%% damage on the players at the set location.",
+                "Inflict %s%% damage on the players at the set location."
+            ],
+            [
+                "There's a %s%% chance the Sun Wolf receives the command to cast %s on the target.",
+                "There's a %s%% chance the Sun Wolf receives the command to cast %s on the target."
+            ],
+            [
+                "Restores HP equal to %s%% of the damage taken (max. %s per attack).",
+                "MP is increased by %s%% of damage taken (max. %s per attack)."
+            ],
+            [
+                "You cannot deal more than %s damage to enemies.",
+                "You cannot deal more than %s damage to enemies."
+            ],
+            [
+                "Provides a %s%% chance that %s causes a critical hit.",
+                "Provides a %s%% chance that %s causes a critical hit."
+            ]
+        ],
+        "desc": [
+            "1",
+            "6",
+            "2",
+            "1",
+            "6"
+        ]
+    },
+    {
+        "vnum": 54,
+        "subj": [
+            "Summon Snake",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Inflict %s%% damage on the players at the set location.",
+                "Inflict %s%% damage on the players at the set location."
+            ],
+            [
+                "While you're attacking, there is a %s%% chance that a dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted.",
+                "While you're attacking, there is a %s%% chance that a dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted."
+            ],
+            [
+                "While you're attacking, there is a %s%% chance that a fire dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted.",
+                "While you're attacking, there is a %s%% chance that a fire dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted."
+            ],
+            [
+                "While you're attacking, there is a %s%% chance that an ice dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted.",
+                "While you're attacking, there is a %s%% chance that an ice dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted."
+            ],
+            [
+                "While you're attacking, there is a %s%% chance that a moonlight dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted.",
+                "While you're attacking, there is a %s%% chance that a moonlight dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 55,
+        "subj": [
+            "Energy of Shield",
+            "Spreading the buff",
+            "Movement of the aura",
+            "Life and Death",
+            null
+        ],
+        "list": [
+            [
+                "The effect ends if you take damage from enemies.",
+                "Enter the number of buffs and the value of the damage (1/1000)."
+            ],
+            [
+                null,
+                "Enter the number of buffs."
+            ],
+            [
+                "Moving the aura has an effect on the surroundings.",
+                "You don't need to enter anything."
+            ],
+            [
+                "The lower your HP, the stronger the effect.",
+                "You don't need to enter anything."
+            ],
+            [
+                "While you're attacking, there is a %s%% chance that a light dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted.",
+                "While you're attacking, there is a %s%% chance that a light dragon will be summoned to attack your target and deal an extra %s%% of the damage you have already inflicted."
+            ]
+        ],
+        "desc": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "2"
+        ]
+    },
+    {
+        "vnum": 56,
+        "subj": [
+            "4th Glacernon Skill",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "All opponents within %s fields will receive %s%% damage.",
+                "All opponents within %s fields will receive %s%% damage."
+            ],
+            [
+                "Increases HP by %s%% of the current Rage bar.",
+                "Increases HP by %s%% of the current Rage bar."
+            ],
+            [
+                "When you use an attack skill, current HP is reduced by %s%%.",
+                "When you use an attack skill, current HP is reduced by %s%%."
+            ],
+            [
+                "In PvP all elemental resistances are increased by %s.",
+                "In PvP all elemental resistances are reduced by %s."
+            ],
+            [
+                "You are invisible. This state will not change if you are attacked.",
+                "You are invisible. This state will not change if you are attacked."
+            ]
+        ],
+        "desc": [
+            "2",
+            "1",
+            "1",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "vnum": 57,
+        "name": "Attack of the summoned monster.",
+        "subj": [
+            "Defeat the summoned monster.",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "You cause %s %s%% damage.",
+                "You cause %s %s%% damage."
+            ],
+            [
+                "Upon getting hit, removes one random debuff up to level %s for each attack with a %s%% chance.",
+                "Upon getting hit, removes one random debuff up to level %s for each attack with a %s%% chance."
+            ],
+            [
+                "HP is increased by (missing HP/%s)%% of damage given.",
+                "HP is increased by (missing HP/%s)%% of damage given."
+            ],
+            [
+                "No HP/MP consumption",
+                "No HP/MP recovery"
+            ],
+            [
+                "Movement speed is increased by %s (max. %s).",
+                "Movement speed is reduced by %s (max. %s)."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "1",
+            "0",
+            "2"
+        ]
+    },
+    {
+        "vnum": 58,
+        "subj": [
+            null,
+            null,
+            "Changes maximum MP. (Bear Spirit)",
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Increases maximum HP by %s%%, however not above 5,000 HP.",
+                "Reduces maximum HP by %s%%, however not above 5,000 HP."
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                "Increases maximum MP by %s%%, however not above 5,000 MP.",
+                "Decreases maximum MP by %s%%, however not below 5,000 MP."
+            ],
+            [
+                "The damage of the next skill is increased by the damage stored by Soulripper (min. %s, max. %s).",
+                "The damage of the next skill is increased by the damage stored by Soulripper (min. %s, max. %s)."
+            ],
+            [
+                "If the target is a monster, the damage from all attacks is increased by %s%%. Otherwise the player is forced to transform into the %s.",
+                "If the target is a monster, the damage from all attacks is increased by %s%%. Otherwise the player is forced to transform into the %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "vnum": 59,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                null,
+                null
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                "Summons 1 %s with a probability of %s%%.",
+                "Summons 1 %s with a probability of %s%%. (Disappears after a set amount of time)"
+            ],
+            [
+                "You transform into a powerful brown bear.",
+                "You transform back into a druid."
+            ],
+            [
+                "If you have reached Waterfall Frenzy, damage increases by %s%% of the current Rage bar while this in turn drops by %s%%.",
+                "If you have reached Waterfall Frenzy, damage increases by %s%% of the current Rage bar while this in turn drops by %s%%."
+            ]
+        ],
+        "desc": [
+            "3",
+            "3",
+            "3",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 60,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Inflict %s%% damage on the players at the set location.",
+                "Inflict %s%% damage on the players at the set location."
+            ],
+            [
+                "The Rage bar increases by %s%%.",
+                "The Rage bar sinks by %s%%."
+            ],
+            [
+                "When hit by another character's skill, there is a %s%% chance to reset the cooldown of the skill used.",
+                "When hit by another character's skill, there is a %s%% chance to reset the cooldown of the skill used."
+            ],
+            [
+                "Attack power is increased by %s%% of the Rage bar.",
+                "Reduces attacks by %s%% of the current Rage bar."
+            ],
+            [
+                "The Rage bar increases by %s%%.",
+                "Reduces the Rage bar by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 61,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                null,
+                null
+            ],
+            [
+                "Increases damage from ongoing debuffs by %s%% per stack (max. %s%%).",
+                "Reduces damage from ongoing debuffs by %s%% per stack (max. %s%%)."
+            ],
+            [
+                "Provides a %s%% chance to transform into the %s.",
+                "Provides a %s%% chance to transform into the %s."
+            ],
+            [
+                "If you take damage %s times, %s disappears (excludes damage over time).",
+                "When you take %s damage, %s disappears (damage over time does not count)."
+            ],
+            [
+                "Increases damage by %s per buff stack (max. %s).",
+                "Increases damage by %s per debuff stack (max. %s)."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "2"
+        ]
+    },
+    {
+        "vnum": 62,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "No HP consumption",
+                "No HP recovery"
+            ],
+            [
+                "Increases damage by %s%% proportional to distance.",
+                "Increases damage by %s%% proportional to distance."
+            ],
+            [
+                "Provides a %s%% chance per stack never to receive a debuff up to level %s (max. 30%%).",
+                "Provides a %s%% chance per stack to receive a debuff up to level %s (max. 30%%)."
+            ],
+            [
+                "Restores %s HP per buff stack (max. %s).",
+                "Reduces %s HP per buff stack (max. %s)."
+            ],
+            [
+                "Only applies to enemies with buffs above level %s.",
+                "Only applies to enemies with debuffs above level %s."
+            ]
+        ],
+        "desc": [
+            "0",
+            "2",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 63,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Attracts nearby enemies' attention to you.",
+                null
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                "Cooking experience gain is increased by %s%%.",
+                "Cooking experience gain is reduced by %s%%."
+            ],
+            [
+                "Chance of major success when cooking increased by %s%%.",
+                "Chance of major success when cooking reduced by %s%%."
+            ],
+            [
+                "Provides a %s%% chance to receive extra ingredients.",
+                "Provides a %s%% chance to receive extra meals."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 64,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Reflects the maximum received damage from %s.",
+                "Reflects the maximum received damage from %s."
+            ],
+            [
+                "The damage inflicted by all attacks will be increased by %s%% with a likelihood of %s%%. Successful defence will recharge energy.",
+                "The damage inflicted by all attacks will be reduced by %s%% with a likelihood of %s%%. Successful defence will recharge energy."
+            ],
+            [
+                "If you are successful in defeating the opponent with this skill, there is a %s%% chance that %s will occur.",
+                "If you are successful in defeating the opponent with this skill, there is a %s%% chance that %s will occur."
+            ],
+            [
+                "If you taunt an opponent that has a Knockdown, there is a %s%% chance that %s will occur.",
+                "If you taunt an opponent in a normal status, there is a %s%% chance that %s will occur."
+            ],
+            [
+                "Reflects an opponent's bad effect with a certain likelihood.",
+                "Reflects an opponent's bad effect with a certain likelihood."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "4",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "vnum": 65,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "The radius of all area attacks is increased by %s.",
+                "The radius of all area attacks is reduced by %s."
+            ],
+            [
+                "Flinch from %s of the opponent's blocks.",
+                "Flinch from %s of the opponent's blocks."
+            ],
+            [
+                "If you use 'Teleport to Fishing Spot', you'll be taken to your chosen location.",
+                "If you use 'Teleport to Fishing Spot', you'll be taken to your chosen location."
+            ],
+            [
+                "Stores %s%% of the damage caused by this skill (max. %s per target).",
+                "Stores %s%% of the damage caused by this skill (max. %s per target)."
+            ],
+            [
+                "If you have reached Fury or Frenzy, damage increases by %s%%.",
+                "If you have reached Fury or Frenzy, damage increases by %s%%."
+            ]
+        ],
+        "desc": [
+            "4",
+            "1",
+            "0",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 66,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "The fiery skills of the volcano are increased by %s.",
+                "The fiery skills of the volcano are reduced by %s."
+            ],
+            [
+                "Reduces the effectiveness of the enemy's attack strengthening buffs.",
+                "Reduces the effectiveness of the enemy's attack strengthening buffs."
+            ],
+            [
+                "If you manage to pull back from the enemy's attack, there is a certain chance the buff will be increased.",
+                "If you manage to pull back from the enemy's attack, there is a certain chance the buff will be increased."
+            ],
+            [
+                "Defence against %s critical damage.",
+                "Defence against %s critical damage."
+            ],
+            [
+                "Suffers a maximum of %s critical damage when attacked (%s times).",
+                "Suffers a maximum of %s critical damage when attacked (%s times)."
+            ]
+        ],
+        "desc": [
+            "2",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 67,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Reduces %s%% of the damage that another player within range receives. Instead you take %s%% of that player's damage.",
+                "Reduces %s%% of the damage that another player within range receives. Instead you take %s%% of that player's damage."
+            ],
+            [
+                "Increases the damage transferred from your fellow player by %s%%.",
+                "Reduces the damage transferred from your fellow player by %s%%."
+            ],
+            [
+                "HP recovery is increased by %s%%.",
+                "HP recovery is reduced by %s%%."
+            ],
+            [
+                "Additional damage received by skill combo: %s%%",
+                "Additional damage received by skill combo: %s%%"
+            ],
+            [
+                "Reflects the maximum received damage from %s.",
+                "Reflects the maximum received damage from %s."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "1",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 68,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Has a %s%% probability of causing [%s].",
+                "There is a %s%% chance that %s will be removed."
+            ],
+            [
+                "The short meditation has a %s%% probability of causing %s.",
+                "The short meditation has a %s%% probability of causing %s."
+            ],
+            [
+                "The regular meditation has a %s%% probability of causing %s.",
+                "The regular meditation has a %s%% probability of causing %s."
+            ],
+            [
+                "There is a %s%% chance of the lengthy meditation causing %s.",
+                "There is a %s%% chance of the lengthy meditation causing %s."
+            ],
+            [
+                "There is a %s%% chance that Sacrifice causes %s.",
+                "There is a %s%% chance that Sacrifice causes %s."
+            ]
+        ],
+        "desc": [
+            "6",
+            "4",
+            "4",
+            "4",
+            "4"
+        ]
+    },
+    {
+        "vnum": 69,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance that %s will be caused at the set location.",
+                "There is a %s%% chance that %s will be removed at the set location."
+            ],
+            [
+                "Disappear for a short time without a trace.",
+                "Disappear for a short time without a trace."
+            ],
+            [
+                "Carry out a targeted ambush on the opponent.",
+                "Carry out a targeted ambush on the opponent."
+            ],
+            [
+                "The enemy is followed and hunted by a falcon and can be attacked from the air.",
+                "The enemy is followed and hunted by a falcon and can be attacked from the air."
+            ],
+            [
+                "Through the falcon's astuteness, the enemy with the lowest HP is identified and attacked. Afterwards this player is marked and can be attacked more intensively by others.",
+                "Through the falcon's astuteness, the enemy with the lowest HP is identified and attacked. Afterwards this player is marked and can be attacked more intensively by others."
+            ]
+        ],
+        "desc": [
+            "3",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 70,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Provides a %s%% chance that you receive no damage. In addition, %s%% of the damage you should have received is added to your HP.",
+                "Provides a %s%% chance that you receive no damage. Instead, %s%% of the damage you should have received is deducted from your HP."
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                "The damage is increased by %s%% by using the skill %s.",
+                "The damage is decreased by %s%% by using the skill %s."
+            ],
+            [
+                "The critical hit rate is increased by %s%% by using the skill %s.",
+                "The critical hit rate is decreased by %s%% by using the skill %s."
+            ]
+        ],
+        "desc": [
+            "2",
+            "1",
+            "4",
+            "6",
+            "6"
+        ]
+    },
+    {
+        "vnum": 71,
+        "subj": [
+            null,
+            null,
+            null,
+            "Defence power in PvP is increased.",
+            "Increases PvP attack power."
+        ],
+        "list": [
+            [
+                "Increases the damage against %s by %s%%.",
+                "If %s attacks a player, the damage is reduced by %s%%."
+            ],
+            [
+                "The effectiveness of recovery items is increased by %s%%.",
+                "The effectiveness of recovery items is decreased by %s%%."
+            ],
+            [
+                "When Leona is wearing the Specialist Partner Card, there is a %s%% chance of causing %s.",
+                "When Leona is wearing the Specialist Partner Card, there is a %s%% chance that %s will be removed."
+            ],
+            [
+                "Reduces damage received in PvP by %s%%.",
+                "Defence power in PvP is reduced by %s%%."
+            ],
+            [
+                "Increases PvP attack power by %s%%.",
+                "Reduces PvP attack power by %s%%."
+            ]
+        ],
+        "desc": [
+            "5",
+            "1",
+            "4",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 72,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Restores %s%% of the opponent's remaining HP.",
+                "Decreases %s%% of the opponent's remaining HP."
+            ],
+            [
+                "If it is used %s times, %s is produced. Can increase to maximum level 2.",
+                "If it is used %s times, %s is produced. Can increase to maximum level 2."
+            ],
+            [
+                "The attack range is increased by %s.",
+                "The attack range is reduced by %s."
+            ],
+            [
+                "Move in a different direction against the player's will for %s seconds.",
+                "Move in a different direction against the player's will for %s seconds."
+            ],
+            [
+                "There is a %s%% probability of a %s being produced after an ambush attack.",
+                "There is a %s%% probability of a %s being produced after an ambush attack."
+            ]
+        ],
+        "desc": [
+            "1",
+            "4",
+            "1",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "vnum": 73,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "After a snipe attack, there is a %s%% chance of causing %s.",
+                "After a snipe attack, there is a %s%% chance that %s will be removed."
+            ],
+            [
+                "The ambush attack range is increased by %s.",
+                "The ambush attack range is increased by %s."
+            ],
+            [
+                "There is a %s%% probability of %s being produced after an ambush attack.",
+                "There is a %s%% probability of %s being produced after an ambush attack."
+            ],
+            [
+                "If you are killed by another player, their HP is reduced by %s%% of their missing HP.",
+                "If you are killed by another player, their HP is increased by %s%% of their missing HP."
+            ],
+            [
+                "You have a %s%% chance to receive a critical hit from a sniper attack.",
+                "You have a %s%% chance to receive a critical hit from a sniper attack."
+            ]
+        ],
+        "desc": [
+            "4",
+            "1",
+            "4",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 74,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Lost all body control. Other players can liberate you from the eternal ice.",
+                "Lost all body control. Other players can liberate you from the eternal ice."
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                "The punishment will be carried out. Death awaits!",
+                "The punishment will be carried out. Death awaits!"
+            ],
+            [
+                "Depending on your Heat Points, the chance of a critical hit is increased from %s%% to %s%%.",
+                "Depending on your Heat Points, the chance of a critical hit is increased from %s%% to %s%%."
+            ],
+            [
+                "All fuel is consumed. For every %s Fuel Points consumed, you recover %s%% HP.",
+                "All fuel is consumed. For every %s Fuel Points consumed, you recover %s%% HP."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 75,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance of moving back %s field(s).",
+                "There is a %s%% chance of moving back %s field(s)."
+            ],
+            [
+                "There is a %s%% chance of pushing the enemy away %s field(s).",
+                "Provides a %s%% chance of pushing the enemy away %s field(s) (only in PvP)."
+            ],
+            [
+                "The effect duration for a melee attack is increased by %s.",
+                "The effect duration for melee attacks is reduced by %s."
+            ],
+            [
+                "The effect duration for a ranged attack is increased by %s.",
+                "The effect duration for a ranged attack is reduced by %s."
+            ],
+            [
+                "The effect duration for a magic attack is increased by %s.",
+                "The effect duration for a magic attack is reduced by %s."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 76,
+        "name": "Special Actions",
+        "subj": [
+            null,
+            "Increase your fairy's experience points",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Teleports you to a selected location.",
+                "Teleports you to a selected location."
+            ],
+            [
+                "Your fairy's experience points are increased by %s%%.",
+                "Your fairy's experience points are increased by %s%%."
+            ],
+            [
+                "Provides a %s%% chance spices aren't consumed when cooking.",
+                "Provides a %s%% chance extra spices are consumed when cooking."
+            ],
+            [
+                "Increases fullness points by %s. Can only be used when satiety is lower than %s.",
+                "Reduces fullness points by %s. Can only be used when satiety is lower than %s."
+            ],
+            [
+                "Fullness points will be increased by %s or reduced by %s.",
+                "Provides a %s%% chance to receive %s%% additional fullness points."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 77,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "%s%% chance to summon %s.",
+                "%s%% chance to summon %s."
+            ],
+            [
+                "Restores your HP by %s%%.",
+                "Reduces your HP by %s%%."
+            ],
+            [
+                "The Holy Energy bar is filled by %s%%.",
+                "The Holy Energy bar is emptied by %s%%."
+            ],
+            [
+                "Regenerates %s%% of the caster's max. HP as HP.",
+                "Regenerates %s%% of the caster's max. HP as HP. This effect does not affect the caster."
+            ],
+            [
+                "The damage of ultimate skills is increased by %s%%.",
+                "The damage of ultimate skills is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "3",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 78,
+        "subj": [
+            "Team Arena Defence Power",
+            "Team Arena Attack Power",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance of the damage taken in the team arena being increased by %s%%.",
+                "There is a %s%% chance of the damage taken in the team arena being reduced by %s%%."
+            ],
+            [
+                "There is a %s%% chance of the attack power being increased by %s%% during an attack in the team arena.",
+                "There is a %s%% chance of the attack power being reduced by %s%% during an attack in the team arena."
+            ],
+            [
+                "When carrying out a basic attack, you have a %s%% chance to execute a second basic attack dealing %s%% damage.",
+                "When carrying out a basic attack, you have a %s%% chance to execute a second basic attack dealing %s%% damage."
+            ],
+            [
+                "Restores %s%% of max. HP (min. %s).",
+                "Restores %s%% of max. MP (min. %s)."
+            ],
+            [
+                "If HP drops below %s%%, incoming damage is reduced by %s%%.",
+                "If HP drops below %s%%, all attacks are increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 79,
+        "subj": [
+            "Call Number 1",
+            "Call Number 2",
+            "Call Number 3",
+            "Audience View",
+            null
+        ],
+        "list": [
+            [
+                "Call Participant Number 1",
+                "Call Participant Number 2"
+            ],
+            [
+                "Call Participant Number 2",
+                "Call Participant Number 2"
+            ],
+            [
+                "Call Participant Number 3",
+                "Call Participant Number 3"
+            ],
+            [
+                "Switch from own view to fighting participant.",
+                "Switch from own view to fighting participant."
+            ],
+            [
+                "You can now see hidden characters in your vicinity.",
+                "You can now see hidden characters in your vicinity."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 80,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "There is a %s%% chance that up to %s Dark Clones will be summoned.",
+                "There is a %s%% chance that up to %s Dark Clones will be summoned."
+            ],
+            [
+                "HP replenishing effects will be converted to damage with a probability of %s%%.",
+                "HP replenishing effects will be converted to damage with a probability of %s%%."
+            ],
+            [
+                "Transforms the enemy's damage into a healing effect with a %s%% chance of success. The restored HP and collected damage disappear after %s seconds.",
+                "Transforms the enemy's damage into a healing effect with a %s%% chance of success. The restored HP and collected damage disappear after %s seconds."
+            ],
+            [
+                "There is a %s%% chance that the enemy's skill cooldown will be increased by %s%%. If the skill succeeds, your own skill cooldown time will be reduced.",
+                "There is a %s%% chance that the enemy's skill cooldown will be increased by %s%%. If the skill succeeds, your own skill cooldown time will be reduced."
+            ],
+            [
+                "There is a %s%% chance that damage from the shadow element is increased by %s%% while a shadow fairy is accompanying you.",
+                "There is a %s%% probability that damage from the shadow element will be decreased by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 81,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "There is a probability of %s%% that %s will be applied if an absorbed spirit is present.",
+                "There is a probability of %s%% that %s will be applied if no absorbed spirit is present."
+            ],
+            [
+                "Resists forced movement with a probability of %s%%.",
+                "Resists forced movement with a probability of %s%%."
+            ],
+            [
+                "The cooldown time for reusing magic skills is increased by %s%%.",
+                "The cooldown time for reusing magic skills is reduced by %s%%."
+            ],
+            [
+                "If %s is already active, %s is triggered.",
+                "If %s is already active, %s is triggered."
+            ],
+            [
+                "The equipped fairy's element increases by %s if %s is active.",
+                "The equipped fairy's element increases by %s if %s is active."
+            ]
+        ],
+        "desc": [
+            "4",
+            "1",
+            "1",
+            "7",
+            "4"
+        ]
+    },
+    {
+        "vnum": 82,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Attacks all enemies in visual range. Except at a certain location.",
+                "Attacks all enemies in visual range. Except at a certain location."
+            ],
+            [
+                "Reduces the opponent's HP by %s%% with a probability of %s%%.",
+                "HP is reduced by %s%% of the damage inflicted with a probability of %s%%."
+            ],
+            [
+                "There is a %s%% chance that no good effects below level %s can be used.",
+                "There is a %s%% chance that no good effects below level %s can be used."
+            ],
+            [
+                "Reduced to carrying out normal attacks by sheer anger.",
+                "Only basic attacks are possible."
+            ],
+            [
+                "Cannot attack for %s sec.",
+                "Cannot attack for %s sec."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "2",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 83,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Summons a Thorn Bush in visual range.",
+                "Summons a Thorn Bush in visual range."
+            ],
+            [
+                "Transforms the target.",
+                "Transforms the target."
+            ],
+            [
+                "Quickly teleport %s fields forwards.",
+                "Quickly teleport %s fields forwards."
+            ],
+            [
+                "Causes 10 (+%s) meteorites to rain down.",
+                "Causes 10 (+%s) meteorites to rain down."
+            ],
+            [
+                "Teleports you and %s group members to the saved location.",
+                "Teleports you and %s group members to the saved location."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 84,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            "Abort Transformation"
+        ],
+        "list": [
+            [
+                "There's a %s%% chance to ignore %s%% of the target's defence.",
+                "There's a %s%% chance to ignore %s%% of the target's defence."
+            ],
+            [
+                "There's a %s%% chance of the critical damage received being reduced by %s%%.",
+                "There's a %s%% chance of the critical damage received being reduced by %s%%."
+            ],
+            [
+                "When attacking, there is a %s%% chance of summoning a shadow clone to carry out an additional attack.",
+                "When attacking, there is a %s%% chance of summoning a shadow clone to carry out an additional attack."
+            ],
+            [
+                "A successful attack can steal good effects below level %s from the target's partner and transfer them to allies within 3 fields. Max. %s effects can be stolen.",
+                "A successful attack can steal good effects below level %s from the target's partner and transfer them to allies within 3 fields. Max. %s effects can be stolen."
+            ],
+            [
+                "There's a %s%% chance that the transformation will be aborted. Cannot be attacked for %s sec. if successfully aborted. The target then returns to their previous state.",
+                "There's a %s%% chance that the transformation will be aborted. Cannot be attacked for %s sec. if successfully aborted. The target then returns to their previous state."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "1",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 85,
+        "subj": [
+            "Phase Change",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Swaps places with the target. Once the effect ends, the character returns to their initial position.",
+                "Swaps places with the target. Once the effect ends, the character returns to their initial position."
+            ],
+            [
+                "When you die, the amount of reputation you lose is increased by %s%%.",
+                "When you die, the amount of reputation you lose is reduced by %s%%."
+            ],
+            [
+                "When you die, the amount of champion level experience you lose is increased by %s%%.",
+                "When you die, the amount of champion level experience you lose is reduced by %s%%."
+            ],
+            [
+                "Increases damage against players of the Angel faction by %s%%.",
+                "When attacking angels, your max. damage decreases to %s%%."
+            ],
+            [
+                "Increases damage against players of the Demon faction by %s%%.",
+                "When attacking demons, your max. damage decreases to %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 86,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Provides a %s%% chance to reset the cooldown of the attack skill used.",
+                "Provides a %s%% chance to reset the cooldown of the attack skill used."
+            ],
+            [
+                "There is a %s%% chance to apply %s to the alliance within 5 fields.",
+                "There is a %s%% chance to remove %s from the alliance within 5 fields."
+            ],
+            [
+                "Provides a %s%% chance of increasing damage by %s%% if the monster has the same or a higher combat level than the character.",
+                "Provides a %s%% chance of reducing damage by %s%% if the monster has a higher level than the character."
+            ],
+            [
+                "Blocks %s bad effects up to level %s.",
+                "Blocks %s bad effects up to level %s."
+            ],
+            [
+                "There is a %s%% chance of an ally within 2 spaces receiving %s.",
+                "There is a %s%% chance of removing %s from an ally within 2 spaces."
+            ]
+        ],
+        "desc": [
+            "2",
+            "4",
+            "2",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "vnum": 87,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Increases fame received by %s%%.",
+                "Reduces fame received by %s%%."
+            ],
+            [
+                "Increases champion experience received by %s%%.",
+                "Reduces champion experience received by %s%%."
+            ],
+            [
+                "After %s hour(s) you can receive %s unknown items while you are being accompanied.",
+                "After %s hour(s) you can receive %s unknown items while you are being accompanied."
+            ],
+            [
+                "There's a %s%% chance to remove a buff from the enemy.",
+                "There's a %s%% chance to remove a buff from the enemy."
+            ],
+            [
+                "Uses lich magic to create a Bone Drake and give the caster Dragon Vitality.",
+                "Uses lich magic to create a Bone Drake and give the caster Strong Dragon Vitality."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 88,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Return to Miniland and regenerate %s%% of your HP. If you have maximum HP, you receive %s%% additional HP.",
+                null
+            ],
+            [
+                "Attacks on hidden enemies cause %s additional damage.",
+                null
+            ],
+            [
+                "Damage from hidden enemies is increased by %s%%.",
+                "Damage from hidden enemies is reduced by %s%%."
+            ],
+            [
+                "Reveals hidden enemies within %s spaces.",
+                null
+            ],
+            [
+                "Skill can be used %s times without cooldown.",
+                null
+            ]
+        ],
+        "desc": [
+            "2",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 89,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Transform and assume the Dragon Stance with which you can carry out flame attacks.",
+                "Transform and assume the Haetae Stance with which you can carry out attacks using the power of the beast."
+            ],
+            [
+                "Provides a %s%% probability to reset the cooldown of %s.",
+                "Provides a %s%% probability to reset the cooldown of %s."
+            ],
+            [
+                "There is a %s%% chance that no good effects below level %s can be used.",
+                "There is a %s%% chance that no good effects below level %s can be used."
+            ],
+            [
+                "Combat and job experience points earned are increased by %s%%.",
+                "Combat and job experience points earned are increased by %s%%."
+            ],
+            [
+                "Provides a %s%% chance of firing a magical arrow when you use magic or ranged attack skills.",
+                "Provides a %s%% chance of firing a magical arrow when you use attack skills."
+            ]
+        ],
+        "desc": [
+            "1",
+            "6",
+            "2",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 90,
+        "name": "15% chance to [stun] when attacking. (Applies to Successful Attack)",
+        "subj": [
+            "Reduces damage from damage by chance when defending",
+            "Sealed Vessel Monster and Death Land Monster Attack Damage (Attack Buff)",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Provides a %s%% chance to increase fire attack damage by %s%%.",
+                "Provides a %s%% chance to reduce fire attack damage by %s%%."
+            ],
+            [
+                "Damage against monsters in Sealed Vessels is increased by %s%% and against monsters in the Land of Death by %s%%.",
+                "Damage against monsters in Sealed Vessels is reduced by %s%% and against monsters in the Land of Death by %s%%."
+            ],
+            [
+                "PvP attack power is increased by %s%% during the Rainbow Battle. Movement speed is increased by %s during the Rainbow Battle.",
+                "PvP attack power is reduced by %s%% during the Rainbow Battle. Movement speed is reduced by %s during the Rainbow Battle."
+            ],
+            [
+                "Increases attack power by %s%% when fighting monsters from Sealed Vessels and by %s%% when fighting monsters in Glacernon.",
+                "Reduces attack power by %s%% when fighting monsters from Sealed Vessels and by %s%% when fighting monsters in Glacernon."
+            ],
+            [
+                "If the target has less than %s%% HP, your Holy Energy bar fills by %s%% (does not apply to NosMates).",
+                null
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 91,
+        "subj": [
+            "Sidestep",
+            "Enlightenment",
+            "Moonlight Absorption",
+            "Gathering Petals",
+            "Mark of the Moon"
+        ],
+        "list": [
+            [
+                "You dodge attacks and have a %s%% chance to cause %s.",
+                "You dodge attacks and have a %s%% chance to cause %s."
+            ],
+            [
+                "Use a buff skill while Enlightenment is active to receive additional effects.",
+                null
+            ],
+            [
+                "Allows you to use Full Moon skills.",
+                null
+            ],
+            [
+                "Allows you to use Lotus Flower skills.",
+                null
+            ],
+            [
+                "The next damage you inflict on a marked enemy will be increased by %s%% and consume the Mark of the Moon.",
+                "The next damage inflicted by the enemy will be reduced by %s%% and consume the Mark of the Moon."
+            ]
+        ],
+        "desc": [
+            "4",
+            "4",
+            "2",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "vnum": 92,
+        "subj": [
+            "Withstand",
+            "Opportunity to Attack",
+            "Mark of the Full Moon",
+            "Bound by the Full Moon's Light",
+            null
+        ],
+        "list": [
+            [
+                "Whenever you are attacked, you have a %s%% chance of generating %s.",
+                "Whenever you are attacked, you have a %s%% chance of generating %s."
+            ],
+            [
+                "After using an attack skill, there is a chance of receiving another Opportunity to Attack.",
+                "After using an attack skill, there is a chance of receiving another Opportunity to Attack."
+            ],
+            [
+                "The next damage you inflict on a marked enemy will be increased by %s%% and consume the Mark of the Full Moon.",
+                "The next damage you inflict on a marked enemy will be increased by %s%% and consume the Mark of the Full Moon."
+            ],
+            [
+                "If the effect Bound by Moonlight is active on your opponent, you will trigger Bound by the Full Moon's Light.",
+                "If the effect Bound by Moonlight is active on your opponent, you will trigger Bound by the Full Moon's Light."
+            ],
+            [
+                "Can only be used with a buff of %s or higher.",
+                "You cannot use skills that increase Heat Points."
+            ]
+        ],
+        "desc": [
+            "4",
+            "2",
+            "4",
+            "0",
+            "7"
+        ]
+    },
+    {
+        "vnum": 93,
+        "name": "Changes the elemental percentage.",
+        "subj": [
+            "Changes the fire element percentage.",
+            "Changes the water element percentage.",
+            "Changes the light element percentage.",
+            "Changes the shadow element percentage.",
+            "Changes all elemental percentages."
+        ],
+        "list": [
+            [
+                "Fire element bonus damage is increased by %s%%.",
+                "Fire element is reduced by %s%%."
+            ],
+            [
+                "Water element is increased by %s%%.",
+                "Water element is reduced by %s%%."
+            ],
+            [
+                "Light element is increased by %s%%.",
+                "Light element is reduced by %s%%."
+            ],
+            [
+                "Shadow element is increased by %s%%.",
+                "Shadow element is reduced by %s%%."
+            ],
+            [
+                "All elements are increased by %s%%.",
+                "All elements are reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 94,
+        "name": "Changes the elemental resistance percentage.",
+        "subj": [
+            "Changes the all resistance percentages.",
+            "Changes the fire resistance percentage.",
+            "Changes the water resistance percentage.",
+            "Changes the light resistance percentage.",
+            "Changes the shadow resistance percentage."
+        ],
+        "list": [
+            [
+                "All elemental resistances are increased by %s%%.",
+                "All elemental resistances are reduced by %s%%."
+            ],
+            [
+                "Fire resistance is increased by %s%%.",
+                "Fire resistance is reduced by %s%%."
+            ],
+            [
+                "Water resistance is increased by %s%%.",
+                "Water resistance is reduced by %s%%."
+            ],
+            [
+                "Light resistance is increased by %s%%.",
+                "Light resistance is reduced by %s%%."
+            ],
+            [
+                "Shadow resistance is increased by %s%%.",
+                "Shadow resistance is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 95,
+        "subj": [
+            "When an item drops there is a certain probability that it may drop a second time. This effect is only triggered when the dropped item is assigned to the player, not when it is shared in the group.",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "When a hunted monster drops an item, there's a %s%% chance that it drops the item a second time. This effect is only triggered when the dropped item is assigned to the player, not when it is shared in the group.",
+                "When a hunted monster drops an item, there's a %s%% chance that it drops the item a second time. This effect is only triggered when the dropped item is assigned to the player, not when it is shared in the group."
+            ],
+            [
+                "On attack, there is a %s%% chance of inflicting %s on your opponent.",
+                "On attack, there is a %s%% chance of inflicting %s on your opponent."
+            ],
+            [
+                "On attack, there is a %s%% chance of receiving %s.",
+                "On attack, there is a %s%% chance of receiving %s."
+            ],
+            [
+                "When you're defending, there is a %s%% chance of inflicting %s on your opponent.",
+                "When you're defending, there is a %s%% chance of inflicting %s on your opponent."
+            ],
+            [
+                "When you're defending, there is a %s%% chance of receiving %s.",
+                "When you're defending, there is a %s%% chance of receiving %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "4",
+            "4",
+            "4",
+            "4"
+        ]
+    },
+    {
+        "vnum": 96,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Increases the equipped fairy's element by %s.",
+                "The equipped fairy's element decreases by %s."
+            ],
+            [
+                "On attack there is a %s%% chance of increasing your equipped fairy's element by %s.",
+                "On attack there is a %s%% chance of decreasing your equipped fairy's element by %s."
+            ],
+            [
+                "Damage to monsters is increased by %s%%.",
+                "Damage to monsters is reduced by %s%%."
+            ],
+            [
+                "Provides a %s%% chance when catching a fish to catch an extra fish.",
+                "Provides a %s%% chance when catching a fish to catch an extra fish."
+            ],
+            [
+                "The probability of catching a rare fish is increased by %s%%.",
+                "The probability of catching a rare fish is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 97,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Provides a (current HP/max. HP * %s)%% chance to inflict %s on your opponent.",
+                "Provides a (missing HP/max. HP * %s)%% chance to inflict %s on your opponent."
+            ],
+            [
+                "If the attack is successful, you earn %s ultimate points.",
+                "If you are attacked while blocking, you earn %s ultimate points."
+            ],
+            [
+                "You can use ultimate skills.",
+                "You can use ultimate skills."
+            ],
+            [
+                "When you're attacked with a shadow element skill, there is a %s%% chance of triggering %s.",
+                "When you're attacked with a shadow element skill, there is a %s%% chance of triggering %s."
+            ],
+            [
+                "When debuffs are applied to you, attack and defence power are increased by %s%% per debuff.",
+                "When buffs are applied to you, attack and defence power are increased by %s%% per buff."
+            ]
+        ],
+        "desc": [
+            "4",
+            "1",
+            "1",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "vnum": 98,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "With a %s%% probability all elemental damage is increased by %s%%.",
+                "With a %s%% probability all elemental damage is reduced by %s%%."
+            ],
+            [
+                "With a %s%% probability fire attack damage is increased by %s%%.",
+                "With a %s%% probability fire attack damage is reduced by %s%%."
+            ],
+            [
+                "With a %s%% probability water attack damage is increased by %s%%.",
+                "With a %s%% probability water attack damage is reduced by %s%%."
+            ],
+            [
+                "With a %s%% probability light attack damage is increased by %s%%.",
+                "With a %s%% probability light attack damage is reduced by %s%%."
+            ],
+            [
+                "With a %s%% probability shadow attack damage is increased by %s%%.",
+                "With a %s%% probability shadow attack damage is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 99,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Damage to low-level plants is increased by %s%%.",
+                "Damage to low-level plants is reduced by %s%%."
+            ],
+            [
+                "Damage to low-level animals is increased by %s%%.",
+                "Damage to low-level animals is reduced by %s%%."
+            ],
+            [
+                "Damage to low-level monsters is increased by %s%%.",
+                "Damage to low-level monsters is reduced by %s%%."
+            ],
+            [
+                "Damage to Kovolts is increased by %s%%.",
+                "Damage to Kovolts is reduced by %s%%."
+            ],
+            [
+                "Damage to Catsies is increased by %s%%.",
+                "Damage to Catsies is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 100,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Damage to low-level spirits is increased by %s%%.",
+                "Damage to low-level spirits is reduced by %s%%."
+            ],
+            [
+                "Damage to angels is increased by %s%%.",
+                "Damage to angels is reduced by %s%%."
+            ],
+            [
+                "Damage to demons is increased by %s%%.",
+                "Damage to demons is reduced by %s%%."
+            ],
+            [
+                "Damage to low-level undead is increased by %s%%.",
+                "Damage to low-level undead is reduced by %s%%."
+            ],
+            [
+                "Production point consumption is reduced by %s%%.",
+                "Production point consumption is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 101,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Damage to monsters in the Land of Death is increased by %s%%.",
+                "Damage to monsters in the Land of Death is reduced by %s%%."
+            ],
+            [
+                "Damage to monsters from Sealed Vessels is increased by %s%%.",
+                "Damage to monsters from Sealed Vessels is reduced by %s%%."
+            ],
+            [
+                "Experience gain is increased by %s%%.",
+                "Experience gain is reduced by %s%%."
+            ],
+            [
+                "Job experience gain is increased by %s%%.",
+                "Job experience gain is reduced by %s%%."
+            ],
+            [
+                "Dodge is increased by %s%%.",
+                "Dodge is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 102,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Your specialist's attack skill points are increased by %s.",
+                "Your specialist's attack skill points are reduced by %s."
+            ],
+            [
+                "Your specialist's defence skill points are increased by %s.",
+                "Your specialist's defence skill points are reduced by %s."
+            ],
+            [
+                "Your specialist's elemental skill points are increased by %s.",
+                "Your specialist's elemental skill points are reduced by %s."
+            ],
+            [
+                "Your specialist's HP/MP skill points are increased by %s.",
+                "Your specialist's HP/MP skill points are reduced by %s."
+            ],
+            [
+                "Hit rate is increased by %s%%.",
+                "Hit rate is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 103,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "All attacks are increased by %s%%.",
+                "All attacks are reduced by %s%%."
+            ],
+            [
+                "Melee attacks are increased by %s%%.",
+                "Melee attacks are reduced by %s%%."
+            ],
+            [
+                "Ranged attacks are increased by %s%%.",
+                "Ranged attacks are reduced by %s%%."
+            ],
+            [
+                "Magic attacks are increased by %s%%.",
+                "Magic attacks are reduced by %s%%."
+            ],
+            [
+                "Concentration is increased by %s%%.",
+                "Concentration is reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 104,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "When you're defending, there is a %s%% chance of %s%% of the damage being reflected at the opponent.",
+                "When you're defending, there is a %s%% chance of %s%% of the damage being reflected at the opponent."
+            ],
+            [
+                "All opponents within %s space(s) take %s damage every 1.5 seconds.",
+                "All opponents within %s space(s) take %s damage every 1.5 seconds."
+            ],
+            [
+                "When you're defending, there is a %s%% chance of summoning a(n) %s.",
+                "When you're defending, there is a %s%% chance of summoning two %s."
+            ],
+            [
+                "Increases the attack power of your NosMate by %s%%.",
+                "Increases the attack power of your NosMate by %s%%."
+            ],
+            [
+                "All opponents within %s space(s) suffer %s every 1.5 seconds.",
+                "Allies within %s space(s) suffer [%s] every 1.5 seconds."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "3",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "vnum": 105,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "When you're attacking, there is a %s%% chance (caster level * 18) of an opponent suffering damage from Apocalypse Power. They will also receive the corresponding debuff.",
+                "When you're attacking, there is a %s%% chance (caster level * 18) of an opponent suffering damage from Apocalypse Power. They will also receive the corresponding debuff."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance of receiving Reflection Power.",
+                "When you're attacking, there is a %s%% chance of receiving Reflection Power."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance (caster level * 15) of an opponent suffering damage from Wolf Power. They will also receive the corresponding debuff.",
+                "When you're attacking, there is a %s%% chance (caster level * 15) of an opponent suffering damage from Wolf Power. They will also receive the corresponding debuff."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance of the opponent being knocked back 4 spaces (only in PvP).",
+                "When you're defending, there is a %s%% chance of the opponent being knocked back 4 spaces (only in PvP)."
+            ],
+            [
+                "When you attack, there is a %s%% chance (caster level * 17) of an opponent suffering damage from Explosion Power. They will also receive the corresponding debuff.",
+                "When you attack, there is a %s%% chance (caster level * 17) of an opponent suffering damage from Explosion Power. They will also receive the corresponding debuff."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 106,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "When you're attacking, there is a %s%% chance of receiving Agility Power.",
+                "When you're attacking, there is a %s%% chance of receiving Agility Power."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance (caster level * 18) of an opponent suffering damage from Lightning Power. They will also receive the corresponding debuff.",
+                "When you're attacking, there is a %s%% chance (caster level * 18) of an opponent suffering damage from Lightning Power. They will also receive the corresponding debuff."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance of triggering Curse Power on the opponent.",
+                "When you're attacking, there is a %s%% chance of triggering Curse Power on the opponent."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance (caster level * 23) of an opponent suffering damage from Bear Power. They will also receive the corresponding debuff.",
+                "When you're attacking, there is a %s%% chance (caster level * 23) of an opponent suffering damage from Bear Power. They will also receive the corresponding debuff."
+            ],
+            [
+                "When you're attacking, there is a %s%% chance of receiving Frost Power.",
+                "When you're attacking, there is a %s%% chance of receiving Frost Power."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 107,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Magic armour prevents %s damage.",
+                "Magic armour prevents %s damage."
+            ],
+            [
+                "When you're defending, there is a %s%% chance of your resistance to the element with which the opponent is attacking increasing by %s.",
+                "When you're defending, there is a %s%% chance of your resistance to the element with which the opponent is attacking decreasing by %s."
+            ],
+            [
+                "The maximum additional HP increases by %s%%.",
+                "The maximum additional HP decreases by %s%%."
+            ],
+            [
+                "When your attack is blocked, there's a %s%% chance of ignoring the block.",
+                "When your attack is blocked, there's a %s%% chance of ignoring the block."
+            ],
+            [
+                "Dodge is increased by %s%%.",
+                "Hit rate of all attacks is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 108,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "When you receive a critical hit, there is a %s%% chance of %s%% being reflected to the opponent.",
+                "When you receive a critical hit, there is a %s%% chance of %s%% being reflected to the opponent."
+            ],
+            [
+                "You have a (percent of HP missing * %s/100)%% probability of dodging attacks.",
+                null
+            ],
+            [
+                "The final critical hit damage is increased by %s%% per critical hit (max. %s hits).",
+                "The final critical hit damage is increased by %s%% per critical hit (max. %s hits)."
+            ],
+            [
+                "When you're defending, there is a %s%% chance of %s%% of the damage being deducted from your MP instead of your HP.",
+                "When you're defending, there is a %s%% chance of %s%% of the damage being deducted from your MP instead of your HP."
+            ],
+            [
+                "Overall attack power is increased by %s%% of magic defence.",
+                "Overall attack power is increased by %s%% of magic defence."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 109,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the lion loa.",
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the lion loa."
+            ],
+            [
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the eagle loa.",
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the eagle loa."
+            ],
+            [
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the snake loa.",
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the snake loa."
+            ],
+            [
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the bear loa.",
+                "When attacking, there is a %s%% chance of %s%% additional damage being added by the bear loa."
+            ],
+            [
+                "When you receive a debuff, there is a %s%% chance of every element being increased by %s%%.",
+                "When you receive a debuff, there is a %s%% chance of every element being increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 110,
+        "subj": [
+            null,
+            "The Beast King has chosen you as the target of his bite attack.",
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Your HP increases by %s whenever you dodge.",
+                "Your HP increases by %s whenever you dodge."
+            ],
+            [
+                "The Beast King has chosen you as the target of his bite attack.",
+                "The Beast King has chosen you as the target of his bite attack."
+            ],
+            [
+                "Maximum HP is increased by %s%%.",
+                "Maximum HP is decreased by %s%%."
+            ],
+            [
+                "Maximum MP is increased by %s%%.",
+                "Maximum MP is decreased by %s%%."
+            ],
+            [
+                "Your HP increases by %s%% of missing HP when you dodge attacks.",
+                null
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 111,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "If you or your NosMates defeat a monster, any NosMates who are currently active will be restored %s%% HP.",
+                "If you or your NosMates defeat a monster, any NosMates who are currently active will be restored %s%% HP."
+            ],
+            [
+                "If one of your NosMates is defeated, you will be restored %s%% HP.",
+                "If one of your NosMates is defeated, any NosMates who are currently active will be restored %s%% HP."
+            ],
+            [
+                "If you defeat a monster, there is a %s%% chance of %s being cast on you.",
+                "If you defeat a monster, there is a %s%% chance of %s being cast on your NosMates."
+            ],
+            [
+                "If you defeat a monster, there is a %s%% chance of your NosMates' attack power increasing by %s%%.",
+                "If you defeat a monster, there is a %s%% chance that all the defences of your NosMates will increase by %s%%."
+            ],
+            [
+                "If you defeat a monster, there is a %s%% chance of all your NosMates being restored %s%% HP.",
+                "If you defeat a monster, there is a %s%% chance of all your NosMates being restored %s%% HP."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "4",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 112,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "If your NosMates defeat a monster, your attack power will be increased by %s%%.",
+                "If your NosMates defeat a monster, your defences will be increased by %s%%."
+            ],
+            [
+                "If you're defeated, all opponents within %s spaces receive %s.",
+                "If you're defeated, all of your NosMates within %s spaces receive %s."
+            ],
+            [
+                "If all of your NosMates are defeated, there is a %s%% chance of %s being cast on you.",
+                "If all of your NosMates are defeated, there is a %s%% chance of %s being cast on you."
+            ],
+            [
+                "If you defeat a monster, %s will be cast on any of your NosMates within %s spaces.",
+                "If you defeat a monster, %s will be cast on any of your NosMates within %s spaces."
+            ],
+            [
+                "Summons Squad %s.",
+                "Summons Squad %s."
+            ]
+        ],
+        "desc": [
+            "1",
+            "4",
+            "4",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "vnum": 113,
+        "subj": [
+            "none",
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Your squads' attack power is increased (%s + level x %s).",
+                "Your squads' defence is increased (%s + level x %s)."
+            ],
+            [
+                "Your NosMates have a %s%% chance to receive %s.",
+                "Your NosMates have a %s%% chance to receive %s."
+            ],
+            [
+                "Your Grav Points reduce by %s each time you perform a basic attack.",
+                "Your Anti-Grav Points reduce by %s each time you perform a basic attack."
+            ],
+            [
+                "All your gravitation skills are unavailable.",
+                "All your anti-gravitation skills are unavailable."
+            ],
+            [
+                "Grav Points are reduced by %s.",
+                "Anti-Grav Points are reduced by %s."
+            ]
+        ],
+        "desc": [
+            "2",
+            "4",
+            "1",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "vnum": 114,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "If you are attacked with the fire element, there's a %s%% chance the damage will be increased by %s%%.",
+                "If you are attacked with the fire element, there's a %s%% chance the damage will be reduced by %s%%."
+            ],
+            [
+                "If you are attacked with the water element, there's a %s%% chance the damage will be increased by %s%%.",
+                "If you are attacked with the water element, there's a %s%% chance the damage will be reduced by %s%%."
+            ],
+            [
+                "If you are attacked with the light element, there's a %s%% chance the damage will be increased by %s%%.",
+                "If you are attacked with the light element, there's a %s%% chance the damage will be reduced by %s%%."
+            ],
+            [
+                "If you are attacked with the shadow element, there's a %s%% chance the damage will be increased by %s%%.",
+                "If you are attacked with the shadow element, there's a %s%% chance the damage will be reduced by %s%%."
+            ],
+            [
+                "Reduces enemies' soft crit damage by %s%%.",
+                "Reduces enemies' soft crit damage by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 115,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "The probability of catching a fish is increased by %s%%.",
+                "The probability of catching a fish is reduced by %s%%."
+            ],
+            [
+                "The probability of your fishing line breaking is increased by %s%%.",
+                "The probability of your fishing line breaking is reduced by %s%%."
+            ],
+            [
+                "There's a %s%% chance of the bait not being consumed when you cast your fishing line.",
+                "There's a %s%% chance of the bait not being consumed when you cast your fishing line."
+            ],
+            [
+                "There's a %s%% chance that the size of the fish caught increases by %s%%.",
+                "There's a %s%% chance that the size of the fish caught decreases by %s%%."
+            ],
+            [
+                "The fishing experience points you receive are increased by %s%%.",
+                "The fishing experience points you receive are reduced by %s%%."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 116,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "%s%% chance to trigger Power of Cleansing Armour when defending.",
+                "%s%% chance to trigger Power of Cleansing Armour when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Regeneration when defending.",
+                "%s%% chance to trigger Power of Regeneration when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of the Flame when defending.",
+                "%s%% chance to trigger Power of the Flame when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Purity when defending.",
+                "%s%% chance to trigger Power of Purity when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Resistance when defending.",
+                "%s%% chance to trigger Power of Resistance when defending."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 117,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "%s%% chance to trigger Power of Blood when defending.",
+                "%s%% chance to trigger Power of Blood when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Conversion when defending.",
+                "%s%% chance to trigger Power of Conversion when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Unyielding when defending.",
+                "%s%% chance to trigger Power of Unyielding when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Instinct when defending.",
+                "%s%% chance to trigger Power of Instinct when defending."
+            ],
+            [
+                "%s%% chance to trigger Power of Healing when defending.",
+                "%s%% chance to trigger Power of Healing when defending."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 118,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Pierces armour. Increases damage of Pinpoint attacks.",
+                "Pierces armour thoroughly. Significantly increases damage of Pinpoint attacks."
+            ],
+            [
+                "Counts as a Pinpoint attack. Damage against targets with pierced armour is increased by %s%%.",
+                "Counts as a Pinpoint attack. Damage against targets with pierced armour is increased by %s%%."
+            ],
+            [
+                "Increases critical damage by %s%% if %s is active.",
+                "Reduces critical damage by %s%% if %s is active."
+            ],
+            [
+                "Increases the chance of inflicting a critical hit by %s%% if %s is active.",
+                "Reduces the chance of inflicting a critical hit by %s%% if %s is active."
+            ],
+            [
+                "You receive %s when you block while %s is active.",
+                "The target receives [%s] when you attack while [%s] is active."
+            ]
+        ],
+        "desc": [
+            "0",
+            "1",
+            "4",
+            "4",
+            "7"
+        ]
+    },
+    {
+        "vnum": 119,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Depending on your Heat Points, your attack power is increased from %s%% to %s%%.",
+                "Depending on your Heat Points, your attack power is increased from %s%% to %s%%."
+            ],
+            [
+                "Depending on your Heat Points, your attack range is increased from %s to %s.",
+                "Depending on your Heat Points, your attack range is increased from %s to %s."
+            ],
+            [
+                "Depending on your Heat Points, your attack radius is increased from %s%% to %s%%.",
+                "Depending on your Heat Points, your attack radius is increased from %s%% to %s%%."
+            ],
+            [
+                "If the High Heating effect is active, enemies from %s spaces around the target are pulled together in one place.",
+                "Pulls enemies from %s spaces around the target together in one place."
+            ],
+            [
+                "If the High Heating effect or higher is active, the opponent's HP is reduced by %s%% of the damage you take.",
+                "If the High Heating effect or higher is active, the opponent's HP is reduced by %s%% of the damage you take."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 120,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "All Heat Points are consumed. The damage increases by %s%% of the consumed Heat Points.",
+                "All Heat Points are consumed. The damage increases by %s%% of the consumed Heat Points."
+            ],
+            [
+                "You receive %s Sharpness Points.",
+                "You lose %s Sharpness Points."
+            ],
+            [
+                "You receive %s Grav Points and lose %s Antigrav Points.",
+                "You receive %s Anti-Grav Points and lose %s Grav Points."
+            ],
+            [
+                "The damage of Gravitation skills is increased by %s%%.",
+                "The damage of Anti-Gravitation skills is increased by %s%%."
+            ],
+            [
+                "Increases damage by (current number of Grav and Anti-Grav Points) * %s%%. All Grav and Anti-Grav Points are consumed.",
+                "Increases damage by (current number of Grav and Anti-Grav Points) * %s%%. All Grav and Anti-Grav Points are consumed."
+            ]
+        ],
+        "desc": [
+            "1",
+            "1",
+            "2",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "vnum": 121,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Increases damage by %s%% if %s is active.",
+                "Increases damage by %s%% if %s is active."
+            ],
+            [
+                "MP consumption of skills (including magic) is increased by %s%% if %s is active.",
+                "MP consumption of skills (including magic) is reduced by %s%% if %s is active."
+            ],
+            [
+                "Water element is increased by %s%% if %s is active.",
+                "All elemental resistances are increased by %s%% if %s is active."
+            ],
+            [
+                "You lose %s%% of your max. MP and receive %s Fuel Points.",
+                "You lose %s%% of your max. MP and receive %s Fuel Points."
+            ],
+            [
+                "You consume %s Fuel Points. Your damage is increased by %s%%.",
+                "You consume %s Fuel Points. Your damage is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "4",
+            "4",
+            "4",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "vnum": 122,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "You consume %s Fuel Points. Your shadow element is increased by %s%%.",
+                "You consume %s Fuel Points. Your shadow element is increased by %s%%."
+            ],
+            [
+                "You consume %s Fuel Points and receive the %s effect.",
+                "You lose %s Fuel Points and inflict %s to the target."
+            ],
+            [
+                "You consume %s Fuel Points. There's a %s%% chance to reset the cooldown of the used skill.",
+                "You consume %s Fuel Points. There's a %s%% chance to reset the cooldown of the used skill."
+            ],
+            [
+                "You consume %s Fuel Points and ignore %s%% of the opponent's defence.",
+                "You consume %s Fuel Points and ignore %s%% of the opponent's defence."
+            ],
+            [
+                "You receive %s Heat Points.",
+                "You lose %s Heat Points."
+            ]
+        ],
+        "desc": [
+            "2",
+            "4",
+            "2",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "vnum": 123,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Tames %s-star pets with a %s%% chance.",
+                "Tames %s-star pets with a %s%% chance."
+            ],
+            [
+                "This debuff disappears when you get hit %sx by other players.",
+                "This debuff disappears when you get hit %sx by other players."
+            ],
+            [
+                "%s%% of the user's HP are recovered.",
+                "%s%% of the user's HP are recovered."
+            ],
+            [
+                "You die as soon as you move, attack or use a skill.",
+                "You die as soon as you move, attack or use a skill."
+            ],
+            [
+                "Increases damage to all monsters in Act 9 (excluding raids) and the Land of Life by %s%%.",
+                "Reduces damage from all monsters in Act 9 (excluding raids) and the Land of Life by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "1",
+            "1",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "vnum": 124,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Can only be cast if you have %s tokens.",
+                "Can only be cast if you have %s tokens."
+            ],
+            [
+                "Provides a %s%% chance to receive %s token(s).",
+                "Provides a %s%% chance to receive %s token(s)."
+            ],
+            [
+                "Token enhancement buff active.",
+                "Token enhancement buff active."
+            ],
+            [
+                "Token gauge increased by %s.",
+                "Token gauge reduced by %s."
+            ],
+            [
+                "If you spend %s tokens, you are guaranteed to receive %s.",
+                "If you spend %s tokens, you are guaranteed to deal %s to the target."
+            ]
+        ],
+        "desc": [
+            "1",
+            "2",
+            "0",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "vnum": 125,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "If you spend %s tokens, your attack power increases by %s%%.",
+                "If you spend %s tokens, your specialist's original element increases by %s%%."
+            ],
+            [
+                "If you have %s Mineral tokens, your attack power is increased by %s%%.",
+                "If you have %s Mineral tokens, your defence power is increased by %s%%."
+            ],
+            [
+                "When you take damage, the gauge increases by %s (max. %s times).",
+                "When you take damage, the gauge increases by %s (max. %s times)."
+            ],
+            [
+                "On attack there is a %s%% chance of inflicting %s on your enemy.",
+                "On attack there is a %s%% chance of triggering %s."
+            ],
+            [
+                "If you have %s Explosive Charge tokens, your attack power is increased by %s%%.",
+                "If you have %s Explosive Charge tokens, your dodge is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "2",
+            "2",
+            "2",
+            "4",
+            "2"
+        ]
+    },
+    {
+        "vnum": 126,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "Has a %s%% probability of triggering %s on itself and its owner.",
+                "Has a %s%% probability of removing %s from itself and its owner."
+            ],
+            [
+                "When you cast an attack skill, the damage dealt is increased by %s%% of your main weapon's attack power.",
+                "When you cast an attack skill, the damage dealt is increased by %s%% of your secondary weapon's attack power."
+            ],
+            [
+                "Provides a %s%% chance to gain an additional raid token (excluding hardcore raid tokens).",
+                "Provides a %s%% chance to gain an additional raid token (excluding hardcore raid tokens)."
+            ],
+            [
+                "There is a %s%% chance that you'll get an additional raid box.",
+                "There is a %s%% chance that you'll get an additional raid box."
+            ],
+            [
+                "If you have %s Pyrosphere tokens, your attack power is increased by %s%%.",
+                "If you have %s Pyrosphere tokens, your fire element is increased by %s%%."
+            ]
+        ],
+        "desc": [
+            "4",
+            "1",
+            "1",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "vnum": 127,
+        "subj": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "list": [
+            [
+                "All attacks in the %s raid and hardcore raid are increased by %s%%.",
+                "All defences in the %s raid and hardcore raid are increased by %s%%."
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                "If you have %s Spare Battery tokens, your attack power is increased by %s%%.",
+                "If you have %s Spare Battery tokens, your hit rate is increased by %s%%."
+            ],
+            [
+                null,
+                null
+            ],
+            [
+                null,
+                null
+            ]
+        ],
+        "desc": [
+            "8",
+            "2",
+            "2",
+            null,
+            null
+        ]
+    }
+]

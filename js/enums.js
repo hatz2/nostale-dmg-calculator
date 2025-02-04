@@ -10,7 +10,10 @@ export {
     AccessorySubType,
     SpecialistSubType,
     ClassFlag,
-    EquipSlot
+    EquipSlot,
+    SkillTargetGroup,
+    SkillTargetType,
+    SkillType
 }
 
 const Elem = {
@@ -126,7 +129,7 @@ const EquipSlot = {
     MINIPET: 17,
 }
 
-export const SkillType = {
+const SkillType = {
     PASSIVE: 0,
     PLAYER_SKILL: 1,
     SKILL_UPGRADE: 2,
@@ -135,14 +138,14 @@ export const SkillType = {
     PARTNER_SKILL: 5,
 }
 
-export const SkillTargetType = {
+const SkillTargetType = {
     TARGET: 0,
     SELF: 1,
     TARGET_OR_SELF: 2,
     NO_TARGET: 3,
 }
 
-export const SkillTargetGroup = {
+const SkillTargetGroup = {
     ENEMY: 0,
     ENEMY_DEBUFF: 1,
     ALLY_BUFF: 2,

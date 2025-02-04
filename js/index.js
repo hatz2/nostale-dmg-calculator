@@ -1,16 +1,11 @@
-import { MonsterDatParser } from "./parsers/dat/monster_parser.js"
-import { NameParser } from "./parsers/name_parser.js";
-import { getIdleMonsterImgPaths } from "./parsers/imgs/monster_img_parser.js";
-import { ItemDatParser } from "./parsers/dat/item_parser.js";
+import { getIdleMonsterImgPaths } from "../utils/js/parsers/imgs/monster_img_parser.js";
 import { initMonsterListUI } from "./ui/monster_list.js";
 import { initItemListUI } from "./ui/items_lists.js";
-import { BCardDatParser } from "./parsers/dat/bcard_parser.js";
 import { initWeaponInspector } from "./ui/weapon_inspector.js";
 import { initDraggableElements } from "./ui/dragable_element.js";
 import { initSpInspector } from "./ui/sp_inspector.js";
 import { initClassSwapRadioButtons } from "./ui/class_swap.js";
 import { initFairyInspector } from "./ui/fairy_inspector.js";
-import { SkillDatParser } from "./parsers/dat/skill_parser.js";
 import { initSkillListUI } from "./ui/skill_list.js";
 
 var monsters;
@@ -24,21 +19,23 @@ window.addEventListener("load", onLoad);
 
 async function onLoad() {
     // Load and parse game files
-    const monster_names = await readNamesMapFromFile("/lang/_code_uk_monster.txt");
-    const bcard_names = await readNamesMapFromFile("/lang/_code_uk_BCard.txt");
-    const card_names = await readNamesMapFromFile("/lang/_code_uk_Card.txt");
-    const item_names = await readNamesMapFromFile("/lang/_code_uk_Item.txt");
-    const skill_names = await readNamesMapFromFile("/lang/_code_uk_Skill.txt");
-    monsters = await initDatObjCollection("/data/monster.dat", monster_names, MonsterDatParser);
-    items = await initDatObjCollection("/data/Item.dat", item_names, ItemDatParser);
-    bcards = await initDatObjCollection("/data/BCard.dat", bcard_names, BCardDatParser);
-    skills = await initDatObjCollection("/data/Skill.dat", skill_names, SkillDatParser)
+    monsters = await fetch("/data/monster.json");
+    monsters = await monsters.json();
+
+    items = await fetch("/data/item.json");
+    items = await items.json();
+
+    bcards = await fetch("/data/bcard.json");
+    bcards = await bcards.json();
+
+    skills = await fetch("/data/skill.json");
+    skills = await skills.json();
     
-    console.log(bcards);
+    // console.log(bcards);
     // console.log(items);
     // console.log(skills);
 
-    const monster_sprite_file = await fetch("/data/NSmnData.NOS.json");
+    const monster_sprite_file = await fetch("/client_files/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
     monster_img_paths = getIdleMonsterImgPaths(monster_sprite_data);
 
@@ -50,18 +47,4 @@ async function onLoad() {
     initFairyInspector(bcards);
     initDraggableElements();
     initClassSwapRadioButtons();
-}
-
-async function readNamesMapFromFile(path) {
-    const lang_file = await fetch(path);
-    const data = await lang_file.text();
-    const parser = new NameParser(data);
-    return parser.parse();
-}
-
-async function initDatObjCollection(path, names_map, ParserTemplate, ...additional_params) {
-    const dat_file = await fetch(path);
-    const data = await dat_file.text();
-    const parser = new ParserTemplate(data, names_map, additional_params);
-    return parser.parse();
 }

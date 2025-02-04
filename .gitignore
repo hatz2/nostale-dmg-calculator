@@ -1,5 +1,4 @@
-/data/*
-/lang/*
+/client_files/*
 /imgs/*
-/utils/venv
+/utils/python/venv
 .vscode/launch.json
