@@ -1,12 +1,14 @@
 import { character_config } from "../calculator/character_config.js";
 import { calculateAttackAddition, calculateDefenceAddition, calculateElementAddition, calculateHpMpAddition } from "../calculator/sp_stats.js";
-
+import { calculate_bonus_from_sp, get_str_array_from_bonuses } from "../calculator/sp_bonus.js";
 
 export function initSpInspector() {
     initInputBindings();
     initButtonBindings();
     initContextMenu();
 }
+
+const SP_BONUS_SCROLL_STEP = 14.5;
 
 function initInputBindings() {
     const attack = document.getElementById("attack-points");
@@ -32,22 +34,30 @@ function initInputBindings() {
 
 function setAttackPoints() {
     character_config.sp_config.attack = this.value;
+    character_config.sp_bonuses = calculate_bonus_from_sp(character_config.sp_config);
     showAttackIncrease();
+    showSpBonuses();
 }
 
 function setDefencePoints() {
     character_config.sp_config.defence = this.value;
+    character_config.sp_bonuses = calculate_bonus_from_sp(character_config.sp_config);
     showDefenceIncrease();
+    showSpBonuses();
 }
 
 function setElementPoints() {
     character_config.sp_config.element = this.value;
+    character_config.sp_bonuses = calculate_bonus_from_sp(character_config.sp_config);
     showElementIncrease();
+    showSpBonuses();
 }
 
 function setHpMpPoints() {
     character_config.sp_config.hp_mp = this.value;
+    character_config.sp_bonuses = calculate_bonus_from_sp(character_config.sp_config);
     showHpMpIncrease();
+    showSpBonuses();
 }
 
 function setAttackPerf() {
@@ -106,6 +116,20 @@ function showHpMpIncrease() {
     }`;
 }
 
+function showSpBonuses() {
+    let bonuses = character_config.sp_bonuses;
+    const sp_bonus_display = document.getElementById("sp-bonus-display");
+    const str_bonuses = get_str_array_from_bonuses(bonuses);
+
+    let full_text = "";
+
+    for (let str_bonus of str_bonuses) {
+        full_text += str_bonus + "<br>";
+    }
+
+    sp_bonus_display.innerHTML = full_text;
+}
+
 function initButtonBindings() {
     const cross_btn = document.getElementById("sp-cross-close-btn")
     cross_btn.addEventListener("click", hideSpInspector);
@@ -115,6 +139,12 @@ function initButtonBindings() {
 
     const close_btn = document.getElementById("sp-close-blue-btn");
     close_btn.addEventListener("click", hideSpInspector);
+
+    const scroll_up_btn = document.getElementById("sp-bonus-scroll-up-btn");
+    scroll_up_btn.addEventListener("click", scrollUp);
+    
+    const scroll_down_btn = document.getElementById("sp-bonus-scroll-down-btn");
+    scroll_down_btn.addEventListener("click", scrollDown);
 }
 
 export function hideSpInspector() {
@@ -185,4 +215,23 @@ function resetFields() {
     document.getElementById("sp-title").value = 0;
 
     character_config.sp_config.resetFields();
+    showSpBonuses();
+}
+
+function scrollUp() {
+    const sp_bonus_display = document.getElementById("sp-bonus-display");
+
+    sp_bonus_display.scrollTo({
+        top: sp_bonus_display.scrollTop - SP_BONUS_SCROLL_STEP,
+        behavior: "smooth"
+    });
+}
+
+function scrollDown() {
+    const sp_bonus_display = document.getElementById("sp-bonus-display");
+
+    sp_bonus_display.scrollTo({
+        top: sp_bonus_display.scrollTop + SP_BONUS_SCROLL_STEP,
+        behavior: "smooth"
+    });
 }

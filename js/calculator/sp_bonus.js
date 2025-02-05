@@ -1,3 +1,8 @@
+export {
+    calculate_bonus_from_sp,
+    get_str_array_from_bonuses
+}
+
 const BONUS_NAMES = {
     2730: "Attack power +",
     2726: "Hit Rate +",
@@ -398,3 +403,51 @@ const BONUS = {
         }
     }
 }
+
+function calculate_bonus_from_sp(sp_config) {
+    let bonuses = {}
+    let keywords = ["attack", "defence", "element", "hp_mp"]
+
+    for (let keyword of keywords) {
+        let bonuses_to_use = BONUS[keyword];
+
+        for (let i = 100; i >= 1; i--) {
+            if (!Object.hasOwn(bonuses_to_use, i))
+                continue;
+
+            if (sp_config[keyword] >= i) {
+                let bonus = bonuses_to_use[i]
+                for (let key in bonus) {
+                    if (bonuses[key] === undefined) {
+                        bonuses[key] = 0
+                    }
+                    bonuses[key] += bonus[key]
+                }
+                break
+            }
+        }
+    }
+
+    return bonuses;
+}
+
+function get_str_array_from_bonuses(bonuses) {
+    let str_array = []
+    for (let key in bonuses) {
+        let bonus = bonuses[key]
+        str_array.push(`${BONUS_NAMES[key]} ${bonus}`)
+    }
+    return str_array
+}
+
+// let sp_config = {
+//     attack: 100,
+//     defence: 100,
+//     element: 100,
+//     hp_mp: 100
+// }
+
+// let bonuses = calculate_bonus_from_sp(sp_config)
+// let str_array = get_str_array_from_bonuses(bonuses)
+
+// console.log(str_array)

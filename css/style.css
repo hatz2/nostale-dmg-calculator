@@ -54,6 +54,10 @@ img {
     border-radius: 8px;
 }
 
+.square-box {
+    border: solid 1px #ccc;
+}
+
 .center {
     text-align: center;
     justify-content: center;
@@ -356,4 +360,16 @@ img {
     position: absolute; 
     bottom: 27px; 
     right: 25px;
+}
+
+#sp-bonus-display {
+    position: absolute; 
+    left: 30px; 
+    top: 300px; 
+    width: 230px; 
+    height: 85px; 
+    color: rgb(124, 143, 245); 
+    overflow-y: hidden; 
+    font-size: 12px; 
+    text-align: left;
 }
