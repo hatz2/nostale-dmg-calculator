@@ -7,6 +7,9 @@ import { initSpInspector } from "./ui/sp_inspector.js";
 import { initClassSwapRadioButtons } from "./ui/class_swap.js";
 import { initFairyInspector } from "./ui/fairy_inspector.js";
 import { initSkillListUI } from "./ui/skill_list.js";
+import { initBuffsWidget } from "./ui/buff_widget.js";
+import { initStatsTab } from "./ui/stats_tab.js";
+import { initDmgWidget } from "./ui/dmg_widget.js";
 
 var monsters;
 var monster_sprite_data;
@@ -33,7 +36,7 @@ async function onLoad() {
     
     // console.log(bcards);
     // console.log(items);
-    // console.log(skills);
+    console.log(skills);
 
     const monster_sprite_file = await fetch("/client_files/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
@@ -47,4 +50,7 @@ async function onLoad() {
     initFairyInspector(bcards);
     initDraggableElements();
     initClassSwapRadioButtons();
+    initBuffsWidget(bcards);
+    initStatsTab();
+    initDmgWidget(monsters);
 }

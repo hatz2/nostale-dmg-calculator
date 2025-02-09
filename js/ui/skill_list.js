@@ -1,5 +1,6 @@
 import { character_config } from "../calculator/character_config.js";
 import { SkillTargetGroup, SkillType } from "../enums.js";
+import { displayEquippedOrangeBuffs } from "./buff_widget.js";
 import { getSelectedClass, ITEM_ICONS_PATH } from "./items_lists.js";
 
 var skills
@@ -193,6 +194,8 @@ function onSkillClicked(event) {
 
     // Set the item data in the charcter config structure
     character_config.skill = skill;
+
+    displayEquippedOrangeBuffs();
 }
 
 export function resetSkill() {

@@ -62,6 +62,7 @@ function init(monsters, monster_img_paths) {
             // Set the new current monster
             current_monster.title = img_node.title;
             current_monster.src = img_node.src;
+            current_monster.setAttribute("vnum", monster.vnum);
 
             // Set monster stats
             melee_stat_div.firstChild.data = monster.armor[AttackType.MELEE];

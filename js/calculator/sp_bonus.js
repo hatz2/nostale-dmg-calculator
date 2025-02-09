@@ -1,6 +1,6 @@
 export {
-    calculate_bonus_from_sp,
-    get_str_array_from_bonuses
+    calculateBonusFromSp as calculate_bonus_from_sp,
+    getStrArrayFromBonuses as get_str_array_from_bonuses
 }
 
 const BONUS_NAMES = {
@@ -404,7 +404,7 @@ const BONUS = {
     }
 }
 
-function calculate_bonus_from_sp(sp_config) {
+function calculateBonusFromSp(sp_config) {
     let bonuses = {}
     let keywords = ["attack", "defence", "element", "hp_mp"]
 
@@ -431,7 +431,7 @@ function calculate_bonus_from_sp(sp_config) {
     return bonuses;
 }
 
-function get_str_array_from_bonuses(bonuses) {
+function getStrArrayFromBonuses(bonuses) {
     let str_array = []
     for (let key in bonuses) {
         let bonus = bonuses[key]
@@ -439,15 +439,3 @@ function get_str_array_from_bonuses(bonuses) {
     }
     return str_array
 }
-
-// let sp_config = {
-//     attack: 100,
-//     defence: 100,
-//     element: 100,
-//     hp_mp: 100
-// }
-
-// let bonuses = calculate_bonus_from_sp(sp_config)
-// let str_array = get_str_array_from_bonuses(bonuses)
-
-// console.log(str_array)

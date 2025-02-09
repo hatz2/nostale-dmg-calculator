@@ -27,6 +27,8 @@ class CharacterConfig {
         this.skill = undefined;
         this.sp_bonuses = undefined;
         this.sp_config = new SpConfig();
+        this.level = 1;
+        this.base_dmg = 10;
     }
 
     clear() {

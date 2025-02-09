@@ -11,8 +11,6 @@
     <meta name="language" content="en-us">
     <link rel="stylesheet" href="/css/style.css">
     <script type="module" src="/js/index.js"></script>
-
-
 </head>
 
 <body class="prevent-select">
@@ -152,131 +150,155 @@
         <div class="flex-container">
             <div class="column center">
                 <h2>Character configuration</h2>
-                <div class="" style="display: table; margin: auto;">
-                    <span class="class-radio-btn-container" style="margin: 0px 5px 0px 20px;">
-                        <input type="radio" id="adventurer-radio-btn" name="character_class">
-                        <img src="/imgs/ui/adventurer_class_icon.webp" class="class-selector-icon">
-                    </span>
-                    <span class="class-radio-btn-container">
-                        <input type="radio" id="melee-radio-btn" name="character_class" checked>
-                        <img src="/imgs/ui/melee_def_icon.webp" class="class-selector-icon">
-                    </span>
+                <table>
+                    <tr>
+                        <td style="display: table; height: 380px; max-width: 300px; font-size: 13px;">
+                            <div class="tab">
+                                <button class="tablinks" id="stats-tab-btn">Stats</button>
+                                <button class="tablinks" id="dmg-mod-tab-btn">Dmg modifiers</button>
+                            </div>
 
-                    <span class="class-radio-btn-container">
-                        <input type="radio" id="ranged-radio-btn" name="character_class">
-                        <img src="/imgs/ui/ranged_def_icon.webp" class="class-selector-icon">
-                    </span>
+                            <div id="stats-tab" class="tabcontent" style="height: 100%;">
+                                <span>Level</span>
+                                <input type="number" id="character-level" value="1" min="1" max="99">
+                                <br>
+                                <span>Base damage</span>
+                                <input type="number" id="base-dmg" value="10" min="10", max="9999">
+                            </div>
+                            <div class="square-box tabcontent" id="buff-widget" style="height: 100%;">
+        
+                            </div>
+                        </td>
 
-                    <span class="class-radio-btn-container">
-                        <input type="radio" id="mage-radio-btn" name="character_class">
-                        <img src="/imgs/ui/mage_def_icon.webp" class="class-selector-icon">
-                    </span>
-
-                    <span class="class-radio-btn-container">
-                        <input type="radio" id="artist-radio-btn" name="character_class">
-                        <img src="/imgs/ui/martial_def_icon.webp" class="class-selector-icon">
-                    </span>
-
-
-                    <table id="character-config-table" style="margin: auto;">
-                        <tr>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/mask_slot.webp" id="mask-slot" eqslot="9">
-                                <img src="" class="weared-item clickable" eqslot="9">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/hat_slot.webp" id="hat-slot" eqslot="2">
-                                <img src="" class="weared-item clickable" eqslot="2">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/fairy_slot.webp" id="fairy-slot" eqslot="10">
-                                <img src="" class="weared-item clickable" eqslot="10">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/main_weapon_slot.webp" id="main-weapon-slot" eqslot="0">
-                                <img src="" class="weared-item clickable" eqslot="0">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/sp_slot.webp" id="sp-slot" eqslot="12">
-                                <img src="" class="weared-item clickable" eqslot="12">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/secondary_weapon_slot.webp" id="secondary-weapon-slot" eqslot="5">
-                                <img src="" class="weared-item clickable" eqslot="5">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/glove_slot.webp" id="glove-slot" eqslot="3">
-                                <img src="" class="weared-item clickable" eqslot="3">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/armor_slot.webp" id="armor-slot" eqslot="1">
-                                <img src="" class="weared-item clickable" eqslot="1">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/shoe_slot.webp" id="shoe-slot" eqslot="4">
-                                <img src="" class="weared-item clickable" eqslot="4">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/ring_slot.webp" id="ring-slot" eqslot="7">
-                                <img src="" class="weared-item clickable" eqslot="7">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/necklace_slot.webp" id="necklace-slot" eqslot="6">
-                                <img src="" class="weared-item clickable" eqslot="6">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/bracelet_slot.webp" id="bracelet-slot" eqslot="8">
-                                <img src="" class="weared-item clickable" eqslot="8">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/costume_wings_slot.webp" id="costume-wings-slot" eqslot="16">
-                                <img src="" class="weared-item clickable" eqslot="16">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/mini_pet_slot.webp" id="mini-pet-slot" eqslot="17">
-                                <img src="" class="weared-item clickable" eqslot="17">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/amulet_slot.webp" id="amulet-slot" eqslot="11">
-                                <img src="" class="weared-item clickable" eqslot="11">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/costume_weapon_slot.webp" id="costume-weapon-slot" eqslot="15">
-                                <img src="" class="weared-item clickable" eqslot="15">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/costume_hat_slot.webp" id="costume-hat-slot" eqslot="14">
-                                <img src="" class="weared-item clickable" eqslot="14">
-                            </td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/costume_slot.webp" id="costume-slot" eqslot="13">
-                                <img src="" class="weared-item clickable" eqslot="13">
-                            </td>
-                        </tr>
-                    </table>
-
-                    <table style="margin: auto;">
-                        <tr>
-                            <td></td>
-                            <td class="character-slot-container">
-                                <img src="/imgs/ui/skill_slot.png">
-                                <img id="equiped-skill" src="" class="weared-item clickable" style="bottom: 3px;">
-                            </td>
-                            <td></td>
-                        </tr>
-                    </table>
-
-                </div>
+                        <td>
+                            <div class="" style="display: table; margin: auto;">
+                                <span class="class-radio-btn-container" style="margin: 0px 5px 0px 20px;">
+                                    <input type="radio" id="adventurer-radio-btn" name="character_class">
+                                    <img src="/imgs/ui/adventurer_class_icon.webp" class="class-selector-icon">
+                                </span>
+                                <span class="class-radio-btn-container">
+                                    <input type="radio" id="melee-radio-btn" name="character_class" checked>
+                                    <img src="/imgs/ui/melee_def_icon.webp" class="class-selector-icon">
+                                </span>
+            
+                                <span class="class-radio-btn-container">
+                                    <input type="radio" id="ranged-radio-btn" name="character_class">
+                                    <img src="/imgs/ui/ranged_def_icon.webp" class="class-selector-icon">
+                                </span>
+            
+                                <span class="class-radio-btn-container">
+                                    <input type="radio" id="mage-radio-btn" name="character_class">
+                                    <img src="/imgs/ui/mage_def_icon.webp" class="class-selector-icon">
+                                </span>
+            
+                                <span class="class-radio-btn-container">
+                                    <input type="radio" id="artist-radio-btn" name="character_class">
+                                    <img src="/imgs/ui/martial_def_icon.webp" class="class-selector-icon">
+                                </span>
+            
+            
+                                <table id="character-config-table" style="margin: auto;">
+                                    <tr>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/mask_slot.webp" id="mask-slot" eqslot="9">
+                                            <img src="" class="weared-item clickable" eqslot="9">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/hat_slot.webp" id="hat-slot" eqslot="2">
+                                            <img src="" class="weared-item clickable" eqslot="2">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/fairy_slot.webp" id="fairy-slot" eqslot="10">
+                                            <img src="" class="weared-item clickable" eqslot="10">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/main_weapon_slot.webp" id="main-weapon-slot" eqslot="0">
+                                            <img src="" class="weared-item clickable" eqslot="0">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/sp_slot.webp" id="sp-slot" eqslot="12">
+                                            <img src="" class="weared-item clickable" eqslot="12">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/secondary_weapon_slot.webp" id="secondary-weapon-slot" eqslot="5">
+                                            <img src="" class="weared-item clickable" eqslot="5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/glove_slot.webp" id="glove-slot" eqslot="3">
+                                            <img src="" class="weared-item clickable" eqslot="3">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/armor_slot.webp" id="armor-slot" eqslot="1">
+                                            <img src="" class="weared-item clickable" eqslot="1">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/shoe_slot.webp" id="shoe-slot" eqslot="4">
+                                            <img src="" class="weared-item clickable" eqslot="4">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/ring_slot.webp" id="ring-slot" eqslot="7">
+                                            <img src="" class="weared-item clickable" eqslot="7">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/necklace_slot.webp" id="necklace-slot" eqslot="6">
+                                            <img src="" class="weared-item clickable" eqslot="6">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/bracelet_slot.webp" id="bracelet-slot" eqslot="8">
+                                            <img src="" class="weared-item clickable" eqslot="8">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/costume_wings_slot.webp" id="costume-wings-slot" eqslot="16">
+                                            <img src="" class="weared-item clickable" eqslot="16">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/mini_pet_slot.webp" id="mini-pet-slot" eqslot="17">
+                                            <img src="" class="weared-item clickable" eqslot="17">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/amulet_slot.webp" id="amulet-slot" eqslot="11">
+                                            <img src="" class="weared-item clickable" eqslot="11">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/costume_weapon_slot.webp" id="costume-weapon-slot" eqslot="15">
+                                            <img src="" class="weared-item clickable" eqslot="15">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/costume_hat_slot.webp" id="costume-hat-slot" eqslot="14">
+                                            <img src="" class="weared-item clickable" eqslot="14">
+                                        </td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/costume_slot.webp" id="costume-slot" eqslot="13">
+                                            <img src="" class="weared-item clickable" eqslot="13">
+                                        </td>
+                                    </tr>
+                                </table>
+            
+                                <table style="margin: auto;">
+                                    <tr>
+                                        <td></td>
+                                        <td class="character-slot-container">
+                                            <img src="/imgs/ui/skill_slot.png">
+                                            <img id="equiped-skill" src="" class="weared-item clickable" style="bottom: 3px;">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+            
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
             </div>
 
@@ -287,7 +309,8 @@
                     <div class="column">
                         <img id="current-monster" class="clickable animation"
                             src="/imgs/full_monster_sprites/0_10_2.webp"
-                            style="max-height: 100%; max-width: 100%; position: relative;">
+                            style="max-height: 100%; max-width: 100%; position: relative;"
+                            vnum="0">
                     </div>
                     <div class="column box monster-stat-container">
                         <h3 id="monster-name-title">Baby Fox</h3>
@@ -379,9 +402,6 @@
             </div>
         </div>
 
-
-
-
         <hr>
 
         <div class="center">
@@ -395,14 +415,6 @@
             </div>
 
             <div>
-                <label>Critical damage:</label>
-                <output id="min_crit_dmg">0</output>
-                -
-                <output id="mmax_crit_dmg">0</output>
-            </div>
-
-
-            <div>
                 <label>Softcrit damage:</label>
                 <output id="min_softcrit_dmg">0</output>
                 -
@@ -410,96 +422,22 @@
             </div>
 
             <div>
-                <label>Softcrit + Critical damage:</label>
-                <output id="min_softcrit_crit_dmg">0</output>
+                <label>Critical damage:</label>
+                <output id="min_crit_dmg">0</output>
                 -
-                <output id="max_softcrit_crit_dmg">0</output>
+                <output id="max_crit_dmg">0</output>
+            </div>
+
+            <div>
+                <label>Hardcrit damage:</label>
+                <output id="min_hardcrit_dmg">0</output>
+                -
+                <output id="max_hardcrit_dmg">0</output>
             </div>
 
             <button id="calculate_btn">Calculate</button>
 
             <hr>
-        </div>
-
-        <div>
-            <h2>Character configuration</h2>
-
-            <div>
-                <label for="character_level">Level:</label>
-                <input id="character_level" type="number" value="1" min="1" max="99">
-            </div>
-
-            <div>
-                <label for="overall_dmg_increase">Overall damage increase (%):</label>
-                <input id="overall_dmg_increase" type="number" value="0" min="0">
-            </div>
-
-            <h3>Physical Damage</h3>
-
-            <div>
-                <label for="weapon_level">Weapon upgrade level:</label>
-                <input id="weapon_level" type="number" value="0" min="0" max="10">
-            </div>
-
-            <div>
-                <label for="weapon_base_dmg">Weapon base damage (min, max):</label>
-                <span>
-                    <input id="weapon_base_dmg_min" type="number" value="0" min="0">
-                    <input id="weapon_base_dmg_max" type="number" value="0" min="0">
-                </span>
-            </div>
-
-            <div>
-                <label for="char_base_dmg">Character base damage</label>
-                <input id="char_base_dmg" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="soft_crit_dmg">Soft crit damage increase (%)</label>
-                <input id="soft_crit_dmg" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="critical_dmg">Critical damage increase (%):</label>
-                <input id="critical_dmg" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="skill_base_dmg">Skill power increase</label>
-                <input id="skill_base_dmg" type="number" value="0" min="0">
-            </div>
-
-            <h3>Elemental Damage</h3>
-
-            <div>
-                <label for="weapon_elemental_energy">Weapon elemental energies increase:</label>
-                <input id="weapon_elemental_energy" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="skill_element">Skill element increase:</label>
-                <input id="skill_element" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="fairy_level">Fairy level (%):</label>
-                <input id="fairy_level" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="weapon_ele_reduction">Weapons elemental resistance reduction (%):</label>
-                <input id="weapon_ele_reduction" type="number" value="0" min="0">
-            </div>
-
-            <div>
-                <label for="fairy_element">Fairy element:</label>
-                <select id="fairy_element">
-                    <option value="fire">Fire</option>
-                    <option value="water">Water</option>
-                    <option value="light">Light</option>
-                    <option value="shadow">Shadow</option>
-                </select>
-            </div>
         </div>
 </body>
 

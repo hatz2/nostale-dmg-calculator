@@ -1,7 +1,6 @@
 import { character_config } from "../calculator/character_config.js";
 import { ClassFlag, EquipSlot } from "../enums.js";
-import { formatString } from "../utils.js";
-// import { makeDraggable } from "./dragable_element.js";
+import { getBuffFormattedText } from "./bcard_text.js";
 import { ITEM_ICONS_PATH } from "./items_lists.js";
 
 var bcards
@@ -111,43 +110,10 @@ function showWeaponDetails(weapon, pos) {
         if (buff.bcard_vnum <= 0) 
             return;
 
-        let bcard = bcards.filter((elem) => elem.vnum == buff.bcard_vnum)[0];
-
-        const desc = parseInt(bcard.desc[buff.bcard_sub]);
-        const values = [Math.abs(buff.values[0]), Math.abs(buff.values[1])];
-
-        // TODO: Add other desc types (buffs for example)
-        if (desc == 5) {
-            const race_id = values[0].toString();
-            const RACE_TO_TEXT = {
-                "00": "Low-level plant",
-                "01": "Low-level animal",
-                "02": "Low-level monster",
-                "10": "High-level plant",
-                "11": "High-level animal",
-                "12": "High-level monster",
-                "20": "Kovolt",
-                "21": "Bushtais",
-                "22": "Catsy",
-                "30": "Human",
-                "32": "Neutral",
-                "33": "Demon",
-                "40": "Angel",
-                "50": "Low-level undead",
-                "51": "High-level undead",
-                "60": "Low-level spirit",
-            }
-
-            // Set value to the text equivalent
-            values[0] = RACE_TO_TEXT[race_id];
-        }
-        
+        const buff_text = getBuffFormattedText(buff, bcards);
         const node = document.createElement("div");
         node.classList.add("item-inspector-dark-orange-text");
-        const text_template = bcard.list[buff.bcard_sub][buff.values[0] >= 0 ? 0 : 1];
-        const text = formatString(text_template, values);
-
-        node.innerHTML = text;
+        node.innerHTML = buff_text;
         buff_effects_container.appendChild(node);
     });
 

@@ -1,5 +1,6 @@
 import { character_config } from "../calculator/character_config.js";
 import { AccessorySubType, ArmorSubType, ClassFlag, EquipmentSubType, EquipSlot, InventoryTab, ItemType, SpecialistSubType, WeaponSubType } from "../enums.js";
+import { displayEquippedOrangeBuffs } from "./buff_widget.js";
 import { hideFairyInspector } from "./fairy_inspector.js";
 import { resetSkill } from "./skill_list.js";
 import { hideSpInspector } from "./sp_inspector.js";
@@ -77,6 +78,9 @@ function onItemClicked(event) {
     // If we click an SP reset the skill widget
     if (eqslot == EquipSlot.SP)
         resetSkill();
+
+    // TEST
+    displayEquippedOrangeBuffs();
 }
 
 function initCharacterSlotCallbacks(items) {
