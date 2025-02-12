@@ -1,4 +1,4 @@
-import { getIdleMonsterImgPaths } from "../utils/js/parsers/imgs/monster_img_parser.js";
+import { getIdleMonsterImgPaths } from "./utils.js";
 import { initMonsterListUI } from "./ui/monster_list.js";
 import { initItemListUI } from "./ui/items_lists.js";
 import { initWeaponInspector } from "./ui/weapon_inspector.js";

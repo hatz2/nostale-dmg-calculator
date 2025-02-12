@@ -71,15 +71,15 @@ class CalculatedDamage {
         this.hardcrit.sub(other.hardcrit);
     }
 
-    round() {
-        this.base.min = Math.round(this.base.min);
-        this.base.max = Math.round(this.base.max);
-        this.critical.min = Math.round(this.critical.min);
-        this.critical.max = Math.round(this.critical.max);
-        this.softcrit.min = Math.round(this.softcrit.min);
-        this.softcrit.max = Math.round(this.softcrit.max);
-        this.hardcrit.min = Math.round(this.hardcrit.min);
-        this.hardcrit.max = Math.round(this.hardcrit.max);
+    floor() {
+        this.base.min = Math.floor(this.base.min);
+        this.base.max = Math.floor(this.base.max);
+        this.critical.min = Math.floor(this.critical.min);
+        this.critical.max = Math.floor(this.critical.max);
+        this.softcrit.min = Math.floor(this.softcrit.min);
+        this.softcrit.max = Math.floor(this.softcrit.max);
+        this.hardcrit.min = Math.floor(this.hardcrit.min);
+        this.hardcrit.max = Math.floor(this.hardcrit.max);
     }
 
     addFlat(value) {
@@ -120,7 +120,7 @@ function calculateDamage(character_config, monster) {
     total_dmg.mul(percent_dmg_increase);
 
     // Round
-    total_dmg.round();
+    total_dmg.floor();
 
     return total_dmg;
 }
@@ -270,7 +270,23 @@ function calculateElementalDamage(character_config, monster, bonuses) {
 
     // Basically if we have no fairy or a fairy without element, we return 0 damage
     if (getCharElementType(character_config) === Elem.NONE) {
-        return new CalculatedDamage();
+        if (character_config.fairy === undefined) {
+            return new CalculatedDamage();
+        }
+        else {
+            if (character_config.fairy.data.element === Elem.NONE) {
+                return new CalculatedDamage();
+            }
+            else {
+                // Fairy has element but skill doesn't match
+                // somehow elmental power is used based on your fairy element
+                // and elemental bonus is added aswell based on your fairy level
+                let dmg = new CalculatedDamage();
+                dmg.add(elemental_power);
+                dmg.mul(element_bonus);
+                return dmg;
+            }
+        }
     }
 
     total_atk.addFlat(100);
@@ -297,9 +313,22 @@ function getCharElementType(character_config) {
     return fairy_element === skill_element ? fairy_element : Elem.NONE;
 }
 
+function getFairyElementType(character_config) {
+    if (character_config.fairy === undefined) {
+        return Elem.NONE;
+    }
+
+    return character_config.fairy.data.element;
+}
+
 function calculateElementalPower(character_config, bonuses) {
-    const element_type = getCharElementType(character_config);
+    const element_type = getFairyElementType(character_config);
     let result = 0;
+
+    // If no fairy or fairy has no element then attack power is 0
+    if (element_type === Elem.NONE) {
+        return new CalculatedDamage();
+    }
 
     // Add all elemental power bonuses
     if (Object.hasOwn(bonuses, 74)) {
@@ -389,7 +418,7 @@ function calculateElementBonus(character_config, monster) {
     const element_type = getCharElementType(character_config);
 
     const ELEM_BONUS_TABLE = [
-        [0, 0, 0, 0, 0],
+        [0.3, 0, 0, 0, 0],
         [0.3, 0.0, 1.0, 0.0, 0.5],
         [0.3, 1.0, 0.0, 0.5, 0.0],
         [0.3, 0.5, 0.0, 0.0, 2.0],
