@@ -36,7 +36,7 @@ async function onLoad() {
     
     // console.log(bcards);
     // console.log(items);
-    console.log(skills);
+    //console.log(skills);
 
     const monster_sprite_file = await fetch("/client_files/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
