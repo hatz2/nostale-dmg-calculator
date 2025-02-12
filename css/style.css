@@ -433,3 +433,20 @@ img {
 }
 
 /* END OF TAB WIDGET */
+
+.blue-btn {
+    color: #DCECFF; 
+    background: linear-gradient(#5AA8D8 0%, #5AA8D8 10%, #3475BE 25%, #3475BE 85%, #588DC9 100%); 
+    border: 1px solid #0E2752; 
+    border-radius: 8px; 
+    padding: 7px 15px; 
+    text-shadow: -1px -1px #1052C6, 1px -1px #1052C6, -1px 1px #1052C6, 1px 1px #1052C6;
+}
+
+.blue-btn:hover {
+    background: linear-gradient(#75ACDE 0%, #75ACDE 10%, #5090CB 25%, #5090CB 85%, #7DCDF8 100%); 
+}
+
+.blue-btn:active {
+    background: linear-gradient(#296FBE 0%, #296FBE 90%, #4BA2D8 100%);
+}
