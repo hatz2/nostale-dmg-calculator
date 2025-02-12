@@ -14,7 +14,7 @@ function formatString(template, values) {
 }
 
 const IDLE_ANIMATION = 10
-const IMG_FOLDER = "/imgs/full_monster_sprites/"
+const IMG_FOLDER = "imgs/full_monster_sprites/"
 
 function getIdleMonsterImgPaths(sprite_info_array) {
     const result = new Map()
