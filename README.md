@@ -42,7 +42,7 @@ As I pointed out earlier, the calculator is not complete and it still need a lot
 
 Contributions of any kind are welcome.
 
-## Atributions
+## Attributions
 
 Thanks to Pumba98 for his [OnexExplorer](https://github.com/Pumba98/OnexExplorer) fork that allows to easily extract information from the game files.
 
