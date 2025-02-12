@@ -166,6 +166,7 @@ function initDropdownSkills() {
         img_container.onclick = onSkillClicked;
 
         const img_node = document.createElement("img");
+        img_node.loading = "lazy";
         img_node.src = `${ITEM_ICONS_PATH}/${skill.icon_id}.png`;
         img_node.title = skill.name;
         img_node.onerror = () => img_node.src = `${ITEM_ICONS_PATH}/0.png`;
@@ -188,6 +189,7 @@ function onSkillClicked(event) {
     const weared_item_img = document.getElementById("equiped-skill");
 
     // Set error handler and set the img
+    weared_item_img.setAttribute("loading", "lazy");
     weared_item_img.onerror = () => weared_item_img.src = `${ITEM_ICONS_PATH}/0.png`;
     weared_item_img.setAttribute("src", `${ITEM_ICONS_PATH}/${skill.icon_id}.png`)
     weared_item_img.setAttribute("title", img_node.getAttribute("title"));

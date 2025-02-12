@@ -8,7 +8,7 @@ import { hideWeaponInspector } from "./weapon_inspector.js";
 
 var items_dict = new Map();
 var selected_eq_slot;
-export const ITEM_ICONS_PATH = "/imgs/icons";
+export const ITEM_ICONS_PATH = "imgs/icons";
 
 export function initItemListUI(items) {
     init(items);
@@ -41,8 +41,8 @@ function createItemUIandAddToDropdown(item, dropdown) {
     img_container.onclick = onItemClicked;
 
     const img_node = document.createElement("img");
+    img_node.loading = "lazy";
     img_node.src = `${ITEM_ICONS_PATH}/${item.icon_id}.png`;
-    img_node.title = item.name;
     img_node.onerror = () => img_node.src = `${ITEM_ICONS_PATH}/0.png`;
     img_node.setAttribute("vnum", item.vnum);
 

@@ -49,6 +49,7 @@ function init(monsters, monster_img_paths) {
 
         // Create the img node
         const img_node = document.createElement("img");
+        img_node.setAttribute("loading", "lazy");
         img_node.setAttribute("src", monster_img_paths.get(monster.skin))
         img_node.setAttribute("title", monster.name);
         img_node.setAttribute("class", "monster-img-max-size");
@@ -86,7 +87,7 @@ function init(monsters, monster_img_paths) {
 
             // Set monster element icon
             monster_element_icon.src = "/imgs/icons/1710" + monster.element + ".png";
-
+            
             // Set monster element level
             monster_element_level_text.innerText = monster.element_level + "%";
 
