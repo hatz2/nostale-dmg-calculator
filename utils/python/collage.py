@@ -6,9 +6,10 @@ are splitted into multiple parts
 from PIL import Image, UnidentifiedImageError
 import json
 
-SPRITES_FOLDER_PATH = "./imgs/monster_sprites/"
-NSMN_DATA_PATH = "./data/NSmnData.NOS.json"
-SAVE_PATH = "./imgs/full_monster_sprites/"
+SPRITES_FOLDER_PATH = "../../client_files/img/monster_sprites/"
+NSMN_DATA_PATH = "../../client_files/NSmnData.NOS.json"
+SAVE_PATH = "../../imgs/full_monster_sprites/"
+ANIMATION = 10
 
 def get_monster_sprite_metadata() -> dict:
     """
@@ -147,6 +148,10 @@ if __name__ == "__main__":
         skin_id = sprite["monster"]
         animation = sprite["animation"]
         direction = sprite["direction"]
+
+        # Skip animations we don't care about
+        if animation != ANIMATION:
+            continue
 
         image_ids = get_img_ids(sprite)
         images = get_imgs(image_ids)
