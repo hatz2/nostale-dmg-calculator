@@ -22,23 +22,23 @@ window.addEventListener("load", onLoad);
 
 async function onLoad() {
     // Load and parse game files
-    monsters = await fetch("/data/monster.json");
+    monsters = await fetch("data/monster.json");
     monsters = await monsters.json();
 
-    items = await fetch("/data/item.json");
+    items = await fetch("data/item.json");
     items = await items.json();
 
-    bcards = await fetch("/data/bcard.json");
+    bcards = await fetch("data/bcard.json");
     bcards = await bcards.json();
 
-    skills = await fetch("/data/skill.json");
+    skills = await fetch("data/skill.json");
     skills = await skills.json();
     
     // console.log(bcards);
     // console.log(items);
     //console.log(skills);
 
-    const monster_sprite_file = await fetch("/client_files/NSmnData.NOS.json");
+    const monster_sprite_file = await fetch("client_files/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
     monster_img_paths = getIdleMonsterImgPaths(monster_sprite_data);
 
