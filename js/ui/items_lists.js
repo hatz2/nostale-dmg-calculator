@@ -43,6 +43,7 @@ function createItemUIandAddToDropdown(item, dropdown) {
     const img_node = document.createElement("img");
     img_node.loading = "lazy";
     img_node.src = `${ITEM_ICONS_PATH}/${item.icon_id}.png`;
+    img_node.title = item.name;
     img_node.onerror = () => img_node.src = `${ITEM_ICONS_PATH}/0.png`;
     img_node.setAttribute("vnum", item.vnum);
 
