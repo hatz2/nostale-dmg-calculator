@@ -86,7 +86,7 @@ function init(monsters, monster_img_paths) {
             monster_level_span.innerText = monster.level;
 
             // Set monster element icon
-            monster_element_icon.src = "/imgs/icons/1710" + monster.element + ".png";
+            monster_element_icon.src = "imgs/icons/1710" + monster.element + ".png";
             
             // Set monster element level
             monster_element_level_text.innerText = monster.element_level + "%";
