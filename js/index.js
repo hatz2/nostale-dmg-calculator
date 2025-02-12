@@ -38,7 +38,7 @@ async function onLoad() {
     // console.log(items);
     //console.log(skills);
 
-    const monster_sprite_file = await fetch("client_files/NSmnData.NOS.json");
+    const monster_sprite_file = await fetch("data/NSmnData.NOS.json");
     monster_sprite_data = await monster_sprite_file.json();
     monster_img_paths = getIdleMonsterImgPaths(monster_sprite_data);
 
