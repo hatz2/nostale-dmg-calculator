@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     --dropdown-bg-color: rgba(240, 240, 240, 0.9);
-    --dropdown-item-hover-color: rgba(220, 220, 220, 0.5);
+    --dropdown-item-hover-color: rgba(60, 60, 60, 0.90);
 }
 
 .prevent-select {
@@ -126,10 +126,9 @@ img {
 }
 
 #monster-dropdown {
-    height: 425px;
-    width: 420px;
+    height: 433px;
+    width: 428px;
     position: absolute;
-    background-color: var(--dropdown-bg-color);
     visibility: hidden;
     opacity: 0;
 }
@@ -240,6 +239,7 @@ img {
     z-index: 1;
     max-width: 42px;
     max-height: 42px;
+    padding-bottom: 3px;
 }
 
 .smooth-hiding-transition {
@@ -253,12 +253,7 @@ img {
     position: absolute;
     font-size: 12px;
     color: white;
-    border: solid 2px rgb(125, 124, 123);
-    border-radius: 5px;
     --light-orange: rgb(245, 196, 120);
-    /* --frame-bg-color: rgb(59, 57, 59, 1.0); */
-    --frame-bg-color: rgb(20, 20, 20, 0.90);
-    background-color: var(--frame-bg-color);
     z-index: 2;
     visibility: hidden;
     opacity: 0;
@@ -386,11 +381,15 @@ img {
 /* TAB WIDGET */
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 1px solid #606467;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 0 1px #111517;
+    background-color: #111517;
+    clip-path: inset(-1px -1px 0px -1px);
 }
 
 .tab button {
+    color: white;
     background-color: inherit;
     float: left;
     border: none;
@@ -398,22 +397,27 @@ img {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    width: 50%;
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: rgb(27, 31, 33);
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: rgb(37, 41, 43);
 }
 
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #606467;
     border-top: none;
     text-align: left;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 2px 0px 1px #111517;
+    clip-path: inset(-2px -2px 0px -2px);
+    background-color: #111517;
 }
 
 .tabcontent {
@@ -433,3 +437,67 @@ img {
 }
 
 /* END OF TAB WIDGET */
+
+.blue-btn {
+    color: #DCECFF; 
+    background: linear-gradient(#5AA8D8 0%, #5AA8D8 10%, #3475BE 25%, #3475BE 85%, #588DC9 100%); 
+    border: 1px solid #0E2752; 
+    border-radius: 8px; 
+    padding: 7px 15px; 
+    text-shadow: 2px 0 #1052C6, -2px 0 #1052C6, 0 2px #1052C6, 0 -2px #1052C6, 1px 1px #1052C6, -1px -1px #1052C6, 1px -1px #1052C6, -1px 1px #1052C6;
+}
+
+.blue-btn:hover {
+    background: linear-gradient(#75ACDE 0%, #75ACDE 10%, #5090CB 25%, #5090CB 85%, #7DCDF8 100%); 
+}
+
+.blue-btn:active {
+    background: linear-gradient(#296FBE 0%, #296FBE 90%, #4BA2D8 100%);
+}
+
+.black-panel {
+    color: white;
+    background-color: #111517;
+    border: 1px solid #606467;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #111517;
+    padding: 5px;
+}
+
+.gray-panel {
+    color: white;
+    background-color: rgb(50, 50, 50);
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgb(84, 84, 84);
+    padding: 5px;
+}
+
+.almost-white-panel {
+    color: white;
+    background-color: rgb(90, 90, 90);
+    border: 1px solid black;
+    margin-right: 3px;
+    margin-left: 3px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 2px 0px 2px rgb(90, 90, 90);
+    padding: 5px;
+}
+
+.black-translucent-panel {
+    border: solid 1px rgb(125, 124, 123);
+    border-radius: 5px;
+    background-color: rgb(20, 20, 20, 0.90);
+    box-shadow: 0 0 0 1px rgb(20, 20, 20);
+}
+
+.panel-title {
+    font-size: 18px;
+    color: white; 
+    background: linear-gradient(#474847 0%, #474847 10%, #2B2D31 25%, #2B2D31 50%, black 55%, black 100%); 
+    border: 1px solid #7C7C7C;
+    border-radius: 5px 5px 5px 5px; 
+    box-shadow: 0 0 0px 1px black;
+    padding: 7px 15px; 
+    text-shadow: 2px 0 #2A2C30, -2px 0 #2A2C30, 0 2px #2A2C30, 0 -2px #2A2C30, 1px 1px #2A2C30, -1px -1px #2A2C30, 1px -1px #2A2C30, -1px 1px #2A2C30;
+}
