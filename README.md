@@ -45,3 +45,5 @@ Contributions of any kind are welcome.
 ## Atributions
 
 Thanks to Pumba98 for his [OnexExplorer](https://github.com/Pumba98/OnexExplorer) fork that allows to easily extract information from the game files.
+
+Thanks to [Blowa](https://github.com/blowaxd) and all the olympus team as the monster defence calculations have been taken from an old leaked source of their server.
