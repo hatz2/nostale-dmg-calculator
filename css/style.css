@@ -31,7 +31,7 @@ body {
     font-family: Tahoma, Verdana, sans-serif;
     /* background-color: #f4f4f4b9; */
 
-    background-image: url('/imgs/map_textures/background6.webp');
+    background-image: url('imgs/map_textures/background6.webp');
     background-repeat: repeat;
     background-size: auto;
 }
