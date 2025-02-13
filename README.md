@@ -2,12 +2,6 @@
 
 As the title says this is a damage calculator (PVE only) for the MMORPG Nostale. The formula used in this calculator can be found [here](https://forum.de.nostale.gameforge.com/forum/thread/617-schadensberechnung/). The damage output should be pretty close to the official server but the calculator still lacks a lot of functionality. This is (kind of) my first web project and the code is probably not the best so don't judge it.
 
-## Disclaimer
-
-This project is an independent work done for educational purposes and without any intention of infringing the copyrights of the original game. All images, names and other elements belong to their respective owners and are used for reference and learning purposes only.
-
-If rights holders consider that any content infringes their rights, they can contact us to request its immediate removal.
-
 ## How to use
 
 I think it's pretty intuitive but basically you only have to do set up a few things:
@@ -47,3 +41,9 @@ Contributions of any kind are welcome.
 Thanks to Pumba98 for his [OnexExplorer](https://github.com/Pumba98/OnexExplorer) fork that allows to easily extract information from the game files.
 
 Thanks to [Blowa](https://github.com/blowaxd) and all the olympus team as the monster defence calculations have been taken from an old leaked source of their server.
+
+## Disclaimer
+
+This project is an independent work done for educational purposes and without any intention of infringing the copyrights of the original game. All images, names and other elements belong to their respective owners and are used for reference and learning purposes only.
+
+If rights holders consider that any content infringes their rights, they can contact us to request its immediate removal.
