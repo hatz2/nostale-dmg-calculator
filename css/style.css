@@ -384,7 +384,7 @@ img {
     border: 1px solid #606467;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 0 1px #111517;
-    background-color: #111517;
+    background-color: rgb(37, 41, 43);
     clip-path: inset(-1px -1px 0px -1px);
 }
 
@@ -405,7 +405,7 @@ img {
 }
 
 .tab button.active {
-    background-color: rgb(37, 41, 43);
+    background-color: #111517;
 }
 
 .tabcontent {
