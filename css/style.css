@@ -29,7 +29,11 @@ input::-webkit-inner-spin-button {
 
 body {
     font-family: Tahoma, Verdana, sans-serif;
-    background-color: #f4f4f4b9;
+    /* background-color: #f4f4f4b9; */
+
+    background-image: url('/imgs/map_textures/background6.webp');
+    background-repeat: repeat;
+    background-size: auto;
 }
 
 h1,
@@ -466,21 +470,21 @@ img {
 
 .gray-panel {
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(60, 60, 60, 0.5);
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px rgb(84, 84, 84);
+    box-shadow: 0 0 0 1px rgb(84, 84, 84, 1);
     padding: 5px;
 }
 
 .almost-white-panel {
     color: white;
-    background-color: rgb(90, 90, 90);
+    background-color: rgb(10, 10, 10, 0.4);
     border: 1px solid black;
     margin-right: 3px;
     margin-left: 3px;
     border-radius: 0px 0px 5px 5px;
-    box-shadow: 0px 2px 0px 2px rgb(90, 90, 90);
+    box-shadow: 0px 2px 0px 2px rgb(10, 10, 10, 0.4);
     padding: 5px;
 }
 
@@ -500,4 +504,21 @@ img {
     box-shadow: 0 0 0px 1px black;
     padding: 7px 15px; 
     text-shadow: 2px 0 #2A2C30, -2px 0 #2A2C30, 0 2px #2A2C30, 0 -2px #2A2C30, 1px 1px #2A2C30, -1px -1px #2A2C30, 1px -1px #2A2C30, -1px 1px #2A2C30;
+}
+
+
+.nunito-title {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+#main-title {
+    font-size: 64px;
+    background: linear-gradient(#F59000 0%, #F59000 20%, #FBD06C 50%, #FEEC9A 80%, #FEEC9A 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(6px 6px 6px #000);
 }

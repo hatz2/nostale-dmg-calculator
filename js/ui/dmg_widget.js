@@ -50,6 +50,12 @@ function initDmgWidget(monsters_array) {
 }
 
 function onCalculateDamageClicked() {
+    // Check if there is a skill selected
+    if (character_config.skill === undefined) {
+        alert("You need to select a skill first");
+        return;
+    }
+
     const min_dmg = document.getElementById("min_base_dmg");
     const max_dmg = document.getElementById("max_base_dmg");
     const min_crit_dmg = document.getElementById("min_crit_dmg");
