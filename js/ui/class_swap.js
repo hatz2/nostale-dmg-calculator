@@ -18,6 +18,6 @@ function clearCharacterSlotWidgets() {
 
     Array.from(char_slot_imgs).forEach((img) => {
         img.setAttribute("title", "");
-        img.removeAttribute("src");
+        img.setAttribute("src", `imgs/ui/char_slot_placeholder.png`);
     });
 }

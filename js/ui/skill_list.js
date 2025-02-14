@@ -202,7 +202,7 @@ function onSkillClicked(event) {
 
 export function resetSkill() {
     const img = document.getElementById("equiped-skill");
-    img.removeAttribute("src");
+    img.setAttribute("src", `imgs/ui/char_slot_placeholder.png`);
     img.setAttribute("title", "");
     character_config.skill = undefined;
 }
