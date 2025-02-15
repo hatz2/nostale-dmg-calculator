@@ -213,10 +213,23 @@ img {
 }
 
 .item-img-container {
+    position: relative;
     width: 40px;
     height: 40px;
     display: flex;
     border-radius: 8px;
+}
+
+.item-img-container .item-level {
+    position : absolute;
+    color : white;
+    font-size : 10px;
+    border-radius : 8px;
+    padding: 1px;
+    border : 1px solid rgba(100, 100, 100, 0.7);
+    background-color : rgba(0, 0, 0, 0.7);
+    right: 0px;
+    bottom: 0px;
 }
 
 .item-dropdown .item-img-container:hover {

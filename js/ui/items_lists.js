@@ -11,8 +11,19 @@ var selected_eq_slot;
 export const ITEM_ICONS_PATH = "imgs/icons";
 
 export function initItemListUI(items) {
-    init(items);
-    initCharacterSlotCallbacks(items);
+    // Remove non equip items
+    let filtered_items = items.filter(item => item.inventory_tab == InventoryTab.EQUIP)
+
+    // Sort items first by level
+    filtered_items.sort((a, b) => {
+        let a_level = a.is_hero_eq ? 100 + a.data.level : a.data.level;
+        let b_level = b.is_hero_eq ? 100 + b.data.level : b.data.level;
+        let result = a_level - b_level;
+        return result;
+    });
+
+    init(filtered_items);
+    initCharacterSlotCallbacks(filtered_items);
 
     document.addEventListener("click", (event) => {
         if (!event.target.closest(".weared-item")) {
@@ -31,6 +42,8 @@ function init(items) {
         createItemUIandAddToDropdown(item, item_dropdown);
         items_dict.set(item.vnum, item);
     });
+
+    item_dropdown
 }
 
 
@@ -49,7 +62,59 @@ function createItemUIandAddToDropdown(item, dropdown) {
 
     img_container.appendChild(img_node);
 
+
+    // Skip the following items
+    // - SP
+    // - Mini pet
+    // - Costumes
+    // - Fairy
+    // - Amulet
+    if (shouldDisplayLevel(item)) {
+        const level_node = document.createElement("div");
+        level_node.innerHTML = `${item.data.level}`;
+        level_node.classList.add("item-level");
+        img_container.appendChild(level_node);
+    }
+
+    
+
     dropdown.appendChild(img_container);
+}
+
+function shouldDisplayLevel(item) {
+    if (item.item_type == ItemType.SPECIALIST) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.ACCESSORY && item.item_subtype == AccessorySubType.MINI_PET) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.EQUIPMENT && item.item_subtype == EquipmentSubType.COSTUME) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.EQUIPMENT && item.item_subtype == EquipmentSubType.COSTUME_HAT) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.EQUIPMENT && item.item_subtype == EquipmentSubType.COSTUME_WEAPON) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.EQUIPMENT && item.item_subtype == EquipmentSubType.COSTUME_WINGS) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.ACCESSORY && item.item_subtype == AccessorySubType.FAIRY) {
+        return false;
+    }
+
+    if (item.item_type == ItemType.ACCESSORY && item.item_subtype == AccessorySubType.AMULET) {
+        return false;
+    }
+    
+    return true;
 }
 
 function onItemClicked(event) {
@@ -80,7 +145,6 @@ function onItemClicked(event) {
     if (eqslot == EquipSlot.SP)
         resetSkill();
 
-    // TEST
     displayEquippedOrangeBuffs();
 }
 
@@ -117,7 +181,6 @@ function characterSlotClickCallback(event) {
     let item_filter = getItemFilter(eq_slot, selected_class);
 
     selected_eq_slot = eq_slot;
-
 
     // Filter the items
     for (let i = 0; i < item_dropdown.children.length; ++i) {
