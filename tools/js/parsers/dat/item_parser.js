@@ -59,6 +59,16 @@ class Item extends DatObject {
         return this.inventory_tab == InventoryTab.EQUIP &&
             this.item_type == ItemType.EQUIPMENT;
     }
+
+    isArmor() {
+        return this.inventory_tab == InventoryTab.EQUIP &&
+            this.item_type == ItemType.ARMOR;
+    }
+
+    isAccessory() {
+        return this.inventory_tab == InventoryTab.EQUIP &&
+            this.item_type == ItemType.ACCESSORY;
+    }
 }
 
 class ItemDatParser extends DatParser {
@@ -223,6 +233,15 @@ class DataRow extends DatRow {
         else if (obj.isEquipment()) {
             this.applyToEquipment(obj);
         }
+        else if (obj.isArmor()) {
+            this.applyToArmor(obj);
+        }
+        else if (obj.isAccessory()) {
+            this.applyToAccessory(obj);
+        }
+        else {
+            obj.data.level = 0;
+        }
     }
 
     applyToWeapon(obj) {
@@ -241,10 +260,20 @@ class DataRow extends DatRow {
     }
 
     applyToSp(obj) {
+        obj.data.level = this.getInt(13); // this is indeed morph id, but we set it for the sorting
         obj.data.morph_id = this.getInt(13);
     }
 
     applyToEquipment(obj) {
+        obj.data.level = this.getInt(1);
         obj.data.time_left = this.getInt(12);
+    }
+
+    applyToArmor(obj) {
+        obj.data.level = this.getInt(1);
+    }
+
+    applyToAccessory(obj) {
+        obj.data.level = this.getInt(1);
     }
 }

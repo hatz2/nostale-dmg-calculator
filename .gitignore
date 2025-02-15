@@ -1,4 +1,4 @@
 /client_files/*
 #/imgs/*
-/utils/python/venv
+/tools/python/venv
 .vscode/launch.json
